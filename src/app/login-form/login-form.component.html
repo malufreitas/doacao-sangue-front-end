@@ -1,13 +1,16 @@
-
 <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
   <div class="form-group">
     <label for="email">E-mail</label>
-    <input type="email" class="form-control" name="email" id="email" placeholder="nome@email.com" ngModel>
+    <input type="email" class="form-control" name="email" 
+    id="email" placeholder="nome@email.com" ngModel 
+    required email #email >
   </div>
 
   <div class="form-group">
     <label for="senha">Senha</label>
-    <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" ngModel>
+    <input type="password" class="form-control" name="senha" 
+    id="senha" placeholder="Senha" ngModel 
+    required >
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
@@ -28,8 +31,8 @@ E-mail
 Senha
 Confirmar senha
 
-  
-  <form #cadastroForm="ngForm" (ngSubmit)="onSubmit(cadastroForm)">
+
+<form #cadastroForm="ngForm" (ngSubmit)="onSubmit(cadastroForm)">
   <div class="form-group">
     <label for="nome">Nome</label>
     <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" ngModel>
@@ -42,7 +45,8 @@ Confirmar senha
 
   <div class="form-group">
     <label for="dataNascimento">Data de Nascimento</label>
-    <input type="date" class="form-control" name="dataNascimento" id="dataNascimento" placeholder="Data de nascimento" ngModel>
+    <input type="date" class="form-control" name="dataNascimento" id="dataNascimento" placeholder="Data de nascimento"
+      ngModel>
   </div>
 
   <div class="form-group">
@@ -76,13 +80,9 @@ Confirmar senha
 
   <div class="form-group">
     <label for="confirmarSenha">Confirmar senha</label>
-    <input type="password" class="form-control" name="confirmarSenha" id="confirmarSenha" placeholder="Confirmar senha" ngModel>
+    <input type="password" class="form-control" name="confirmarSenha" id="confirmarSenha" placeholder="Confirmar senha"
+      ngModel>
   </div>
 
-
-
   <button type="submit" class="btn btn-primary">Submit</button>
-</form-->
-
-
-
+  </form-->
