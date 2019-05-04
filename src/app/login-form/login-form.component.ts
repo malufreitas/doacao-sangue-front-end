@@ -7,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class LoginFormComponent implements OnInit {
+  
+  usuario: any = {
+    email: null,
+    senha: null
+  };
 
-  onSubmit(form: any) {
+  onSubmit(form) {
     console.log(form);
   }
 

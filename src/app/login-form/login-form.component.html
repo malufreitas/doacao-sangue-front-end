@@ -1,88 +1,46 @@
 <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+
   <div class="form-group">
-    <label for="email">E-mail</label>
-    <input type="email" class="form-control" name="email" 
-    id="email" placeholder="nome@email.com" ngModel 
-    required email #email >
+
+    <label for="email" classl="control-label">E-mail</label>
+    <input type="email" class="form-control" name="email" id="email" placeholder="nome@email.com"
+      [ngModel]="usuario.email" required email #email="ngModel">
+
+    <div *ngIf="!email.valid && email.touched" class="alert alert-danger" role="alert">
+      E-mail é obrigatório.
+    </div>
+
   </div>
 
   <div class="form-group">
     <label for="senha">Senha</label>
-    <input type="password" class="form-control" name="senha" 
-    id="senha" placeholder="Senha" ngModel 
-    required >
+    <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" [ngModel]="usuario.senha"
+      required #senha="ngModel">
+
+    <div *ngIf="!senha.valid && senha.touched">
+      Senha é obrigatória.
+    </div>
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  **Ainda não ta verificando o robô**
+  <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Não sou um robô</label>
+    </div>
+
+  <button type="submit" class="btn btn-primary"
+    [disabled] ="!loginForm.valid">Submit</button>
+
 </form>
 
+<br>
 
 
-<!--
-Cadastro da loja:
+/Dividir tela/ <br><br>
+<b>Ainda não tenho cadastro:</b>
+<br><br>
+Para comprar em nosso site é preciso realizar um cadastro. Através ficará por dentro das novidades, ofertas e promoções. 
+<br><br>
+<!--a href="/cadastro" class="btn btn-link" role="button" aria-pressed="true">Cadastrar</a-->
+<a href="/cadastro" class="btn btn-dark" role="button" aria-pressed="true">Cadastrar</a>
 
-Nome
-Sobrenome
-Data de Nascimento
-Sexo
-CPF
-Telefone
-E-mail
-Senha
-Confirmar senha
-
-
-<form #cadastroForm="ngForm" (ngSubmit)="onSubmit(cadastroForm)">
-  <div class="form-group">
-    <label for="nome">Nome</label>
-    <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" ngModel>
-  </div>
-
-  <div class="form-group">
-    <label for="sobrenome">Sobrenome</label>
-    <input type="text" class="form-control" name="sobrenome" id="sobrenome" placeholder="Sobrenome" ngModel>
-  </div>
-
-  <div class="form-group">
-    <label for="dataNascimento">Data de Nascimento</label>
-    <input type="date" class="form-control" name="dataNascimento" id="dataNascimento" placeholder="Data de nascimento"
-      ngModel>
-  </div>
-
-  <div class="form-group">
-    <label for="sexo">Sexo</label>
-    <input type="text" class="form-control" name="sexo" id="sexo" placeholder="Sexo" ngModel>
-  </div>
-
-  Colocar option
-  F
-  M
-
-  <div class="form-group">
-    <label for="cpf">CPF</label>
-    <input type="number" class="form-control" name="cpf" id="cpf" placeholder="CPF" ngModel>
-  </div>
-
-  <div class="form-group">
-    <label for="telefone">Telefone</label>
-    <input type="number" class="form-control" name="telefone" id="telefone" placeholder="Telefone" ngModel>
-  </div>
-
-  <div class="form-group">
-    <label for="email">E-mail</label>
-    <input type="email" class="form-control" name="email" id="email" placeholder="nome@email.com" ngModel>
-  </div>
-
-  <div class="form-group">
-    <label for="senha">Senha</label>
-    <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" ngModel>
-  </div>
-
-  <div class="form-group">
-    <label for="confirmarSenha">Confirmar senha</label>
-    <input type="password" class="form-control" name="confirmarSenha" id="confirmarSenha" placeholder="Confirmar senha"
-      ngModel>
-  </div>
-
-  <button type="submit" class="btn btn-primary">Submit</button>
-  </form-->
