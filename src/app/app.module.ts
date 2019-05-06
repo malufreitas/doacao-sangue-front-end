@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { CadastroFormModule } from './cadastro-form/cadastro-form.module';
 import { LoginFormModule } from './login-form/login-form.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,
