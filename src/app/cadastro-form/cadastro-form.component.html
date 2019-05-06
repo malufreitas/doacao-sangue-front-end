@@ -1,0 +1,89 @@
+<!--form name="clienteCadastrar" 
+  action="https://doacaodesangue.herokuapp.com/cliente" 
+  method="POST" 
+  onsubmit="return validateForm();" >
+</form-->
+
+<br>
+
+<form #cadastroForm="ngForm" (ngSubmit)="onSubmit(cadastroForm)">
+
+  <div class="form-row">
+
+    <div class="form-group col-md-6">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" [ngModel]=usuario.nome>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="sobrenome">Sobrenome</label>
+      <input type="text" class="form-control" name="sobrenome" id="sobrenome" placeholder="Sobrenome"
+        [ngModel]=usuario.sobrenome>
+    </div>
+
+  </div>
+
+  <div class="form-row">
+
+    <div class="form-group col-md-3">
+      <label for="dataNascimento">Data de Nascimento</label>
+      <input type="date" class="form-control" name="dataNascimento" id="dataNascimento" placeholder="dd/mm/aaaa"
+        [ngModel]=usuario.dataNascimento>
+    </div>
+
+    <div class="form-group col-md-3">
+      <label for="sexo">Sexo</label>
+      <select class="custom-select" id="sexo">
+        <option selected>Selecione...</option>
+        <option value="F">F</option>
+        <option value="M">M</option>
+      </select>
+      <!--br>
+      <div class="form-check-inline">
+        <label for="sexo">F</label>
+        <input class="form-check-input" type="radio" name="sexo" id="sexoF" value="F" [ngModel]=usuario.sexo>
+      </div>
+
+      <div class="form-check-inline">
+        <label for="sexoM">M</label>
+        <input class="form-check-input" type="radio" name="sexo" id="sexoM" value="M" [ngModel]=usuario.sexo>
+      </div-->
+    </div>
+
+    <div class="form-group col-md-3">
+      <label for="cpf">CPF</label>
+      <input type="number" class="form-control" name="cpf" id="cpf" placeholder="Digite apenas os números"
+        [ngModel]=usuario.cpf>
+    </div>
+
+    <div class="form-group col-md-3">
+      <label for="telefone">Telefone</label>
+      <input type="number" class="form-control" name="telefone" id="telefone" placeholder="Digite apenas os números"
+        [ngModel]=usuario.telefone>
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <label for="email">E-mail</label>
+    <input type="email" class="form-control" name="email" id="email" placeholder="nome@email.com"
+      [ngModel]=usuario.email>
+  </div>
+
+  <div class="form-row">
+
+    <div class="form-group col-md-6">
+      <label for="senha">Senha</label>
+      <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" [ngModel]=usuario.senha>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="confirmarSenha">Confirmar senha</label>
+      <input type="password" class="form-control" name="confirmarSenha" id="confirmarSenha"
+        placeholder="Confirmar senha" [ngModel]=usuario.confirmarSenha ngModel>
+    </div>
+
+  </div>
+
+  <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>

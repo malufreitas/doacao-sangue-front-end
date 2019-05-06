@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <title>Cadastro</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+
+<body>
+
+    <div class="container">
+        <h2>Cadastre um produto</h2>
+        <p>Insira os dados para cadastrar um produto.</p><br>
+
+        <form name="produtoCadastro" action="https://doacaodesangue.herokuapp.com/produto/" method="POST">
+            
+            <!-- Parte antiga (substituir) ******************
+            <div class="form-group row">
+                <div class="col-xs-2">
+                    <label for="tipo">Tipo do produto: </label>
+                    <select class="form-control" id="tipo" name="tipo">
+                        <option>Camisa</option>
+                        <option>Caneca</option>
+                        <option>Bottons</option>
+                    </select>
+                </div>
+            </div>
+            -->
+
+           <!-- BAIXAR O ANGULAR E INSTALAR (testar em casa) *****************
+            <form>
+                Tipo do produto:
+                <input type="radio" ng-model="myVar" value="camisa">Camisa
+                <input type="radio" ng-model="myVar" value="caneca">Caneca
+                <input type="radio" ng-model="myVar" value="bottons">Bottons
+                <br><br>
+            </form>
+            <div ng-switch="myVar">
+                <div ng-switch-when="camisa">
+                    Categoria:
+                    <input type="radio" ng-model="myVar" value="femininas">Femininas
+                    <input type="radio" ng-model="myVar" value="masculinas">Masculinas
+                </div>
+                <div ng-switch-when="camisa">
+                    Tamanho:
+                    <input type="radio" ng-model="myVar" value="P">P
+                    <input type="radio" ng-model="myVar" value="M">M
+                    <input type="radio" ng-model="myVar" value="G">G
+                </div>
+                <div ng-switch-when="caneca">
+                    Tipo:
+                    <input type="radio" ng-model="myVar" value="porcelana">Porcelana
+                    <input type="radio" ng-model="myVar" value="plastico">Plastico
+                    <input type="radio" ng-model="myVar" value="metal">Metal
+                </div>
+                <div ng-switch-when="bottons">
+                    Tamanho:
+                    <input type="radio" ng-model="myVar" value="3">3,5 cm
+                    <input type="radio" ng-model="myVar" value="4">4,5 cm
+                    <input type="radio" ng-model="myVar" value="5">5,5 cm
+                </div>
+            </div>
+            -->
+
+
+            <div class="form-group row">
+                <div class="col-xs-5">
+                    <label for="nome">Nome do produto: </label>
+                    <input class="form-control" id="nome" type="text" name="nome" placeholder="Informe o nome">
+                </div>
+                <div class="col-xs-3">
+                    <label for="valor">Preço: </label>
+                    <input class="form-control" id="valor" type="text" name="valor">
+                </div>
+                <div class="col-xs-4">
+                    <label for="quantidade">Quantidade: </label>
+                    <input class="form-control" id="quantidade" type="number" name="quantidade">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-xs-12">
+                    <label for="descricao">Descrição: </label>
+                    <textarea class="form-control" rows=2 id="descricao" name="descricao" placeholder="Descreva o produto em poucas palavras"></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Voltar</button>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>
