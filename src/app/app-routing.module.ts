@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LoginFormComponent } from './login-form/login-form.component';
 import { CadastroFormComponent } from './cadastro-form/cadastro-form.component';
+import { DadosEntregaFormComponent } from './dados-entrega-form/dados-entrega-form.component';
 
 const routes: Routes = [  
   { path: 'login', component: LoginFormComponent },
   { path: 'cadastro', component: CadastroFormComponent },
+  { path: 'entrega', component: DadosEntregaFormComponent },
   { path: '', pathMatch: 'full', redirectTo: '' },
 ];
 

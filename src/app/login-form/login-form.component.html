@@ -1,14 +1,12 @@
+<br>
+
 <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
 
   <div class="form-group">
-
     <label for="email" class="control-label">E-mail</label>
     <input type="email" class="form-control" name="email" id="email" placeholder="nome@email.com"
       [ngModel]="usuario.email" required email #email="ngModel">
 
-    <div *ngIf="!email.valid && email.touched" class="alert alert-danger" role="alert">
-      E-mail é obrigatório.
-    </div>
 
   </div>
 

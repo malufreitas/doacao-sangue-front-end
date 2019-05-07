@@ -1,9 +1,7 @@
-
 <!--
   <form name="clienteCadastrar" 
-  action="https://doacaodesangue.herokuapp.com/cliente" 
+  action="https://doacaodesangue.herokuapp.com/pessoa" 
   method="POST" 
-  onsubmit="return validateForm();" >
 </form>
 <br>
 -->
@@ -32,6 +30,9 @@
         Sobrenome é obrigatório.
       </div>
     </div>
+  </div>
+
+  <div class="form-row ">
 
     <div class="form-group col-md-3">
       <label for="dataNascimento">Data de Nascimento</label>
@@ -52,7 +53,7 @@
       </select>
 
       <div *ngIf="!sexo.valid && sexo.touched">
-          É necessário informar o sexo.
+        É necessário informar o sexo.
       </div>
     </div>
 
@@ -75,6 +76,9 @@
         Telefone é obrigatório.
       </div>
     </div>
+  </div>
+
+  <div class="form-row ">
 
     <div class="form-group col-md-12">
       <label for="email">E-mail</label>
@@ -86,6 +90,9 @@
       </div>
     </div>
 
+  </div>
+
+  <div class="form-row ">
     <div class="form-group col-md-6">
       <label for="senha">Senha</label>
       <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" [ngModel]="usuario.senha"
@@ -109,7 +116,6 @@
 
 
   </div>
-
 
   <button type="submit" class="btn btn-primary" [disabled]="!cadastroForm.valid">Submit</button>
 

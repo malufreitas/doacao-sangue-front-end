@@ -5,12 +5,11 @@ import { CommonModule } from '@angular/common';
 import { LoginFormComponent } from './login-form.component';
 import { FormDebugComponent } from '../form-debug/form-debug.component';
 import { CadastroFormModule } from '../cadastro-form/cadastro-form.module';
-import { CadastroFormComponent } from '../cadastro-form/cadastro-form.component';
 
 @NgModule({
   declarations: [
     LoginFormComponent,
-    FormDebugComponent  
+    FormDebugComponent
   ],
   imports: [
     CommonModule,
