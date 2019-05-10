@@ -10,7 +10,7 @@ import { LoginFormModule } from './login-form/login-form.module';
 import { ProdutosComponent } from './produtos/produtos/produtos.component';
 import { ProdutoCadastroComponent } from './produtos/produto-cadastro/produto-cadastro.component';
 import { ProdutosConsultaComponent } from './produtos/produtos-consulta/produtos-consulta.component';
-
+import { HttpClientModule } from '/@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { ProdutosConsultaComponent } from './produtos/produtos-consulta/produtos
     AppRoutingModule,
     FormsModule,
     LoginFormModule,
-    CadastroFormModule
+    CadastroFormModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
