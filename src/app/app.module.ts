@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -8,6 +9,7 @@ import { DoacaoSangueComponent } from './doacao-sangue/doacao-sangue.component';
 import { CadastroFormModule } from './cadastro-form/cadastro-form.module';
 import { LoginFormModule } from './login-form/login-form.module';
 import { DadosEntregaFormModule } from './dados-entrega-form/dados-entrega-form.module';
+import { ProdutoModule } from './produto/produto.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { DadosEntregaFormModule } from './dados-entrega-form/dados-entrega-form.
     FormsModule,
     LoginFormModule,
     CadastroFormModule,
-    DadosEntregaFormModule 
+    DadosEntregaFormModule,
+    HttpClientModule,
+    ProdutoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

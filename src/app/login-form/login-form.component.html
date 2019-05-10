@@ -2,6 +2,12 @@
 
 <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
 
+  <b>Ainda não tenho cadastro:</b>
+  {{ '' }}
+  <a href="/cadastro">Clique aqui para se cadastrar</a>
+  <br>
+  <br>
+
   <div class="form-group">
     <label for="email" class="control-label">E-mail</label>
     <input type="email" class="form-control" name="email" id="email" placeholder="nome@email.com"

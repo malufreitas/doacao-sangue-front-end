@@ -35,11 +35,11 @@
   <div class="form-row ">
 
     <div class="form-group col-md-3">
-      <label for="dataNascimento">Data de Nascimento</label>
-      <input type="date" class="form-control" name="dataNascimento" id="dataNascimento" placeholder="dd/mm/aaaa"
-        [ngModel]="usuario.dataNascimento" required #dataNascimento="ngModel">
+      <label for="datanascimento">Data de Nascimento</label>
+      <input type="date" class="form-control" name="datanascimento" id="datanascimento" placeholder="dd/mm/aaaa"
+        [ngModel]="usuario.datanascimento" required #datanascimento="ngModel">
 
-      <div *ngIf="!dataNascimento.valid && dataNascimento.touched">
+      <div *ngIf="!datanascimento.valid && datanascimento.touched">
         Data de Nascimento é obrigatório.
       </div>
     </div>
@@ -59,7 +59,7 @@
 
     <div class="form-group col-md-3">
       <label for="cpf">CPF</label>
-      <input type="number" class="form-control" name="cpf" id="cpf" placeholder="Digite apenas os números"
+      <input type="text" class="form-control" name="cpf" id="cpf" placeholder="Digite apenas os números"
         [ngModel]="usuario.cpf" required #cpf="ngModel">
 
       <div *ngIf="!cpf.valid && cpf.touched">
@@ -69,7 +69,7 @@
 
     <div class="form-group col-md-3">
       <label for="telefone">Telefone</label>
-      <input type="number" class="form-control" name="telefone" id="telefone" placeholder="Digite apenas os números"
+      <input type="text" class="form-control" name="telefone" id="telefone" placeholder="Digite apenas os números"
         [ngModel]="usuario.telefone" required #telefone="ngModel">
 
       <div *ngIf="!telefone.valid && telefone.touched">

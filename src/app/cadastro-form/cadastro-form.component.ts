@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cadastro-form',
@@ -10,7 +12,7 @@ export class CadastroFormComponent implements OnInit {
   usuario: any = {
     nome: null,
     sobrenome: null,
-    dataNascimento: null,
+    datanascimento: null,
     sexo: null,
     cpf: null,
     telefone: null,
@@ -19,11 +21,18 @@ export class CadastroFormComponent implements OnInit {
     confirmarSenha: null
   };
 
-  onSubmit(form) {
-    console.log(form);
+  onSubmit(formulario) {
+    console.log(formulario);
+
+    //this.httpClient.post('https://doacao-de-sangue-helenfranca.c9users.io/pessoa', formulario.value)
+    this.httpClient.post('https://doacaodesangue.herokuapp.com/pessoa', formulario.value)
+    .pipe(map(res => res))
+    .subscribe(dados => console.log(dados))
   }
 
-  constructor() { }
+  constructor(
+    private httpClient: HttpClient
+  ) { }
 
   ngOnInit() {
   }
