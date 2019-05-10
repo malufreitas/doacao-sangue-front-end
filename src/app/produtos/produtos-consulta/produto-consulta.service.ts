@@ -6,7 +6,10 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class CursosService {
-
+  private readonly API = 'https://wwww.../produtos';
   contructor(private http: HttpCliente) {}
-
+    
+  list(){
+   return this.http.get(this.API);
+  }
 }
