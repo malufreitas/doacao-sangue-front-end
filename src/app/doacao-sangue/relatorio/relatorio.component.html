@@ -1,52 +1,42 @@
-<br>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Doação de Sangue</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+  
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            =
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+  
+        <li class="nav-link">
+          <a routerLink="">Home</a>
+        </li>
 
-<div class="card">
+        <li class="nav-link">
+          <a routerLink="/login">Acessar meu perfil</a>
+        </li>
+
+      </ul>
   
-    <div class="card-header">
-      
-      <div class="float-left">
-        <h4>Relatórios</h4>
-      </div>
-    
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </div>
   
-    <div class="card-body">
+  </nav>
   
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Produto</th>
-            <th>Qtd</th>
-            <th>Valor</th>
-            <th></th>
-          </tr>
-        </thead>
-  
-        <tbody>
-          
-          <tr *ngFor="let produto of produtos">
-            <td>{{ produto.id }}</td>
-            <td>{{ produto.nome }}</td>
-            <td>{{ produto.quantidade }}</td>
-            <td>{{ produto.valorunitario }}</td>
-            <td>
-              <span class="float-right">
-                <button class="btn btn-outline-warning mb-1 btn-sm">
-                  Atualizar
-                </button>
-                {{ '' }}
-                <button class="btn btn-outline-danger mb-1 btn-sm">
-                    Remover
-                </button>
-              </span>
-            </td>
-          </tr>
-  
-        </tbody>
-  
-      </table>
-  
-    </div>
-  
+  <div class="container">
+    <router-outlet></router-outlet>
   </div>

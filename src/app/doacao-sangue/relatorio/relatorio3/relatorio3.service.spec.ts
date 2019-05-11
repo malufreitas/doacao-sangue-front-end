@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Relatorio1ListaComponent } from './relatorio.component';
+import { Relatorio3Component } from './relatorio3.component';
 
-describe('RelatorioComponent', () => {
-  let component: Relatorio1ListaComponent;
-  let fixture: ComponentFixture<Relatorio1ListaComponent>;
+describe('Relatorio3Component', () => {
+  let component: Relatorio3Component;
+  let fixture: ComponentFixture<Relatorio3Component>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Relatorio1ListaComponent ]
+      declarations: [ Relatorio3Component ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Relatorio1ListaComponent);
+    fixture = TestBed.createComponent(Relatorio3Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs/operators';
 
-import { Relatorio1 } from './relatorio1/relatorio1';
+import { Relatorio4 } from './relatorio4';
 
 
 @Injectable({
@@ -17,7 +17,7 @@ export class RelatorioListaService {
   ) { }
 
   list() {
-    return this.http.get<Relatorio1[]>(this.API).
+    return this.http.get<Relatorio4[]>(this.API).
     pipe(
       tap(console.log) //para debugar, ver os erros
     );

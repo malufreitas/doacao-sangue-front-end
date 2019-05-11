@@ -1,11 +1,11 @@
-1. Hemocentros com mais demandas atendidas(Ranking)
+Relatório 1. Hemocentros com mais demandas atendidas(Ranking)
 colunas: Nome Hemocentro | Número de demandas
 
-2. Produtos vendidos
+Relatório 2. Produtos vendidos
 colunas: Tipo Produto | Valor total vendido | Quantidade vendida
 
-3. Demandas por tipo sanguineo
+Relatório 3. Demandas por tipo sanguineo
 colunas: Tipo Sanguíneo | Número de demandas
 
-4. Doadores por tipo sanguineo
+Relatório 4. Doadores por tipo sanguineo
 colunas: Tipo Sanguíneo | Número de doadores

@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Relatorio1ListaComponent } from './relatorio.component';
+import { Relatorio1ListaComponent } from './relatorio4.component';
 
-describe('RelatorioComponent', () => {
+describe('Relatorio4Component', () => {
   let component: Relatorio1ListaComponent;
   let fixture: ComponentFixture<Relatorio1ListaComponent>;
 

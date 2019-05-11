@@ -1,0 +1,32 @@
+<br>
+<div class="card">
+    <div class="card-header">  
+      <div class="float-left">
+        <h4>Relatórios</h4>
+      </div>  
+    </div> 
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Tipo Sanguíneo</th>
+            <th>Número de Demandas</th>
+            <th></th>
+          </tr>
+        </thead> 
+        <tbody>          
+          <tr *ngFor="let relatorio of hemocentro">
+            <td>{{ relatorio.nomeHemocentro }}</td>
+            <td>{{ relatorio.numeroDemandas }}</td>
+            <td>
+              <span class="float-right">
+                <button class="btn btn-outline-danger mb-1 btn-sm">
+                    Voltar
+                </button>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table> 
+    </div>
+  </div>
