@@ -11,6 +11,7 @@ import { ProdutosComponent } from './produtos/produtos/produtos.component';
 import { ProdutoCadastroComponent } from './produtos/produto-cadastro/produto-cadastro.component';
 import { ProdutosConsultaComponent } from './produtos/produtos-consulta/produtos-consulta.component';
 import { HttpClientModule } from '/@angular/common/http';
+import { RelatoriosComponent } from './relatorios/relatorios.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '/@angular/common/http';
     DoacaoSangueComponent,
     ProdutosComponent,
     ProdutoCadastroComponent,
-    ProdutosConsultaComponent
+    ProdutosConsultaComponent,
+    RelatoriosComponent
   ],
   imports: [
     BrowserModule,
