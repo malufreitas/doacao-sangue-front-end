@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Relatorio4 } from './relatorio4';
 
 @Component({
-  selector: 'app-relatorio',
+  selector: 'relatorio4-component',
   templateUrl: './relatorio4.component.html',
   styleUrls: ['./relatorio4.component.css']
 })
