@@ -9,7 +9,7 @@ import { Relatorio1 } from './relatorio1';
 })
 export class Relatorio1Component implements OnInit {
 
-  relatorio: Relatorio1[];
+  relatorios: Relatorio1[];
 
   constructor(
     private service: RelatorioListaService
@@ -17,7 +17,7 @@ export class Relatorio1Component implements OnInit {
 
   ngOnInit() {
     this.service.list()
-    .subscribe(dados => this.relatorio = dados);
+    .subscribe(dados => this.relatorios = dados);
   }
 
 }

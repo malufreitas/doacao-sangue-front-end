@@ -10,11 +10,10 @@ import { Relatorio1 } from './relatorio1';
 })
 export class RelatorioListaService {
 
-  private readonly API = 'http://localhost:3000/relatorio';
+  private readonly API = 'http://localhost:3000/produto';
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) { }
+
 
   list() {
     return this.http.get<Relatorio1[]>(this.API).
