@@ -1,0 +1,78 @@
+{
+    "produto": [
+        {
+            "id": 1,
+            "nome": "Compartilhando sangue bom",
+            "quantidade": 30,
+            "descricao": "",
+            "valorunitario": 19.9,
+            "categoria": "Camisa",
+            "tamanho": "P",
+            "volume": "Não Possui",
+            "material": "Algodão",
+            "genero": "Masculino"
+        },
+        {
+            "id": 2,
+            "nome": "Sou um herói!",
+            "quantidade": 10,
+            "descricao": "T-shirt",
+            "valorunitario": 15.5,
+            "categoria": "Camisa",
+            "tamanho": "GG",
+            "volume": "Não Possui",
+            "material": "Malha",
+            "genero": "Feminino"
+        },
+        {
+            "id": 3,
+            "nome": "Doe sangue, doe vida!",
+            "quantidade": 40,
+            "descricao": "",
+            "valorunitario": 29.9,
+            "categoria": "Botton",
+            "tamanho": "M",
+            "volume": "Não Possui",
+            "material": "Plastico",
+            "genero": "Unissex"
+        },
+        {
+            "id": 4,
+            "nome": "Doando sangue",
+            "quantidade": 15,
+            "descricao": "",
+            "valorunitario": 29.9,
+            "categoria": "Camisa",
+            "tamanho": "G",
+            "volume": "Não Possui",
+            "material": "Algodão",
+            "genero": "Feminino"
+        }
+    ],
+    "pessoa": [
+        {
+            "id": 1,
+            "nome": "Tony",
+            "sobrenome": "Stark de Ferro",
+            "datanascimento": "2000-07-05T00:00:00.000Z",
+            "cpf": "123.234.345-90",
+            "sexo": "M",
+            "email": "homemdeferro@gmail.com",
+            "telefone": "27960706070",
+            "senha": "123456",
+            "status": true
+        },
+        {
+            "id": 2,
+            "nome": "Peter",
+            "sobrenome": "Parker",
+            "datanascimento": "1987-10-03T00:00:00.000Z",
+            "cpf": "123.234.345-80",
+            "sexo": "M",
+            "email": "peterparker@gmail.com",
+            "telefone": "27960703242",
+            "senha": "1234567",
+            "status": true
+        }
+    ]
+}
