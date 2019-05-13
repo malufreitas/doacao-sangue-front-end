@@ -19,7 +19,9 @@
   
     <div class="card-body">
   
-      <table class="table table-hover">
+      <!--Só vai mostrar produtos caso exista produtos-->
+      <!--table class="table table-hover" *ngIf="cursos$ | async as produtos; else loading"-->
+      <table class="table table-hover"-->
         <thead>
           <tr>
             <th>#</th>
@@ -32,7 +34,7 @@
   
         <tbody>
           
-          <tr *ngFor="let produto of produtos">
+          <tr *ngFor="let produto of produtos$ | async">
             <td>{{ produto.id }}</td>
             <td>{{ produto.nome }}</td>
             <td>{{ produto.quantidade }}</td>
@@ -53,6 +55,10 @@
         </tbody>
   
       </table>
+
+      <!--ng-template #loading>
+        <span>Carregando Produtos...</span>
+      </ng-template-->
   
     </div>
   
