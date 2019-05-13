@@ -74,5 +74,41 @@
             "senha": "1234567",
             "status": true
         }
+    ],
+      "hemocentro": [
+        {
+            "id": 1,
+            "nome": "Hemos",
+            "cnes": "12312412412",
+            "email": "hemos@gmail.com",
+            "telefone": "27960706070",
+            "senha": "123456",
+            "status": true
+        },
+        {
+            "id": 2,
+            "nome": "Hemoise",
+            "cnes": "4124125543",
+            "email": "Hemoise10@gmail.com",
+            "telefone": "27960703242",
+            "senha": "1234567",
+            "status": true
+        }
+    ],
+      "demanda": [
+        {
+            "id": 1,
+            "nome": "13/05/2019",           
+            "idtiposanguineo": "1",
+            "idhemocentro": "2",
+            "status": true
+        },
+        {
+            "id": 2,
+            "nome": "11/05/2019",           
+            "idtiposanguineo": "2",
+            "idhemocentro": "3",
+            "status": true
+        }
     ]
 }
