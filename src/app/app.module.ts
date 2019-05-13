@@ -6,27 +6,29 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DoacaoSangueComponent } from './doacao-sangue/doacao-sangue.component';
-import { RelatorioComponent } from './doacao-sangue/relatorio/relatorio.component';
-import { Relatorio1Component } from './doacao-sangue/relatorio/relatorio1/relatorio1.component';
-import { Relatorio2Component } from './doacao-sangue/relatorio/relatorio2/relatorio2.component';
-import { Relatorio3Component } from './doacao-sangue/relatorio/relatorio3/relatorio3.component';
-import { Relatorio4Component } from './doacao-sangue/relatorio/relatorio4/relatorio4.component';
+import { CadastroFormModule } from './cadastro-form/cadastro-form.module';
+import { LoginFormModule } from './login-form/login-form.module';
+import { DadosEntregaFormModule } from './dados-entrega-form/dados-entrega-form.module';
+import { ProdutoModule } from './produto/produto.module';
+import { RelatorioComponent } from './relatorio/relatorio.component';
+import { RelatorioModule } from './relatorio/relatorio.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     DoacaoSangueComponent,
-    RelatorioComponent,
-    Relatorio1Component,
-    Relatorio2Component,
-    Relatorio3Component,
-    Relatorio4Component
+    RelatorioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    LoginFormModule,
+    CadastroFormModule,
+    DadosEntregaFormModule,
     HttpClientModule,
-    FormsModule
+    ProdutoModule,
+    RelatorioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
