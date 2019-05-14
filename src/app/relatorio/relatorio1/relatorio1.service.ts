@@ -10,8 +10,8 @@ import { tap } from 'rxjs/operators';
 })
 export class Relatorio1Service {
 
-  private readonly API = `${environment.API}produto`;
-  //private readonly API = 'http://localhost:3000/produto'
+//private readonly API = `${environment.API}produto`;
+  private readonly API = 'http://doacaodesangue.herokuapp.com/hemocentro/demandas'
 
   constructor(
     private http: HttpClient
