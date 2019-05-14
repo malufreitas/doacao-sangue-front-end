@@ -25,7 +25,6 @@ export class CatalogoProdutosService {
     );
   }
 
-  
   getProdutosCategoria(filtros?) {
     return this.http.get<Produto[]>(this.API, { params: filtros})
   }
