@@ -1,0 +1,7 @@
+.blog-banner-area {
+    height: 280px;
+    position: relative;
+    /*z-index: 1;*/
+    background-image: url(http://feedbox.com/wp-content/uploads/2018/08/which-game-console-is-best-for-the-budget-conscious.jpg);
+    background-position: center !important
+  }

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, empty, Subject } from 'rxjs';
 
 import { ProdutosListaService } from './produtos-lista.service';
 import { Produto } from './produto';
+import { catchError } from 'rxjs/operators';
 
 
 @Component({
@@ -12,11 +13,12 @@ import { Produto } from './produto';
 })
 export class ProdutosListaComponent implements OnInit {
 
-  produtos: Produto[];
+  //produtos: Produto[];
 
   //Sempre que tiver um $ do lado é um observable
   //Vai atribuir a variavel produtos$ o : this.service.list()
   produtos$: Observable<Produto[]>;
+  error$ = new Subject<boolean>();
 
   constructor(
     private service: ProdutosListaService
@@ -29,7 +31,14 @@ export class ProdutosListaComponent implements OnInit {
     //.subscribe(dados => this.produtos = dados);
     //.subscribe(console.log);
 
-    this.produtos$ = this.service.list();
+    this.produtos$ = this.service.list().
+    pipe(
+      catchError(error =>{
+        console.error(error);
+        this.error$.next(true);
+        return empty();
+      })
+    );    
   }
 
 }

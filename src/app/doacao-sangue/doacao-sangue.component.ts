@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoacaoSangueComponent implements OnInit {
 
+  onSubmit(form) {
+    console.log(form);
+  }
+
   constructor() { }
 
   ngOnInit() {

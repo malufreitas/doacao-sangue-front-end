@@ -20,7 +20,7 @@ export class ProdutosListaService {
   list() {
     return this.http.get<Produto[]>(this.API).
     pipe(
-      //delay(2000),
+      delay(2000),
       tap(console.log) //para debugar, ver os erros
     );
   }
