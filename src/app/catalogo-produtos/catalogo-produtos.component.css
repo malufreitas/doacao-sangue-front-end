@@ -1350,7 +1350,7 @@ a {
   height: 280px;
   position: relative;
   /*z-index: 1;*/
-  background-image: url(http://feedbox.com/wp-content/uploads/2018/08/which-game-console-is-best-for-the-budget-conscious.jpg);
+  background-image: url(https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/master/images/banner_inicial.jpg);
   background-position: center !important
 }
 
