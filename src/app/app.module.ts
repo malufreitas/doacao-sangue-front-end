@@ -12,12 +12,14 @@ import { DadosEntregaFormModule } from './dados-entrega-form/dados-entrega-form.
 import { ProdutoModule } from './produto/produto.module';
 import { RelatorioComponent } from './relatorio/relatorio.component';
 import { RelatorioModule } from './relatorio/relatorio.module';
+import { CatalogoProdutosComponent } from './catalogo-produtos/catalogo-produtos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DoacaoSangueComponent,
-    RelatorioComponent
+    RelatorioComponent,
+    CatalogoProdutosComponent
   ],
   imports: [
     BrowserModule,
