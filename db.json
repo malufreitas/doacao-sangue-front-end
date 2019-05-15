@@ -91,7 +91,8 @@
             "tamanho": "GG",
             "volume": "Não Possui",
             "material": "Malha",
-            "genero": "Feminino"
+            "genero": "Feminino",
+            "urlimagem": "https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/dev-malu/images/camisa%20-%20heroi.jpg"
         },
         {
             "id": 3,
@@ -116,7 +117,8 @@
             "tamanho": "G",
             "volume": "Não Possui",
             "material": "Algodão",
-            "genero": "Feminino"
+            "genero": "Feminino",
+            "urlimagem": "https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/dev-malu/images/camisa%20-%20doando%20sangue.jpg"
         }
     ],
     "pessoa": [
