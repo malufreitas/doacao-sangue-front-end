@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, empty, Subject } from 'rxjs';
 
 import { ProdutosListaService } from './produtos-lista.service';
-import { Produto } from './produto';
+import { Produto } from '../../../model/produto';
 import { catchError } from 'rxjs/operators';
 
 

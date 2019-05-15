@@ -1,6 +1,84 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald:400,500,600");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500");
 
+
+.blog-banner-area {
+  height: 280px;
+  position: relative;
+  background-image: url(https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/dev-malu/images/tipo-sanguineo.jpg);
+  background-position: center !important
+}
+
+@media (min-width: 1000px) {
+  .blog-banner-area {
+    height: 350px
+  }
+}
+
+.blog-banner-area .blog-banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%)
+}
+
+.blog-banner-area::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f1f6f7;
+  z-index: -1
+}
+
+.blog-banner-btn {
+  border: 2px solid #384aeb;
+  padding: 10px 45px
+}
+
+  .blog-banner-btn:hover {
+    background: #384aeb;
+    color: #fff
+  }
+
+.banner-breadcrumb {
+  display: inline-block
+}
+
+  .banner-breadcrumb .breadcrumb {
+    background: transparent;
+    padding: 0
+  }
+
+  .banner-breadcrumb .breadcrumb-item {
+    padding: .1rem
+  }
+
+    .banner-breadcrumb .breadcrumb-item a {
+      text-transform: capitalize;
+      color: #777777
+    }
+
+    .banner-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+      color: #777777;
+      padding-right: .1rem;
+      content: "-"
+    }
+
+    .banner-breadcrumb .breadcrumb-item.active {
+      color: #777777
+    }
+
+
+
+
+
+
+
 body {
   color: #777;
   font-family: "Roboto",sans-serif;
@@ -129,13 +207,6 @@ a {
   margin-left: 40px
 }
 
-.header_area {
-  position: relative;
-  width: 100%;
-  z-index: 9999;
-  transition: background 0.4s, all 0.3s linear;
-  box-shadow: 0px 10px 27px 3px rgba(221,221,221,0.3)
-}
 
   .header_area .navbar {
     background: transparent;
@@ -231,9 +302,6 @@ a {
     margin-right: 0px
   }
 
-  .header_area .navbar .nav .nav-item.submenu ul .nav-item: last-child {
-    border-bottom: none
-  }
 
   .header_area .navbar .nav .nav-item.submenu ul .nav-item:hover .nav-link {
     background: #384aeb;
@@ -252,9 +320,7 @@ a {
   margin-top: 0px
 }
 
-.header_area .navbar .nav .nav-item: last-child {
-  margin-right: 0px
-}
+
 
 .header_area .navbar .search {
   font-size: 12px;
@@ -314,20 +380,6 @@ a {
     font-size: 16px
   }
 
-  #search_input_box input: -moz-placeholder {
-    color: #ffffff;
-    font-size: 16px
-  }
-
-  #search_input_box input:: -moz-placeholder {
-    color: #ffffff;
-    font-size: 16px
-  }
-
-  #search_input_box input:: -webkit-input-placeholder {
-    color: #ffffff;
-    font-size: 16px
-  }
 
   #search_input_box .btn {
     width: 0;
@@ -435,9 +487,6 @@ a {
       right: -12px
     }
 
-  .nav-shop li: last-child {
-    margin-left: 40px
-  }
 
 @media (max-width: 1619px) {
   .header_area .navbar .search {
@@ -487,11 +536,7 @@ a {
     top: 7.5px
   }
 
-  .navbar-toggler[aria-expanded="true"] span: last-child {
-    transform: rotate(45deg);
-    bottom: 6px;
-    position: relative
-  }
+
 
   .navbar-toggler span {
     display: block;
@@ -1072,9 +1117,6 @@ a {
       vertical-align: middle
     }
 
-    .card-blog__info li: not(: last-child) {
-      margin-right: 20px
-    }
 
 .card-blog__title {
   font-size: 20px;
@@ -1159,10 +1201,6 @@ a {
   .subscribe-form .form-control {
     min-width: 380px
   }
-}
-
-.subscribe-form .form-control:: placeholder {
-  color: #999999
 }
 
 .subscribe-form .form-control:focus {
@@ -1346,77 +1384,7 @@ a {
   }
 }
 
-.blog-banner-area {
-  height: 280px;
-  position: relative;
-  /*z-index: 1;*/
-  background-image: url(https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/master/images/tipo-sanguineo.jpg);
-  background-position: center !important
-}
 
-@media (min-width: 1000px) {
-  .blog-banner-area {
-    height: 350px
-  }
-}
-
-.blog-banner-area .blog-banner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  transform: translate(-50%, -50%)
-}
-
-.blog-banner-area::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #f1f6f7;
-  z-index: -1
-}
-
-.blog-banner-btn {
-  border: 2px solid #384aeb;
-  padding: 10px 45px
-}
-
-  .blog-banner-btn:hover {
-    background: #384aeb;
-    color: #fff
-  }
-
-.banner-breadcrumb {
-  display: inline-block
-}
-
-  .banner-breadcrumb .breadcrumb {
-    background: transparent;
-    padding: 0
-  }
-
-  .banner-breadcrumb .breadcrumb-item {
-    padding: .1rem
-  }
-
-    .banner-breadcrumb .breadcrumb-item a {
-      text-transform: capitalize;
-      color: #777777
-    }
-
-    .banner-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
-      color: #777777;
-      padding-right: .1rem;
-      content: "-"
-    }
-
-    .banner-breadcrumb .breadcrumb-item.active {
-      color: #777777
-    }
 
 .l_blog_item .l_blog_text .date {
   margin-top: 24px;
@@ -1461,9 +1429,6 @@ a {
     margin-right: 7px
   }
 
-    .causes_slider .owl-dots .owl-dot: last-child {
-      margin-right: 0px
-    }
 
     .causes_slider .owl-dots .owl-dot.active {
       background: #384aeb
@@ -1781,18 +1746,6 @@ a {
       color: #fff
     }
 
-    .blog_right_sidebar .search_widget .input-group .form-control: -moz-placeholder {
-      color: #fff
-    }
-
-    .blog_right_sidebar .search_widget .input-group .form-control:: -moz-placeholder {
-      color: #fff
-    }
-
-    .blog_right_sidebar .search_widget .input-group .form-control:: -webkit-input-placeholder {
-      color: #fff
-    }
-
     .blog_right_sidebar .search_widget .input-group .form-control:focus {
       box-shadow: none
     }
@@ -1941,17 +1894,6 @@ a {
         color: #cccccc
       }
 
-      .blog_right_sidebar .newsletter_widget .form-control: -moz-placeholder {
-        color: #cccccc
-      }
-
-      .blog_right_sidebar .newsletter_widget .form-control:: -moz-placeholder {
-        color: #cccccc
-      }
-
-      .blog_right_sidebar .newsletter_widget .form-control:: -webkit-input-placeholder {
-        color: #cccccc
-      }
 
       .blog_right_sidebar .newsletter_widget .form-control:focus {
         outline: none;
@@ -2038,9 +1980,6 @@ a {
     font-weight: 600
   }
 
-.blog-pagination .page-item: last-child .page-link, .blog-pagination .page-item:first-child .page-link {
-  border-radius: 0
-}
 
 .blog-pagination .page-link:hover {
   color: #fff;
@@ -2229,10 +2168,6 @@ a {
   padding-bottom: 48px
 }
 
-  .comments-area .comment-list: last-child {
-    padding-bottom: 0px
-  }
-
   .comments-area .comment-list.left-padding {
     padding-left: 25px
   }
@@ -2339,34 +2274,12 @@ a {
     border: 1px solid #eee
   }
 
-  .comment-form .form-control:: placeholder {
-    color: #777777
-  }
 
 .comment-form textarea.form-control {
   height: 140px;
   resize: none
 }
 
-.comment-form:: -webkit-input-placeholder {
-  font-size: 13px;
-  color: #777
-}
-
-.comment-form:: -moz-placeholder {
-  font-size: 13px;
-  color: #777
-}
-
-.comment-form: -ms-input-placeholder {
-  font-size: 13px;
-  color: #777
-}
-
-.comment-form: -moz-placeholder {
-  font-size: 13px;
-  color: #777
-}
 
 .contact-banner {
   position: relative
@@ -2476,11 +2389,6 @@ a {
     box-shadow: none
   }
 
-  .form-contact .form-control:: placeholder {
-    font-size: 14px;
-    color: #999999
-  }
-
 .form-contact .different-control {
   height: 100% !important
 }
@@ -2516,9 +2424,6 @@ a {
       box-shadow: none
     }
 
-    .filter-bar-search input:: placeholder {
-      color: #999999
-    }
 
   .filter-bar-search button {
     background: transparent;
@@ -2633,9 +2538,6 @@ a {
       padding-left: 28px
     }
 
-    .sidebar-filter .common-filter: last-child {
-      border-bottom: 0
-    }
 
 .filter-list {
   line-height: 32px
@@ -2766,9 +2668,6 @@ a {
 }
 
 
-  .pixel-radio: checked {
-    border: 8px solid #384aeb
-  }
 
     .pixel-radio:checked::after {
       -webkit-animation: click-wave 0.65s;
@@ -2993,11 +2892,6 @@ a {
   background: #f1f6f7
 }
 
-  .confirmation-card tr td: last-child {
-    color: #222;
-    padding-left: 25px
-  }
-
 .order_details_table {
   background: #f1f6f7;
   padding: 30px;
@@ -3028,11 +2922,6 @@ a {
     color: #222
   }
 
-@media (max-width: 1000px) {
-  .order_details_table .table tbody tr: last-child {
-    height: 50px
-  }
-}
 
 .order_details_table .table tbody tr td {
   border: 0;
@@ -3062,14 +2951,6 @@ a {
     font-weight: 500
   }
 
-.order_details_table .table tbody tr: last-child td {
-  border-top: 1px solid #ddd;
-  padding-bottom: 0
-}
-
-  .order_details_table .table tbody tr: last-child td p {
-    color: #222
-  }
 
 .tracking_box_area .tracking_box_inner p {
   max-width: 870px;
@@ -3103,27 +2984,6 @@ a {
         font-weight: normal
       }
 
-      .tracking_box_area .tracking_box_inner .tracking_form .form-group input: -moz-placeholder {
-        font-size: 14px;
-        color: #999999;
-        font-weight: normal
-      }
-
-      .tracking_box_area .tracking_box_inner .tracking_form .form-group input:: -moz-placeholder {
-        font-size: 14px;
-        color: #999999;
-        font-weight: normal
-      }
-
-      .tracking_box_area .tracking_box_inner .tracking_form .form-group input:: -webkit-input-placeholder {
-        font-size: 14px;
-        color: #999999;
-        font-weight: normal
-      }
-
-    .tracking_box_area .tracking_box_inner .tracking_form .form-group: last-child {
-      margin-bottom: 0px
-    }
 
     .tracking_box_area .tracking_box_inner .tracking_form .form-group .submit_btn {
       text-transform: uppercase
@@ -3174,24 +3034,7 @@ a {
         font-weight: normal
       }
 
-      .returning_customer .contact_form .form-group input: -moz-placeholder {
-        font-size: 14px;
-        color: #999999;
-        font-weight: normal
-      }
-
-      .returning_customer .contact_form .form-group input:: -moz-placeholder {
-        font-size: 14px;
-        color: #999999;
-        font-weight: normal
-      }
-
-      .returning_customer .contact_form .form-group input:: -webkit-input-placeholder {
-        font-size: 14px;
-        color: #999999;
-        font-weight: normal
-      }
-
+    
     .returning_customer .contact_form .form-group .primary-btn {
       line-height: 38px;
       padding: 0px 38px;
@@ -3288,30 +3131,14 @@ a {
       font-size: 14px
     }
 
-    .billing_details .contact_form .form-group input: -moz-placeholder {
-      color: #999999;
-      font-size: 14px
-    }
-
-    .billing_details .contact_form .form-group input:: -moz-placeholder {
-      color: #999999;
-      font-size: 14px
-    }
-
-    .billing_details .contact_form .form-group input:: -webkit-input-placeholder {
-      color: #999999;
-      font-size: 14px
-    }
-
+  
   .billing_details .contact_form .form-group .form-control {
     border-color: #EEEEEE;
     font-size: 14px;
     color: #777777
   }
 
-    .billing_details .contact_form .form-group .form-control:: placeholder {
-      color: #777777
-    }
+
 
   .billing_details .contact_form .form-group label {
     color: #999999
@@ -3415,9 +3242,6 @@ a {
       text-transform: capitalize
     }
 
-  .order_box .list_2 li: last-child a span {
-    color: #222
-  }
 
   .order_box .payment_item h4 {
     font-size: 14px;
@@ -3526,9 +3350,6 @@ a {
   margin-bottom: 8px
 }
 
-  .order_d_inner .details_item .list li: last-child {
-    margin-bottom: 0px
-  }
 
   .order_d_inner .details_item .list li a {
     font-size: 14px;
@@ -3585,13 +3406,6 @@ a {
     color: #222
   }
 
-  .order_details_table .table tbody tr: last-child td {
-    border-top: 1px solid #ddd
-  }
-
-    .order_details_table .table tbody tr: last-child td p {
-      color: #222
-    }
 
 .radion_btn input[type=radio] {
   position: absolute;
@@ -3619,7 +3433,6 @@ a {
     height: 14px;
     z-index: 9;
     cursor: pointer;
-    -webkit-transition: all 0.25s linear;
     font-weight: 500;
     color: #222;
     font-size: 15px;
@@ -3642,33 +3455,7 @@ a {
     -webkit-transition: border .25s linear
   }
 
-    .radion_btn .check::before {
-      display: block;
-      position: absolute;
-      content: '';
-      border-radius: 100%;
-      height: 4px;
-      width: 4px;
-      top: 4px;
-      left: 4px;
-      margin: auto;
-      transition: background 0.25s linear;
-      -webkit-transition: background 0.25s linear
-    }
-
-  .radion_btn input[type=radio]: checked ~ .check {
-    border: 1px solid #C5322D;
-    background: #C5322D
-  }
-
-    .radion_btn input[type=radio]: checked ~ .check::before {
-      background: #fff
-    }
-
-  .radion_btn input[type=radio]: checked ~ label {
-    color: #000
-  }
-
+   
 .order_box .creat_account a {
   font-size: 12px;
   color: #384aeb
@@ -3797,18 +3584,7 @@ a {
       color: #999999
     }
 
-    .login_form .form-group input: -moz-placeholder {
-      color: #999999
-    }
-
-    .login_form .form-group input:: -moz-placeholder {
-      color: #999999
-    }
-
-    .login_form .form-group input:: -webkit-input-placeholder {
-      color: #999999
-    }
-
+    
   .login_form .form-group .creat_account {
     margin-top: 10px;
     font-size: 14px;
@@ -4032,9 +3808,7 @@ a {
   }
 }
 
-.cart_inner .table tbody tr.bottom_button td: last-child {
-  width: 60px
-}
+
 
 .cart_inner .table tbody tr.bottom_button td .cupon_text {
   margin-left: -429px
@@ -4071,25 +3845,6 @@ a {
     color: #cccccc;
     font-weight: normal
   }
-
-  .cart_inner .table tbody tr.bottom_button td .cupon_text input: -moz-placeholder {
-    font-size: 14px;
-    color: #cccccc;
-    font-weight: normal
-  }
-
-  .cart_inner .table tbody tr.bottom_button td .cupon_text input:: -moz-placeholder {
-    font-size: 14px;
-    color: #cccccc;
-    font-weight: normal
-  }
-
-  .cart_inner .table tbody tr.bottom_button td .cupon_text input:: -webkit-input-placeholder {
-    font-size: 14px;
-    color: #cccccc;
-    font-weight: normal
-  }
-
 @media (max-width: 600px) {
   .cart_inner .table tbody tr.bottom_button td .cupon_text input {
     width: 120px
@@ -4126,10 +3881,6 @@ a {
   .cart_inner .table tbody tr.shipping_area .shipping_box .list li {
     margin-bottom: 12px
   }
-
-    .cart_inner .table tbody tr.shipping_area .shipping_box .list li: last-child {
-      margin-bottom: 0px
-    }
 
     .cart_inner .table tbody tr.shipping_area .shipping_box .list li a {
       padding-right: 30px;
@@ -4220,9 +3971,6 @@ a {
     margin-bottom: 20px
   }
 
-    .cart_inner .table tbody tr.shipping_area .shipping_box input:: placeholder {
-      color: #999999
-    }
 
 .cart_inner .table tbody tr.out_button_area .checkout_btn_inner {
   margin-left: -395px
@@ -4337,9 +4085,6 @@ a {
       -webkit-text-fill-color: #555
     }
 
-  .s_product_text .list li: last-child {
-    margin-bottom: 0px
-  }
 
 .s_product_text p {
   padding-top: 20px;
@@ -4472,15 +4217,6 @@ a {
       margin-right: 7px
     }
 
-      .product_description_area .nav.nav-tabs li: last-child {
-        margin-right: 0px
-      }
-
-@media (max-width: 441px) {
-  .product_description_area .nav.nav-tabs li: last-child {
-    margin-top: 15px
-  }
-}
 
 .product_description_area .nav.nav-tabs li a {
   padding: 0px;
@@ -4565,13 +4301,6 @@ a {
           margin-left: 15px
         }
 
-        .product_description_area .tab-content .total_rate .rating_list .list li a i: last-child {
-          margin-right: 15px
-        }
-
-    .product_description_area .tab-content .total_rate .rating_list .list li:nth-child a i: last-child {
-      color: #eeeeee
-    }
 
   .product_description_area .tab-content .table {
     margin-bottom: 0px
@@ -4599,10 +4328,6 @@ a {
 .review_item {
   margin-bottom: 10px
 }
-
-  .review_item: last-child {
-    margin-bottom: 0px
-  }
 
   .review_item .media {
     position: relative
@@ -4644,7 +4369,6 @@ a {
         position: absolute;
         right: 0px;
         top: 14px;
-        @icnlude transition
       }
 
         .review_item .media .media-body .reply_btn:hover {
@@ -4725,9 +4449,6 @@ a {
   margin-bottom: 15px
 }
 
-  .single-footer-widget p: last-child {
-    margin-bottom: 0
-  }
 
 .single-footer-widget .instafeed {
   margin-left: -5px;
@@ -4775,10 +4496,6 @@ a {
     .tp_widgets .list li a:hover {
       color: #384aeb
     }
-
-  .tp_widgets .list li: last-child {
-    margin-bottom: 0px
-  }
 
 .tp_widgets p {
   color: #7b838a
@@ -4837,3 +4554,5 @@ a {
     padding-bottom: 115px !important
   }
 }
+
+
