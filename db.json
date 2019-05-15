@@ -78,7 +78,8 @@
             "tamanho": "P",
             "volume": "Não Possui",
             "material": "Algodão",
-            "genero": "Masculino"
+            "genero": "Masculino",
+            "urlimagem": "https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/dev-malu/images/camisa%20-%20sangue%20bom.jpg"
         },
         {
             "id": 2,
@@ -102,7 +103,8 @@
             "tamanho": "M",
             "volume": "Não Possui",
             "material": "Plastico",
-            "genero": "Unissex"
+            "genero": "Unissex",
+            "urlimagem": "https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/dev-malu/images/boton%20-%20doe%20sangue%20doe%20vida.jpg"
         },
         {
             "id": 4,
