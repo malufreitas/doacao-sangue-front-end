@@ -1,26 +1,23 @@
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DoacaoSangueComponent } from './doacao-sangue/doacao-sangue.component';
-import { FormsModule } from '@angular/forms';
 import { CadastroFormModule } from './cadastro-form/cadastro-form.module';
 import { LoginFormModule } from './login-form/login-form.module';
-import { ProdutosComponent } from './produtos/produtos/produtos.component';
-import { ProdutoCadastroComponent } from './produtos/produto-cadastro/produto-cadastro.component';
-import { ProdutosConsultaComponent } from './produtos/produtos-consulta/produtos-consulta.component';
-import { HttpClientModule } from '/@angular/common/http';
-import { RelatoriosComponent } from './relatorios/relatorios.component';
+import { DadosEntregaFormModule } from './dados-entrega-form/dados-entrega-form.module';
+import { ProdutoModule } from './produto/produto.module';
+import { RelatorioComponent } from './relatorio/relatorio.component';
+import { RelatorioModule } from './relatorio/relatorio.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     DoacaoSangueComponent,
-    ProdutosComponent,
-    ProdutoCadastroComponent,
-    ProdutosConsultaComponent,
-    RelatoriosComponent
+    RelatorioComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +25,10 @@ import { RelatoriosComponent } from './relatorios/relatorios.component';
     FormsModule,
     LoginFormModule,
     CadastroFormModule,
-    HttpClientModule
+    DadosEntregaFormModule,
+    HttpClientModule,
+    ProdutoModule,
+    RelatorioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
