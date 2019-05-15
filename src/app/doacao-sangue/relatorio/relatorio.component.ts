@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-relatorio',
+  selector: 'relatorio-component',
   templateUrl: './relatorio.component.html',
   styleUrls: ['./relatorio.component.css']
 })

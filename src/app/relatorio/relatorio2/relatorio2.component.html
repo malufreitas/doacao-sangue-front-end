@@ -1,0 +1,38 @@
+<br>
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="header">
+                      <h4 class="title">Quantidade de doadores por tipo sanguíneo: </h4>
+                  </div>
+                  <div class="content table-responsive table-full-width">
+                        <table class="table table-hover table-striped">
+                              <thead>
+                                <tr>
+                                <th>Tipo sanguíneo</th>
+                                <th>Quantidade de doadores</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let relatorio of relatorios">
+                                  <td>{{ relatorio.tipofator }}</td>
+                                  <td>{{ relatorio.qtddoador }}</td>
+                                  <td>
+                                    <span class="float-right">
+                                      <button class="btn btn-outline mb-1 btn-sm button1">
+                                          Detalhar
+                                      </button>
+                                    </span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                        </table>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

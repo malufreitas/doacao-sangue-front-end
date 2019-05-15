@@ -1,0 +1,38 @@
+
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="header">
+                      <h4 class="title">Doadores por tipo Sanguíneo</h4>
+                  </div>
+                  <div class="content table-responsive table-full-width">
+                        <table class="table table-hover table-striped">
+                              <thead>
+                                <tr>
+                                <th>Hemocentro</th>
+                                <th>Número de Demandas</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let relatorio of relatorios">
+                                  <td>{{ relatorio.nome }}</td>
+                                  <td>{{ relatorio.nome }}</td>
+                                  <td>
+                                    <span class="float-right">
+                                      <button class="btn btn-outline-danger mb-1 btn-sm">
+                                          Detalhar
+                                      </button>
+                                    </span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                        </table>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
