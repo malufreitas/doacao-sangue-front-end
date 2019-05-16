@@ -35,9 +35,11 @@ export class CatalogoProdutosService {
     return this.http.get<Genero[]>('http://localhost:3000/material')
   }
 
-  getProdutos() {
-    return this.http.get<Produto[]>('http://localhost:3000/produto')
+  // Passando de uma maneira muito ruim, argumento pela url
+  // Prencher o banco e fazer as rotas de busca e filtro funcionar
+  getProdutos(filtros?) {
+    return this.http.get<Produto[]>('http://localhost:3000/produto', { params: filtros })  
   }
-
+  
 
 }
