@@ -1,4 +1,4 @@
-export interface Relatorio1 {
+export interface Relatorio4 {
     id: number;
     nome: string;
     quantidade: number;

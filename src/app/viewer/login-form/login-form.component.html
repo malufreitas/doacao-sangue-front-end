@@ -1,32 +1,33 @@
 <br>
 
-<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+<div class="container">
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
 
-  <div class="text-center">
-    <b>Ainda não tenho cadastro:</b>
-    <br>
-    <a href="/cadastro">Clique aqui para se cadastrar</a>
-  </div>
-
-  <div class="form-group">
-    <label for="email" class="control-label">E-mail</label>
-    <input type="email" class="form-control" name="email" id="email" placeholder="nome@email.com"
-      [ngModel]="usuario.email" required email #email="ngModel">
-
-
-  </div>
-
-  <div class="form-group">
-    <label for="senha">Senha</label>
-    <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" [ngModel]="usuario.senha"
-      required #senha="ngModel">
-
-    <div *ngIf="!senha.valid && senha.touched">
-      Senha é obrigatória.
+    <div class="text-center">
+      <b>Ainda não tenho cadastro:</b>
+      <br>
+      <a href="/cadastro">Clique aqui para se cadastrar</a>
     </div>
-  </div>
 
-  <!--
+    <div class="form-group">
+      <label for="email" class="control-label">E-mail</label>
+      <input type="email" class="form-control" name="email" id="email" placeholder="nome@email.com"
+        [ngModel]="usuario.email" required email #email="ngModel">
+
+
+    </div>
+
+    <div class="form-group">
+      <label for="senha">Senha</label>
+      <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" [ngModel]="usuario.senha"
+        required #senha="ngModel">
+
+      <div *ngIf="!senha.valid && senha.touched">
+        Senha é obrigatória.
+      </div>
+    </div>
+
+    <!--
  **Ainda não ta verificando o robô**
   <div class="form-group form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -34,18 +35,7 @@
     </div>
   -->
 
-  <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
 
-</form>
-
-<br>
-
-
-<!--
-/Dividir tela/ <br><br>
-<b>Ainda não tenho cadastro:</b>
-<br><br>
-Para comprar em nosso site é preciso realizar um cadastro. Através ficará por dentro das novidades, ofertas e promoções.
-<br><br>
-<a href="/cadastro" class="btn btn-dark" role="button" aria-pressed="true">Cadastrar</a>
--->
+  </form>
+</div>

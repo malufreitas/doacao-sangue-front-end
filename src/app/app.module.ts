@@ -10,9 +10,9 @@ import { CadastroFormModule } from './viewer/cadastro-form/cadastro-form.module'
 import { LoginFormModule } from './viewer/login-form/login-form.module';
 import { DadosEntregaFormModule } from './viewer/dados-entrega-form/dados-entrega-form.module';
 import { ProdutoModule } from './viewer/produto/produto.module';
+import { CatalogoProdutosComponent } from './viewer/catalogo-produtos/catalogo-produtos.component';
 import { RelatorioComponent } from './viewer/relatorio/relatorio.component';
 import { RelatorioModule } from './viewer/relatorio/relatorio.module';
-import { CatalogoProdutosComponent } from './viewer/catalogo-produtos/catalogo-produtos.component';
 
 @NgModule({
   declarations: [

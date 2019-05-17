@@ -15,7 +15,7 @@
   <!-- Tabela de Relatórios -->
   <div class="container">
     <div class="text-center">
-      <h4>Demandas atendidas por hemocentros com base no tipo sanguíneo</h4>
+      <h4>Quantidade de doadores por tipo sanguíneo</h4>
       <br>
 
       <div class="col-md-0">
@@ -25,17 +25,15 @@
 
             <thead>
               <tr>
-                <th>Hemocentro</th>
-                <th>Quantidade de demandas</th>
                 <th>Tipo sanguíneo</th>
+                <th>Quantidade de doadores</th>
               </tr>
             </thead>
 
             <tbody>
               <tr *ngFor="let relatorio of relatorios">
-                <td>{{ relatorio.hemocentro }}</td>
-                <td>{{ relatorio.qtddemanda }}</td>
                 <td>{{ relatorio.tipofator }}</td>
+                <td>{{ relatorio.qtddoador }}</td>
               </tr>
             </tbody>
 

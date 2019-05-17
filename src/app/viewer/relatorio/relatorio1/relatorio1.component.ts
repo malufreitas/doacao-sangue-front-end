@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Relatorio1 } from './relatorio1';
+import { Relatorio1 } from 'src/app/model/relatorio1';
 import { Relatorio1Service } from './relatorio1.service';
 
 @Component({

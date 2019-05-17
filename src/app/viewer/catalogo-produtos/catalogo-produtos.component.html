@@ -3,12 +3,17 @@
   <div class="container h-100">
     <div class="blog-banner">
       <div class="text-center">
-        <h1>Catálogo de Produtos</h1>
         <nav aria-label="breadcrumb" class="banner-breadcrumb">
         </nav>
       </div>
     </div>
   </div>
+
+  <br>
+  <div class="text-center">
+    <h2>Catálogo de Produtos</h2>
+  </div>
+
 </section>
 <!-- ================ Area de banner ================== -->
 
@@ -22,6 +27,7 @@
   <div class="container">
 
     <div class="row">
+
 
       <div class="col-xl-3 col-lg-4 col-md-5">
 
@@ -114,19 +120,21 @@
 
           <!-- Limpar filtros selecionados -->
           <div class="sorting mr-auto">
-            <button class="btn btn-danger" (click)="limpar()">Limpar Filtros <i class="fas fa-trash-alt"></i></button>
+            <button class="btn btn-dark" (click)="limpar()">Limpar Filtros <i class="fas fa-trash-alt"></i></button>
           </div>
 
           <!-- Barra de busca -->
-          <!-- NÃO CONSEGUI AINDA -->
+          <!-- NÃO CONSEGUI AINDA 
           <div>
             <div class="input-group filter-bar-search">
-              <input type="text" placeholder="Pesquisar" (keyup.enter)="pegaProduto(filtros)" [(ngModel)]="filtros.produto">
+              <input type="text" placeholder="Pesquisar" (keyup.enter)="pegaProduto(filtros)"
+                [(ngModel)]="filtros.produto">
               <div class="input-group-append">
                 <button type="button" (click)="pegaProduto(filtros)"><i class="fas fa-search"></i></button>
               </div>
             </div>
           </div>
+          -->
 
         </div>
 
@@ -172,6 +180,8 @@
 
 
     </div>
+
   </div>
+
 </section>
 <!-- ================ Menu de filtros ================= -->

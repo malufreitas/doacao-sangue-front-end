@@ -146,46 +146,5 @@
             "senha": "1234567",
             "status": true
         }
-    ],
-    "produto-camisas": [
-        {
-            "id": 1,
-            "nome": "Compartilhando sangue bom",
-            "quantidade": 30,
-            "descricao": "",
-            "valorunitario": 19.9,
-            "categoria": "Camisa",
-            "tamanho": "P",
-            "volume": "Não Possui",
-            "material": "Algodão",
-            "genero": "Masculino",
-            "urlimagem": "https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/dev-malu/images/camisa%20-%20compartilhando%20sangue%20bom.jpg"
-        },
-        {
-            "id": 2,
-            "nome": "Sou um herói!",
-            "quantidade": 10,
-            "descricao": "T-shirt",
-            "valorunitario": 15.5,
-            "categoria": "Camisa",
-            "tamanho": "GG",
-            "volume": "Não Possui",
-            "material": "Malha",
-            "genero": "Feminino",
-            "urlimagem": "https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/dev-malu/images/camisa%20-%20heroi.jpg"
-        },
-        {
-            "id": 4,
-            "nome": "Doando sangue",
-            "quantidade": 15,
-            "descricao": "",
-            "valorunitario": 29.9,
-            "categoria": "Camisa",
-            "tamanho": "G",
-            "volume": "Não Possui",
-            "material": "Algodão",
-            "genero": "Feminino",
-            "urlimagem": "https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/dev-malu/images/camisa%20-%20doando%20sangue.jpg"
-        }
     ]
 }
