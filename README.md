@@ -1,7 +1,12 @@
 # DoacaoSangueFrontEnd
 
+Instalar dependencias do angular no projeto (primeira vez executando)
+$ng add angular
+
+Executar localhost:4200
 $ng serve
 
+Executar localhost:3000
 $json-server --watch db.json
 
 

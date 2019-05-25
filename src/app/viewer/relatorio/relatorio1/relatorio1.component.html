@@ -1,0 +1,52 @@
+<br>
+
+<div class="row">
+
+  <!-- Menu de Relatórios -->
+  <div class="col-md-1">
+    <div class="btn-group-vertical">
+      <h5>Relatórios</h5>
+      <a href="/relatorio1" class="btn btn-dark button1" role="button" aria-pressed="true">Relatorio 1</a>
+      <a href="/relatorio2" class="btn btn-dark button1" role="button" aria-pressed="true">Relatorio 2</a>
+      <a href="/relatorio3" class="btn btn-dark button1" role="button" aria-pressed="true">Relatorio 3</a>
+    </div>
+  </div>
+
+  <!-- Tabela de Relatórios -->
+  <div class="container">
+    <div class="text-center">
+      <h4>Demandas atendidas por hemocentros com base no tipo sanguíneo</h4>
+      <br>
+
+      <div class="col-md-0">
+        <div class="card">
+
+          <table class="table table-hover table-striped">
+
+            <thead>
+              <tr>
+                <th>Hemocentro</th>
+                <th>Quantidade de demandas</th>
+                <th>Tipo sanguíneo</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let relatorio of relatorios">
+                <td>{{ relatorio.hemocentro }}</td>
+                <td>{{ relatorio.qtddemanda }}</td>
+                <td>{{ relatorio.tipofator }}</td>
+              </tr>
+            </tbody>
+
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+</div>

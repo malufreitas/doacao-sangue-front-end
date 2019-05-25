@@ -1,0 +1,34 @@
+.blog-banner-area {
+  height: 280px;
+  position: relative;
+  /*z-index: 1;*/
+  background-image: url(https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/master/images/banner_inicial.jpg);
+  background-position: center !important
+}
+
+
+@media (min-width: 1000px) {
+  .blog-banner-area {
+    height: 410px
+  }
+}
+
+.blog-banner-area .blog-banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%)
+}
+
+.blog-banner-area::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f1f6f7;
+  z-index: -1
+}
