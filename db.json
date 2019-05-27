@@ -1,4 +1,72 @@
 {
+    "categoria": [
+        {
+            "id": 1,
+            "nome": "Caneca"
+        },
+        {
+            "id": 2,
+            "nome": "Camisa"
+        },
+        {
+            "id": 3,
+            "nome": "Botton"
+        }
+    ],
+    "genero": [
+        {
+            "id": 1,
+            "nome": "Masculino"
+        },
+        {
+            "id": 2,
+            "nome": "Feminino"
+        },
+        {
+            "id": 3,
+            "nome": "Unissex"
+        }
+    ],
+    "tamanho": [
+        {
+            "id": 1,
+            "nome": "P"
+        },
+        {
+            "id": 2,
+            "nome": "M"
+        },
+        {
+            "id": 3,
+            "nome": "G"
+        },
+        {
+            "id": 3,
+            "nome": "GG"
+        }
+    ],
+    "material": [
+        {
+            "id": 1,
+            "nome": "Porcelana"
+        },
+        {
+            "id": 2,
+            "nome": "Plastico"
+        },
+        {
+            "id": 3,
+            "nome": "Algodao"
+        },
+        {
+            "id": 3,
+            "nome": "Malha"
+        },
+        {
+            "id": 3,
+            "nome": "Aluminio"
+        }
+    ],
     "produto": [
         {
             "id": 1,
@@ -10,7 +78,8 @@
             "tamanho": "P",
             "volume": "Não Possui",
             "material": "Algodão",
-            "genero": "Masculino"
+            "genero": "Masculino",
+            "urlimagem": "https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/dev-malu/images/camisa%20-%20compartilhando%20sangue%20bom.jpg"
         },
         {
             "id": 2,
@@ -22,7 +91,8 @@
             "tamanho": "GG",
             "volume": "Não Possui",
             "material": "Malha",
-            "genero": "Feminino"
+            "genero": "Feminino",
+            "urlimagem": "https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/dev-malu/images/camisa%20-%20heroi.jpg"
         },
         {
             "id": 3,
@@ -34,7 +104,8 @@
             "tamanho": "M",
             "volume": "Não Possui",
             "material": "Plastico",
-            "genero": "Unissex"
+            "genero": "Unissex",
+            "urlimagem": "https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/dev-malu/images/botton%20-%20doe%20sangue%20doe%20vida.jpg"
         },
         {
             "id": 4,
@@ -46,7 +117,21 @@
             "tamanho": "G",
             "volume": "Não Possui",
             "material": "Algodão",
-            "genero": "Feminino"
+            "genero": "Feminino",
+            "urlimagem": "https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/dev-malu/images/camisa%20-%20doando%20sangue.jpg"
+        },
+        {
+            "id": 5,
+            "nome": "Eu sou doador",
+            "quantidade": 15,
+            "descricao": "",
+            "valorunitario": 29.9,
+            "categoria": "Caneca",
+            "tamanho": "",
+            "volume": "",
+            "material": "Porcelana",
+            "genero": "Não Possui",
+            "urlimagem": "https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/dev-malu/images/caneca%20-%20doador.jpg"
         }
     ],
     "pessoa": [
@@ -72,42 +157,6 @@
             "email": "peterparker@gmail.com",
             "telefone": "27960703242",
             "senha": "1234567",
-            "status": true
-        }
-    ],
-      "hemocentro": [
-        {
-            "id": 1,
-            "nome": "Hemos",
-            "cnes": "12312412412",
-            "email": "hemos@gmail.com",
-            "telefone": "27960706070",
-            "senha": "123456",
-            "status": true
-        },
-        {
-            "id": 2,
-            "nome": "Hemoise",
-            "cnes": "4124125543",
-            "email": "Hemoise10@gmail.com",
-            "telefone": "27960703242",
-            "senha": "1234567",
-            "status": true
-        }
-    ],
-      "demanda": [
-        {
-            "id": 1,
-            "nome": "13/05/2019",           
-            "idtiposanguineo": "1",
-            "idhemocentro": "2",
-            "status": true
-        },
-        {
-            "id": 2,
-            "nome": "11/05/2019",           
-            "idtiposanguineo": "2",
-            "idhemocentro": "3",
             "status": true
         }
     ]
