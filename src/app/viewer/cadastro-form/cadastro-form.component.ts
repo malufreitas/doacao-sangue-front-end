@@ -26,9 +26,27 @@ export class CadastroFormComponent implements OnInit {
 
     //this.httpClient.post('https://doacao-de-sangue-helenfranca.c9users.io/pessoa', formulario.value)
     this.httpClient.post('https://doacaodesangue.herokuapp.com/pessoa', formulario.value)
-    .pipe(map(res => res))
-    .subscribe(dados => console.log(dados))
+      .pipe(map(res => res))
+      .subscribe(dados => console.log(dados))
 
+    //alert("Cadastro realizado com sucesso!");
+  }
+
+
+  resetaDadosFormulario(formulario) {
+    formulario.form.patchValue({
+      usuario: {
+        nome: null,
+        sobrenome: null,
+        datanascimento: null,
+        sexo: null,
+        cpf: null,
+        telefone: null,
+        email: null,
+        senha: null,
+        confirmarSenha: null
+      }
+    });
   }
 
   constructor(
