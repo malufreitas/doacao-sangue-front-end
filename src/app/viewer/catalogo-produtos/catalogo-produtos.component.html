@@ -34,9 +34,9 @@
         <!-- Sidebar para listar categorias -->
         <div class="sidebar-categories">
 
-          <div class="head bg-danger text-white">Categorias</div>
+          <div class="head bg-danger text-white rounded">Categorias</div>
 
-          <ul class="main-categories">
+          <ul class="main-categories bg-white">
             <li class="common-filter">
 
               <ul *ngFor="let categoria of categorias; let i = index">
@@ -54,9 +54,9 @@
         <!-- Sidebar para listar filtros -->
         <div class="sidebar-filter">
 
-          <div class="top-filter-head bg-danger text-white">Filtro de Produtos</div>
+          <div class="top-filter-head bg-danger text-white rounded">Filtro de Produtos</div>
 
-          <div class="common-filter">
+          <div class="common-filter bg-white">
 
             <div class="head">Genero</div>
 
@@ -68,7 +68,8 @@
               </li>
             </ul>
 
-            <div class="head">Material</div>
+            <br>
+            <div class="head border-top border-danger">Material</div>
             <ul *ngFor="let material of materiais; let i = index">
               <li class="filter-list">
                 <input class="pixel-checkbox" type="checkbox" [(ngModel)]="campoMaterial[i]"
@@ -77,7 +78,8 @@
               </li>
             </ul>
 
-            <div class="head">Tamanho</div>
+            <br>
+            <div class="head border-top border-danger">Tamanho</div>
             <ul *ngFor="let tamanho of tamanhos; let i = index">
               <li class="filter-list">
                 <input class="pixel-checkbox" type="checkbox" [(ngModel)]="campoTamanho[i]"
@@ -98,7 +100,7 @@
       <div class="col-xl-9 col-lg-8 col-md-7">
 
         <!-- Barra de filtros -->
-        <div class="filter-bar d-flex flex-wrap align-items-center">
+        <div class="filter-bar d-flex flex-wrap align-items-center bg-white">
 
           <!-- Ordenação dos produtos 
           <div class="sorting">
@@ -110,7 +112,7 @@
           </div>
           -->
 
-          <!-- Quantidade de produtos exibidos -->
+          <!-- Quantidade de produtos exibidos 
           <div class="sorting mr-auto">
             <select>
               <option value="10">Exibir 10</option>
@@ -118,14 +120,15 @@
               <option value="30">Exibir 30</option>
             </select>
           </div>
+          -->
 
           <!-- Limpar filtros selecionados -->
           <div class="sorting mr-auto">
-            <button class="btn btn-dark" (click)="limpar()">Limpar Filtros <i class="fas fa-trash-alt"></i></button>
+            <button class="btn btn-dark rounded" (click)="limpar()">Limpar Filtros <i class="fas fa-trash-alt"></i></button>
           </div>
 
           <!-- Barra de busca -->
-          <!-- NÃO CONSEGUI AINDA 
+          <!-- NÃO CONSEGUI AINDA FAZER FUNCIONAR 
           <div>
             <div class="input-group filter-bar-search">
               <input type="text" placeholder="Pesquisar" (keyup.enter)="pegaProduto(filtros)"
@@ -154,17 +157,12 @@
                     <img class="card-img" src="{{ produto.urlimagem }}" alt="" height="293" width="255">
 
                     <!-- Coloca imagem em destaque ao passar o mouse -->
-                    <ul class="card-product__imgOverlay">
-                      <!-- Ainda não descobri o que cada um desses faz -->
-                      <li><button><i class="ti-search"></i></button></li>
-                      <li><button><i class="ti-shopping-cart"></i></button></li>
-                      <li><button><i class="ti-heart"></i></button></li>
-                    </ul>
                   </div>
 
                   <!-- Coloca nome e valor do produto -->
                   <div class="card-body">
                     <h4 class="card-product__title"><a href="#">{{ produto.nome }}</a></h4>
+                    <!-- Tratar o valor impresso do produto -->
                     <p class="card-product__price">R$ {{ produto.valorunitario }}</p>
                   </div>
 
