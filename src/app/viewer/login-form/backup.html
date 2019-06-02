@@ -1,0 +1,45 @@
+<br>
+
+<div class="container">
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+
+    <div class="text-center">
+      <b>Ainda não tenho cadastro:</b>
+      <br>
+      <a href="/cadastro">Clique aqui para se cadastrar</a>
+    </div>
+
+    <div class="form-group">
+      <label for="email" class="control-label">E-mail</label>
+      <input type="email" class="form-control" name="email" id="email" placeholder="nome@email.com"
+        [ngModel]="usuario.email" required email #email="ngModel">
+
+      <div *ngIf="!email.valid && email.touched" class="text-danger">
+        E-mail é obrigatório.
+      </div>
+
+
+    </div>
+
+    <div class="form-group">
+      <label for="senha">Senha</label>
+      <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" [ngModel]="usuario.senha"
+        required #senha="ngModel">
+
+      <div *ngIf="!senha.valid && senha.touched" class="text-danger">
+        Senha é obrigatória.
+      </div>
+    </div>
+
+    <!--
+ **Ainda não ta verificando o robô**
+  <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Não sou um robô</label>
+    </div>
+  -->
+
+    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+
+  </form>
+</div>

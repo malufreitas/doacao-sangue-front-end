@@ -13,13 +13,21 @@ import { ProdutoModule } from './viewer/produto/produto.module';
 import { CatalogoProdutosComponent } from './viewer/catalogo-produtos/catalogo-produtos.component';
 import { RelatorioComponent } from './viewer/relatorio/relatorio.component';
 import { RelatorioModule } from './viewer/relatorio/relatorio.module';
+import { DemandaFormComponent } from './viewer/demanda-form/demanda-form.component';
+import { DoadorFormComponent } from './viewer/doador-form/doador-form.component';
+import { ConfirmarDoacaoComponent } from './viewer/doador-form/confirmar-doacao/confirmar-doacao.component';
+import { HemocentroComponent } from './viewer/hemocentro/hemocentro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DoacaoSangueComponent,
     RelatorioComponent,
-    CatalogoProdutosComponent
+    CatalogoProdutosComponent,
+    DemandaFormComponent,
+    DoadorFormComponent,
+    ConfirmarDoacaoComponent,
+    HemocentroComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,31 @@
+<br>
+<div class="container">
+
+  <form #demandaForm="ngForm" (ngSubmit)="onSubmit(demandaForm)">
+
+    <div class="form-row ">
+      <div class="form-group col-md-6">
+        <label for="nomeHemocentro">nome Hemocentro</label>
+        <input type="text" class="form-control" name="nomeHemocentro" id="nomeHemocentro" placeholder="Nome do hemocentro" [ngModel]="usuario.nomeHemocentro"
+          required #nomeHemocentro="ngModel">
+          
+        <div *ngIf="!nomeHemocentro.valid && nomeHemocentro.touched" class="text-danger">
+          O nome do hemocentro é obrigatório.
+        </div>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="tipoSanguineo">Tipo Sanguineo</label>
+        <input type="text" class="form-control" name="tipoSanguineo" id="tipoSanguineo" placeholder="Informe o tipo Sanguíneo"
+          [ngModel]="usuario.tipoSanguineo" required #tipoSanguineo="ngModel">
+
+        <div *ngIf="!tipoSanguineo.valid && tipoSanguineo.touched" class="text-danger">
+          Tipo Sanguineo é obrigatório.
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!demandaForm.valid">Continuar</button>
+
+  </form>
+</div>

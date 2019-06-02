@@ -1,3 +1,5 @@
+import { ConfirmarDoacaoComponent } from './viewer/doador-form/confirmar-doacao/confirmar-doacao.component';
+import { HemocentroComponent } from './viewer/hemocentro/hemocentro.component';
 import { ProdutosListaComponent } from './viewer/produto/produtos-lista/produtos-lista.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -12,6 +14,8 @@ import { Relatorio1Component } from './viewer/relatorio/relatorio1/relatorio1.co
 import { Relatorio2Component } from './viewer/relatorio/relatorio2/relatorio2.component';
 import { Relatorio3Component } from './viewer/relatorio/relatorio3/relatorio3.component';
 import { Relatorio4Component } from './viewer/relatorio/relatorio4/relatorio4.component';
+import { DoadorFormComponent } from './viewer/doador-form/doador-form.component';
+import { DemandaFormComponent } from './viewer/demanda-form/demanda-form.component';
 
 const routes: Routes = [  
   { path: 'login', component: LoginFormComponent },
@@ -24,6 +28,9 @@ const routes: Routes = [
   { path: 'relatorio2', component: Relatorio2Component },
   { path: 'relatorio3', component: Relatorio3Component },
   { path: 'relatorio4', component: Relatorio4Component },
+  { path: 'confirmar', component: ConfirmarDoacaoComponent },
+  { path: 'demanda', component: DemandaFormComponent },
+  { path: 'doador', component: DoadorFormComponent },
   { path: '', component: DoacaoSangueComponent },
   //{ path: '', pathMatch: 'full', redirectTo: '' },
 ];
