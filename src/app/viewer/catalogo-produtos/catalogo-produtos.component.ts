@@ -129,5 +129,9 @@ export class CatalogoProdutosComponent implements OnInit {
     this.pegaProduto();
   }
 
+  
+  comprar() {
+    
+  }
 
 }

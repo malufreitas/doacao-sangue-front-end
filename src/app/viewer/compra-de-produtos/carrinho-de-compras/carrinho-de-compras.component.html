@@ -1,0 +1,69 @@
+<br><br>
+
+<div class="container">
+
+  <div class="card">
+
+    <div class="card-header">
+
+      <div class="float-left">
+        <h4>Carrinho de Compras</h4>
+      </div>
+
+      <div class="float-right">
+        <!--button type="button" class="btn btn-primary" [routerLink]="['novoProduto']"-->
+        <a href="/catalogo" class="float-right btn btn-outline-primary">Continuar comprando</a>
+      </div>
+
+    </div>
+
+    <div class="card-body">
+
+      <!--Só vai mostrar produtos caso exista produtos-->
+
+      <table id="produtos" class="table table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Qtd</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <!--
+        <tr *ngFor="let produto of produtos">
+        -->
+          <tr>
+            <!--
+          <td>{{ produto.id }}</td>
+          -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              <span class="float-right">
+                <button class="btn btn-outline-danger mb-1 btn-sm">
+                  <!-- Pendente botão remover -->
+                  X
+                </button>
+              </span>
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+      <a href="/enderecodeentrega" class="float-right btn btn-outline-success">Próximo</a>
+
+    </div>
+
+  </div>
+
+</div>
