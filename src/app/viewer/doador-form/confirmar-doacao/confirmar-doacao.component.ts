@@ -14,6 +14,7 @@ export class ConfirmarDoacaoComponent implements OnInit {
   onSubmit(formulario) {
     console.log(formulario);
 
+    this.httpClient.get('https://doacaodesangue.herokuapp.com/pessoa', formulario.value).pipe(map(res => res)).subscribe(dados => console.log(dados))
     this.httpClient.post('https://doacaodesangue.herokuapp.com/doacao', formulario.value).pipe(map(res => res)).subscribe(dados => console.log(dados))
   }
 
