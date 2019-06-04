@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login-form',
@@ -13,11 +15,17 @@ export class LoginFormComponent implements OnInit {
     senha: null
   };
 
-  onSubmit(form) {
-    console.log(form);
+  onSubmit(formulario) {
+    console.log(formulario);
+
+    this.httpClient.post('https://doacaodesangue.herokuapp.com/login', formulario.value)
+      .pipe(map(res => res))
+      .subscribe(dados => console.log(dados))
   }
 
-  constructor() { }
+  constructor(
+    private httpClient: HttpClient
+  ) { }
 
   ngOnInit() {
   }

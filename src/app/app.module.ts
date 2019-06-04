@@ -13,13 +13,15 @@ import { ProdutoModule } from './viewer/produto/produto.module';
 import { CatalogoProdutosComponent } from './viewer/catalogo-produtos/catalogo-produtos.component';
 import { RelatorioComponent } from './viewer/relatorio/relatorio.component';
 import { RelatorioModule } from './viewer/relatorio/relatorio.module';
+import { EsqueciMinhaSenhaComponent } from './viewer/esqueci-minha-senha/esqueci-minha-senha.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DoacaoSangueComponent,
     RelatorioComponent,
-    CatalogoProdutosComponent
+    CatalogoProdutosComponent,
+    EsqueciMinhaSenhaComponent
   ],
   imports: [
     BrowserModule,
