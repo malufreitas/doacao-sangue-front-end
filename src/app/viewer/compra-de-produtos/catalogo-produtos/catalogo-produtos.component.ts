@@ -34,6 +34,11 @@ export class CatalogoProdutosComponent implements OnInit {
   campoMaterial = [];
   campoTamanho = [];
 
+  // Objeto compras, com uma lista de compraProdutos
+  compras = {
+    compraProdutos: [],
+  }
+
   constructor(
     private service: CatalogoProdutosService,
   ) { }
@@ -54,7 +59,6 @@ export class CatalogoProdutosComponent implements OnInit {
 
     this.service.getProdutos().
       subscribe(produtos => this.produtos = produtos);
-
   }
 
 
@@ -130,8 +134,11 @@ export class CatalogoProdutosComponent implements OnInit {
   }
 
   
-  comprar() {
-    
+  comprar(produto) {
+    //console.log(produto);
+    // adiciona o produto que foi clicado no botão "adicionar ao carrinho" à lista compraProdutos
+    this.compras.compraProdutos.push(produto);
+    console.log(this.compras.compraProdutos);
   }
 
 }

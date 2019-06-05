@@ -112,16 +112,6 @@
             </div>
             -->
   
-            <!-- Quantidade de produtos exibidos 
-            <div class="sorting mr-auto">
-              <select>
-                <option value="10">Exibir 10</option>
-                <option value="20">Exibir 20</option>
-                <option value="30">Exibir 30</option>
-              </select>
-            </div>
-            -->
-  
             <!-- Limpar filtros selecionados -->
             <div class="sorting mr-auto">
               <button class="btn btn-dark rounded" (click)="limpar()">Limpar Filtros <i class="fas fa-trash-alt"></i></button>
@@ -165,7 +155,7 @@
                       <!-- Tratar o valor impresso do produto -->
                       <p class="card-product__price">R$ {{ produto.valorunitario }}</p>
                     </div>
-                    <button class="btn btn-success rounded" (click)="comprar()">Adicionar ao carrinho <i class="fas fa-trash-alt"></i></button>
+                    <button class="btn btn-success rounded" (click)="comprar(produto)">Adicionar ao carrinho <i class="fas fa-trash-alt"></i></button>
 
                   </div>
                 </div>

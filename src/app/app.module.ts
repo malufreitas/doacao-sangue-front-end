@@ -9,14 +9,14 @@ import { DoacaoSangueComponent } from './viewer/doacao-sangue/doacao-sangue.comp
 import { CadastroFormModule } from './viewer/cadastro-form/cadastro-form.module';
 import { LoginFormModule } from './viewer/login-form/login-form.module';
 import { ProdutoModule } from './viewer/produto/produto.module';
-import { CatalogoProdutosComponent } from './viewer/catalogo-produtos/catalogo-produtos.component';
+import { CatalogoProdutosComponent } from './viewer/compra-de-produtos/catalogo-produtos/catalogo-produtos.component';
 import { RelatorioComponent } from './viewer/relatorio/relatorio.component';
 import { RelatorioModule } from './viewer/relatorio/relatorio.module';
 import { EsqueciMinhaSenhaComponent } from './viewer/esqueci-minha-senha/esqueci-minha-senha.component';
 import { CarrinhoDeComprasComponent } from './viewer/compra-de-produtos/carrinho-de-compras/carrinho-de-compras.component';
 import { PagamentoComponent } from './viewer/compra-de-produtos/pagamento/pagamento.component';
 import { DadosEntregaFormModule } from './viewer/compra-de-produtos/dados-entrega-form/dados-entrega-form.module';
-import { FinalizaCompraComponent } from './finaliza-compra/finaliza-compra.component';
+import { FinalizaCompraComponent } from './viewer/compra-de-produtos/finaliza-compra/finaliza-compra.component';
 
 @NgModule({
   declarations: [

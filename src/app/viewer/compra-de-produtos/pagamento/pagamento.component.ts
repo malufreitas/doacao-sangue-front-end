@@ -11,10 +11,10 @@ declare let paypal: any;
 
 
 export class PagamentoComponent implements AfterViewChecked {
-  
+
   addScript: boolean = false;
   paypalLoad: boolean = true;
-  
+
   finalAmount: number = 1;
 
   paypalConfig = {
@@ -40,7 +40,8 @@ export class PagamentoComponent implements AfterViewChecked {
     onAuthorize: (data, actions) => {
       return actions.payment.execute().then((payment) => {
         //Do something when payment is successful.
-        //window.alert('Pagamento efetuado!');
+        window.alert('Pagamento efetuado!');
+        // Ver parte do backend
       })
     }
   };
@@ -54,12 +55,12 @@ export class PagamentoComponent implements AfterViewChecked {
       })
     }
   }
-  
+
 
   addPaypalScript() {
     this.addScript = true;
     return new Promise((resolve, reject) => {
-      let scripttagElement = document.createElement('script');    
+      let scripttagElement = document.createElement('script');
       scripttagElement.src = 'https://www.paypalobjects.com/api/checkout.js';
       scripttagElement.onload = resolve;
       document.body.appendChild(scripttagElement);
@@ -109,7 +110,7 @@ export class PagamentoComponent implements AfterViewChecked {
         pagamento: {
           transactions: [
             { montante: { total: this.montanteFinal, moeda: 'USD' } }
-            // é possível alterar o tipo da moeda 
+            // é possível alterar o tipo da moeda
             //{ amount: { total: this.montanteFinal, moeda: 'BRL' } }
           ]
         }
@@ -133,15 +134,15 @@ export class PagamentoComponent implements AfterViewChecked {
       })
     }
   }
-  
+
 
 
   addPaypalScript() {
     this.addScript = true;
     return new Promise((resolve, reject) => {
-      let scripttagElement = document.createElement('script');    
+      let scripttagElement = document.createElement('script');
       //  <script src="https://www.paypalobjects.com/api/checkout.js"> </script>
-      scripttagElement.src = 'https://www.paypalobjects.com/api/checkout.js'; 
+      scripttagElement.src = 'https://www.paypalobjects.com/api/checkout.js';
       scripttagElement.onload = resolve;
       document.body.appendChild(scripttagElement);
     })
