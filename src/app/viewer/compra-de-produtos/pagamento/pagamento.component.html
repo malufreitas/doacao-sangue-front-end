@@ -1,32 +1,37 @@
 <br><br>
 
-<head>
-  <script src="https://www.paypal.com/sdk/js?client-id=sb"> </script>
-  <script> paypal.Buttons().render('card-body'); </script>
-</head>
 
-<body>
-  <div class="container">
+<div class="container">
 
-    <div class="card">
+  <div class="card">
 
-      <div class="card-header">
+    <div class="card-header">
 
-        <div class="float-left">
-          <h4>Formas de pagamento</h4>
-        </div>
-
-      </div>
-
-      <div class="card-body">
-
-        <a href="/enderecodeentrega" class="float-left btn btn-outline-warning">Voltar</a>
-
-        <a href="/finalizacompra" class="float-right btn btn-outline-success">Finalizar compra</a>
-
+      <div class="float-left">
+        <h4>Formas de pagamento</h4>
       </div>
 
     </div>
 
+    <div class="card-body">
+
+      <div class="text-center">
+        <!-- Botão de pagamento paypal -->
+        <input type="number" [(ngModel)]="finalAmount" style="padding-bottom: 10px;">
+        <h2 *ngIf="paypalLoad">Paypal button is loading...</h2>
+        <div id="paypal-checkout-btn"></div>
+
+        <!-- Botão de pagamento boleto -->
+
+      </div>
+
+
+      <a href="/enderecodeentrega" class="float-left btn btn-outline-warning">Voltar</a>
+
+      <a href="/finalizacompra" class="float-right btn btn-outline-success">Finalizar compra</a>
+
+    </div>
+
   </div>
-</body>
+
+</div>
