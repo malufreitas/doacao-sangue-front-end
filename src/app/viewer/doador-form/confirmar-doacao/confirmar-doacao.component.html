@@ -5,27 +5,24 @@
 
     <div class="form-row ">
       <div class="form-group col-md-6">
-        <label for="nomeHemocentro">Nome Hemocentro</label>
-        <input type="text" class="form-control" name="nomeHemocentro" id="nomeHemocentro" placeholder="Nome do hemocentro" [ngModel]="usuario.nomeHemocentro"
-          required #nomeHemocentro="ngModel">
-          
-        <div *ngIf="!nomeHemocentro.valid && nomeHemocentro.touched" class="text-danger">
-          O nome do hemocentro é obrigatório.
-        </div>
-      </div>
-
-      <div class="form-group col-md-6">
-        <label for="cpf">CPF</label>
+        <label for="cpf">CPF do doador</label>
         <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF do doador"
           [ngModel]="usuario.cpf" required #cpf="ngModel">
-
-        <div *ngIf="!cpf.valid && cpf.touched" class="text-danger">
-          CPF do doador é obrigatório.
-        </div>
-      </div>
     </div>
 
-    <button type="submit" class="btn btn-primary" onclick="Confirmar()" [disabled]="!confirmarForm.valid">Continuar</button>
+    <div class="form-group col-md-6">
+      <label for="cpf">Quantidade Doada</label>
+      <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF do doador"
+        [ngModel]="usuario.cpf" required #cpf="ngModel">
+  </div>
 
+  <div class="form-group col-md-6">
+    <label for="nomeHemocentro">Observação</label>
+    <input type="text" class="form-control" name="nomeHemocentro" id="nomeHemocentro" placeholder="Nome do hemocentro" [ngModel]="usuario.nomeHemocentro"
+      required #nomeHemocentro="ngModel">
+  </div>
+
+    <button type="submit" class="btn btn-primary" onclick="Confirmar()" [disabled]="!confirmarForm.valid">Continuar</button>
+    <button type="submit" class="btn btn-primary" onclick="Cancelar()" [disabled]="!confirmarForm.valid">Cancelar</button>
   </form>
 </div>
