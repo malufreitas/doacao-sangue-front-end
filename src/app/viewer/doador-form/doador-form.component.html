@@ -4,16 +4,19 @@
   <form #doadorForm="ngForm" (ngSubmit)="onSubmit(doadorForm)">
 
     <div class="form-row ">
+<<<<<<< HEAD
+=======
+
+>>>>>>> e809a5a917726d71f876dc2674e52846930cb361
       <div class="form-group col-md-6">
         <label for="tipoSanguineo">Tipo Sanguineo</label>
         <input type="text" class="form-control" name="tipoSanguineo" id="tipoSanguineo" placeholder="Informe seu tipo sanguineo"
           [ngModel]="usuario.tipoSanguineo" required #tipoSanguineo="ngModel">
-
-        <div *ngIf="!tipoSanguineo.valid && tipoSanguineo.touched" class="text-danger">
-          Tipo Sanguineo é obrigatório.
-        </div>
       </div>
     </div>
+
+     //informações sobre doenças
+    //https://www.primefaces.org/primeng/#/inputswitch
 
     <button type="submit" class="btn btn-primary" [disabled]="!doadorForm.valid">Continuar</button>
     <button type="submit" class="btn btn-primary" [disabled]="!doadorForm.valid">Cancelar</button>
