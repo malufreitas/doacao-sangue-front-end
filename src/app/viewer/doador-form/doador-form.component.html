@@ -5,16 +5,6 @@
 
     <div class="form-row ">
       <div class="form-group col-md-6">
-        <label for="nome">Nome</label>
-        <input type="text" class="form-control" name="nome" id="nome" placeholder="Informe seu nome" [ngModel]="doador.nome"
-          required #nome="ngModel">
-          
-        <div *ngIf="!nome.valid && nome.touched" class="text-danger">
-          Nome é obrigatório.
-        </div>
-      </div>
-
-      <div class="form-group col-md-6">
         <label for="tipoSanguineo">Tipo Sanguineo</label>
         <input type="text" class="form-control" name="tipoSanguineo" id="tipoSanguineo" placeholder="Informe seu tipo sanguineo"
           [ngModel]="usuario.tipoSanguineo" required #tipoSanguineo="ngModel">
@@ -26,6 +16,7 @@
     </div>
 
     <button type="submit" class="btn btn-primary" [disabled]="!doadorForm.valid">Continuar</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!doadorForm.valid">Cancelar</button>
 
   </form>
 </div>
