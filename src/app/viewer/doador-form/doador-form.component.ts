@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import {InputSwitchModule} from 'primeng/inputswitch';
 
 @Component({
   selector: 'app-doador-form',
@@ -11,6 +12,10 @@ export class DoadorFormComponent implements OnInit {
 
   doador: any = {nome: null, sobrenome: null,};
   
+  handleChange(e) {
+    let isChecked = e.checked;
+  }
+
   onSubmit(formulario) {
     console.log(formulario);
 
