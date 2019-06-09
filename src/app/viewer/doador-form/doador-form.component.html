@@ -1,6 +1,5 @@
 <br>
 <div class="container">
-
   <form #doadorForm="ngForm" (ngSubmit)="onSubmit(doadorForm)">
 
     <div class="form-row ">
@@ -10,13 +9,9 @@
           [ngModel]="usuario.tipoSanguineo" required #tipoSanguineo="ngModel">
       </div>
     </div>
-    <p-inputSwitch (onChange)="handleChange($event)" [(ngModel)]="val">
-      
-     //informações sobre doenças
-    //https://www.primefaces.org/primeng/#/inputswitch
 
     <button type="submit" class="btn btn-primary" [disabled]="!doadorForm.valid">Continuar</button>
-    <button type="submit" class="btn btn-primary" [disabled]="!doadorForm.valid">Cancelar</button>
-
+    <button type="submit" class="btn btn-primary"  style="margin:5px;" [disabled]="!doadorForm.valid">Cancelar</button>
+ 
   </form>
 </div>

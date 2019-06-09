@@ -6,23 +6,21 @@
     <div class="form-row ">
       <div class="form-group col-md-6">
         <label for="cpf">CPF do doador</label>
-        <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF do doador"
-          [ngModel]="usuario.cpf" required #cpf="ngModel">
+        <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF do doador">
     </div>
 
     <div class="form-group col-md-6">
-      <label for="cpf">Quantidade Doada</label>
-      <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF do doador"
-        [ngModel]="usuario.cpf" required #cpf="ngModel">
+      <label for="qtd">Quantidade Doada</label>
+      <input type="text" class="form-control" name="qtd" id="qtd" placeholder="Quantidade de sangue doada">
   </div>
 
   <div class="form-group col-md-6">
-    <label for="nomeHemocentro">Observação</label>
-    <input type="text" class="form-control" name="nomeHemocentro" id="nomeHemocentro" placeholder="Nome do hemocentro" [ngModel]="usuario.nomeHemocentro"
-      required #nomeHemocentro="ngModel">
+    <label for="observacao">Observação</label>
+    <input type="text" class="form-control" name="observacao" id="observacao" placeholder="Observação">
   </div>
+</div>
 
     <button type="submit" class="btn btn-primary" onclick="Confirmar()" [disabled]="!confirmarForm.valid">Continuar</button>
-    <button type="submit" class="btn btn-primary" onclick="Cancelar()" [disabled]="!confirmarForm.valid">Cancelar</button>
+    <button type="submit" class="btn btn-primary" style="margin:5px;" onclick="Cancelar()" [disabled]="!confirmarForm.valid">Cancelar</button>
   </form>
 </div>

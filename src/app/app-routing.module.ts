@@ -1,3 +1,4 @@
+import { HelpPageComponent } from './viewer/help-page/help-page.component';
 import { ConfirmarDoacaoComponent } from './viewer/doador-form/confirmar-doacao/confirmar-doacao.component';
 import { HemocentroComponent } from './viewer/hemocentro/hemocentro.component';
 import { ProdutosListaComponent } from './viewer/produto/produtos-lista/produtos-lista.component';
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'confirmar', component: ConfirmarDoacaoComponent },
   { path: 'demanda', component: DemandaFormComponent },
   { path: 'doador', component: DoadorFormComponent },
+  { path: 'ajuda', component: HelpPageComponent },
   { path: '', component: DoacaoSangueComponent },
   //{ path: '', pathMatch: 'full', redirectTo: '' },
 ];

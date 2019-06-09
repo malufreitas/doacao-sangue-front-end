@@ -15,18 +15,15 @@ export class ConfirmarDoacaoComponent implements OnInit {
 
   deleteModalRef: BsModalRef;
   doador: any = {nome: null, sobrenome: null};
-
-  onSubmit(formulario) {
-    console.log(formulario);
-
-    this.httpClient.post('https://doacaodesangue.herokuapp.com/doacao', formulario.value).pipe(map(res => res)).subscribe(dados => console.log(dados))
-  }
  
   constructor( private httpClient: HttpClient) {}
 
   ngOnInit(){} 
 
-  Continuar(){}
+  Continuar(formulario){
+    console.log(formulario);
+    this.httpClient.post('https://doacaodesangue.herokuapp.com/doacao', formulario.value).pipe(map(res => res)).subscribe(dados => console.log(dados))
+  }
   
   Cancelar(){}
 

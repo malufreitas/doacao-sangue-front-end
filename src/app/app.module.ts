@@ -17,6 +17,7 @@ import { DemandaFormComponent } from './viewer/demanda-form/demanda-form.compone
 import { DoadorFormComponent } from './viewer/doador-form/doador-form.component';
 import { ConfirmarDoacaoComponent } from './viewer/doador-form/confirmar-doacao/confirmar-doacao.component';
 import { HemocentroComponent } from './viewer/hemocentro/hemocentro.component';
+import { HelpPageComponent } from './viewer/help-page/help-page.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HemocentroComponent } from './viewer/hemocentro/hemocentro.component';
     DemandaFormComponent,
     DoadorFormComponent,
     ConfirmarDoacaoComponent,
-    HemocentroComponent
+    HemocentroComponent,
+    HelpPageComponent
   ],
   imports: [
     BrowserModule,
