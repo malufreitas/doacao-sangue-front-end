@@ -18,7 +18,6 @@ import { DoadorFormComponent } from './viewer/doador-form/doador-form.component'
 import { ConfirmarDoacaoComponent } from './viewer/doador-form/confirmar-doacao/confirmar-doacao.component';
 import { HemocentroComponent } from './viewer/hemocentro/hemocentro.component';
 import { HelpPageComponent } from './viewer/help-page/help-page.component';
-import { HelpPage } from './viewer/help-page/help-page.module/help-page.module.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +29,7 @@ import { HelpPage } from './viewer/help-page/help-page.module/help-page.module.c
     DoadorFormComponent,
     ConfirmarDoacaoComponent,
     HemocentroComponent,
-    HelpPageComponent,
-    HelpPage.ModuleComponent
+    HelpPageComponent
   ],
   imports: [
     BrowserModule,
