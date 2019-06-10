@@ -5,7 +5,6 @@ import { ProdutosListaComponent } from './viewer/produto/produtos-lista/produtos
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
 import { LoginFormComponent } from './viewer/login-form/login-form.component';
 import { CadastroFormComponent } from './viewer/cadastro-form/cadastro-form.component';
 import { DadosEntregaFormComponent } from './viewer/dados-entrega-form/dados-entrega-form.component';
@@ -33,9 +32,8 @@ const routes: Routes = [
   { path: 'confirmar', component: ConfirmarDoacaoComponent },
   { path: 'demanda', component: DemandaFormComponent },
   { path: 'doador', component: DoadorFormComponent },
-  { path: 'help', component: HelpPageComponent },
+  { path: 'ajuda', component: HelpPageComponent },
   { path: '', component: DoacaoSangueComponent },
-  
   //{ path: '', pathMatch: 'full', redirectTo: '' },
 ];
 
