@@ -15,7 +15,7 @@ export class PagamentoComponent implements AfterViewChecked {
   addScript: boolean = false;
   paypalLoad: boolean = true;
 
-  finalAmount: number = 1;
+  totalAmount: number = 1;
 
   paypalConfig = {
     env: 'sandbox',
@@ -27,13 +27,17 @@ export class PagamentoComponent implements AfterViewChecked {
 
     commit: true,
     payment: (data, actions) => {
-      return actions.payment.create({
+
+      let a = actions.payment.create({
         payment: {
           transactions: [
-            { amount: { total: this.finalAmount, currency: 'BRL' } }
+            // ****** O valor fixo do pagamento vai vir aqui
+            { amount: { total: this.totalAmount, currency: 'BRL' } }
           ]
         }
       });
+      //console.log(a);
+      return a;
     },
 
 
@@ -41,6 +45,16 @@ export class PagamentoComponent implements AfterViewChecked {
       return actions.payment.execute().then((payment) => {
         //Do something when payment is successful.
         window.alert('Pagamento efetuado!');
+        /*
+        endereco_entrega = {
+          'rua': payment.payer.payer_info.shipping_address.line1 ,
+          'bairro': payment.payer.payer_info.shipping_address.line2,
+          'cidade': payment.payer.payer_info.shipping_address.city,
+          'estado': payment.payer.payer_info.shipping_address.state,
+          'cep': payment.payer.payer_info.shipping_address.postal_code
+        };
+        */
+        console.log(payment.payer.payer_info.shipping_address);
         // Ver parte do backend
       })
     }

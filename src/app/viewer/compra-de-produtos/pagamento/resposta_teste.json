@@ -1,0 +1,68 @@
+{
+    "ack": "success",
+    "data": {
+        "id": "PAYID-LT7FDLY5B743948AW387560K",
+        "intent": "sale",
+        "state": "approved",
+        "cart": "63N158307H693484S",
+        "create_time": "2019-06-10T12:49:08Z",
+        "payer": {
+            "payment_method": "paypal",
+            "status": "UNVERIFIED",
+            "payer_info": {
+                "email": "tuntumdoacaodesangue@gmail.com",
+                "first_name": "Tuntum",
+                "middle_name": "Tuntum",
+                "last_name": "Doacao de Sangue",
+                "payer_id": "5H6VEH38JMHME",
+                "country_code": "BR",
+                "tax_id_type": "BR_CPF",
+                "tax_id": "14891424796",
+                "shipping_address": {
+                    "recipient_name": "Tuntum Doacao de Sangue",
+                    "line1": "Rua Cláudio Manoel da Costa  1",
+                    "line2": "Cristóvão Colombo",
+                    "city": "Vila Velha",
+                    "state": "ES",
+                    "postal_code": "29106-430",
+                    "country_code": "BR"
+                }
+            }
+        },
+        "transactions": [
+            {
+                "amount": {
+                    "total": "1.00",
+                    "currency": "BRL",
+                    "details": {}
+                },
+                "item_list": {},
+                "related_resources": [
+                    {
+                        "sale": {
+                            "id": "98930932FT410953K",
+                            "state": "completed",
+                            "payment_mode": "INSTANT_TRANSFER",
+                            "protection_eligibility": "ELIGIBLE",
+                            "parent_payment": "PAYID-LT7FDLY5B743948AW387560K",
+                            "create_time": "2019-06-10T12:49:07Z",
+                            "update_time": "2019-06-10T12:49:07Z",
+                            "amount": {
+                                "total": "1.00",
+                                "currency": "BRL",
+                                "details": {
+                                    "subtotal": "1.00"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "meta": {
+        "calc": "1a3f5bb8e3787",
+        "rlog": "DfpgsIqFfDYAdeQ8khpS1OP8QpqcD6bo58AsusvBApcnGRud4WBj8A0Fe717Vu%2BiHMKHKpwRHoo5qHthdpOXrQ_16b416f6195"
+    },
+    "server": "TydNqmvvMw_mAIOw9QQwXz6Z8-b4VfINIL9NwJapzV3ykgIxWc6klpF48v3I1w5pf2sxmiv_4qc39NKucWxntE72esSwXNrEUGykHMtnOEL6gLJEF9rIL6p5-1qwbCqOyyVY3_9wgSIeEftHF4-th_jk1JbLoT4HzQZxad-F-IVpky3D-wPSXp0J2Bn_21GlysYAV6-hClVZ0RXNRoQp_D8mLmRZaiZTVa5LdZKKaNW2LnZ5FbA5u2cFg7BjgIYp"
+}
