@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HemocentroComponent } from './hemocentro.component';
+import { AjudaPageComponent } from './ajuda-page.component';
 
-describe('HemocentroComponent', () => {
-  let component: HemocentroComponent;
-  let fixture: ComponentFixture<HemocentroComponent>;
+describe('AjudaPageComponent', () => {
+  let component: AjudaPageComponent;
+  let fixture: ComponentFixture<AjudaPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HemocentroComponent ]
+      declarations: [ AjudaPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HemocentroComponent);
+    fixture = TestBed.createComponent(AjudaPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

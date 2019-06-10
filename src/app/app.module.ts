@@ -16,8 +16,8 @@ import { RelatorioModule } from './viewer/relatorio/relatorio.module';
 import { DemandaFormComponent } from './viewer/demanda-form/demanda-form.component';
 import { DoadorFormComponent } from './viewer/doador-form/doador-form.component';
 import { ConfirmarDoacaoComponent } from './viewer/doador-form/confirmar-doacao/confirmar-doacao.component';
-import { HemocentroComponent } from './viewer/hemocentro/hemocentro.component';
-import { HelpPageComponent } from './viewer/help-page/help-page.component';
+import { HelpPageComponent } from './viewer/hemocentro-page/help-page.component';
+import { AjudaPageComponent } from './viewer/ajuda-page/ajuda-page.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,8 @@ import { HelpPageComponent } from './viewer/help-page/help-page.component';
     DemandaFormComponent,
     DoadorFormComponent,
     ConfirmarDoacaoComponent,
-    HemocentroComponent,
-    HelpPageComponent
+    HelpPageComponent,
+    AjudaPageComponent
   ],
   imports: [
     BrowserModule,
