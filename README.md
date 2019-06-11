@@ -9,6 +9,10 @@ $ng serve
 Executar localhost:3000
 $json-server --watch db.json
 
+Adicionando o ngx-bootstrap ao componente:
+$ng add ngx-bootstrap  --component modals
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
