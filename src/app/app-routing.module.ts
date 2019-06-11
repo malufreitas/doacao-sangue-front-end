@@ -16,6 +16,7 @@ import { CatalogoProdutosComponent } from './viewer/compra-de-produtos/catalogo-
 import { PagamentoComponent } from './viewer/compra-de-produtos/pagamento/pagamento.component';
 import { CarrinhoDeComprasComponent } from './viewer/compra-de-produtos/carrinho-de-compras/carrinho-de-compras.component';
 import { FinalizaCompraComponent } from './viewer/compra-de-produtos/finaliza-compra/finaliza-compra.component';
+import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component';
 
 const routes: Routes = [  
   { path: 'login', component: LoginFormComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'relatorio2', component: Relatorio2Component },
   { path: 'relatorio3', component: Relatorio3Component },
   { path: 'relatorio4', component: Relatorio4Component },
+  { path: 'modal', component: TesteModalComponent },
   { path: '', component: DoacaoSangueComponent },
   //{ path: '', pathMatch: 'full', redirectTo: '' },
 ];

@@ -17,6 +17,8 @@ import { CarrinhoDeComprasComponent } from './viewer/compra-de-produtos/carrinho
 import { PagamentoComponent } from './viewer/compra-de-produtos/pagamento/pagamento.component';
 import { DadosEntregaFormModule } from './viewer/compra-de-produtos/dados-entrega-form/dados-entrega-form.module';
 import { FinalizaCompraComponent } from './viewer/compra-de-produtos/finaliza-compra/finaliza-compra.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { FinalizaCompraComponent } from './viewer/compra-de-produtos/finaliza-co
     EsqueciMinhaSenhaComponent,
     CarrinhoDeComprasComponent,
     PagamentoComponent,
-    FinalizaCompraComponent
+    FinalizaCompraComponent,
+    TesteModalComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { FinalizaCompraComponent } from './viewer/compra-de-produtos/finaliza-co
     DadosEntregaFormModule,
     HttpClientModule,
     ProdutoModule,
-    RelatorioModule
+    RelatorioModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
