@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Observable, empty, Subject } from 'rxjs';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { catchError, map } from 'rxjs/operators';
 
 import { ProdutosListaService } from './produtos-lista.service';
 import { Produto } from '../../../model/produto';
-import { catchError } from 'rxjs/operators';
+import { HttpClient } from 'selenium-webdriver/http';
 
 
 @Component({
@@ -20,16 +22,22 @@ export class ProdutosListaComponent implements OnInit {
   produtos$: Observable<Produto[]>;
   error$ = new Subject<boolean>();
 
+  // Parao Modal Pop-up
+  modalRef: BsModalRef;
+  message: string;
+
   constructor(
-    private service: ProdutosListaService
+    private service: ProdutosListaService,
+    private modalService: BsModalService
+    //private httpClient: HttpClient
   ) { }
 
   ngOnInit() {
     //Subscribe para ativar, fazer a chamada de cursos 
     //Mostra no Network -> XHR
-    //this.service.list()
-    //.subscribe(dados => this.produtos = dados);
-    //.subscribe(console.log);
+    /* this.service.list()
+    .subscribe(dados => this.produtos = dados);
+    .subscribe(console.log); */
 
     this.produtos$ = this.service.list().
     pipe(
@@ -40,5 +48,27 @@ export class ProdutosListaComponent implements OnInit {
       })
     );    
   }
+
+  novoProdutoModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
+  }
+
+
+  /*
+  salvar(formulario) {
+    console.log(formulario);
+
+    this.httpClient.post('https://doacaodesangue.herokuapp.com/produto', formulario.value)
+    .pipe(map(res => res))
+    .subscribe(dados => console.log(dados))
+
+  }
+  */
+
+
+  cancelar() {
+
+  }
+
 
 }

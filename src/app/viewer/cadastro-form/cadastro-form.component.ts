@@ -21,6 +21,14 @@ export class CadastroFormComponent implements OnInit {
     confirmarSenha: null
   };
 
+
+  constructor(
+    private httpClient: HttpClient
+  ) { }
+
+  ngOnInit() {
+  }
+
   onSubmit(formulario) {
     console.log(formulario);
 
@@ -29,13 +37,6 @@ export class CadastroFormComponent implements OnInit {
     .pipe(map(res => res))
     .subscribe(dados => console.log(dados))
 
-  }
-
-  constructor(
-    private httpClient: HttpClient
-  ) { }
-
-  ngOnInit() {
   }
 
 }
