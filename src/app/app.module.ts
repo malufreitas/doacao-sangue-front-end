@@ -18,6 +18,13 @@ import { DoadorFormComponent } from './viewer/doador-form/doador-form.component'
 import { ConfirmarDoacaoComponent } from './viewer/doador-form/confirmar-doacao/confirmar-doacao.component';
 import { HelpPageComponent } from './viewer/hemocentro-page/help-page.component';
 import { AjudaPageComponent } from './viewer/ajuda-page/ajuda-page.component';
+//Bootstrap
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalModule } from 'ngx-bootstrap/modal';
+//Bootstrap
+//Services
+import { ConfirmarService } from './service/confirmar-service';
+//Services
 
 @NgModule({
   declarations: [
@@ -32,6 +39,7 @@ import { AjudaPageComponent } from './viewer/ajuda-page/ajuda-page.component';
     AjudaPageComponent
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -40,9 +48,10 @@ import { AjudaPageComponent } from './viewer/ajuda-page/ajuda-page.component';
     DadosEntregaFormModule,
     HttpClientModule,
     ProdutoModule,
-    RelatorioModule
+    RelatorioModule,
+    ModalModule.forRoot()
   ],
-  providers: [],
+  providers: [ConfirmarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

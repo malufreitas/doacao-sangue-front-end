@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Doador } from 'src/app/model/doador';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-doador-form',
@@ -9,17 +11,29 @@ import { map } from 'rxjs/operators';
 })
 export class DoadorFormComponent implements OnInit {
 
-  doador: any = {nome: null, sobrenome: null,};
+  public doador: Doador[]
+  modalRef: BsModalRef;
   
-  handleChange(e) {
-    let isChecked = e.checked;
-  }
-
+  config = {
+    backdrop: true,
+    ignoreBackdropClick: true
+  };
+  
   onSubmit(formulario) {
     console.log(formulario);
-
     this.httpClient.post('https://doacaodesangue.herokuapp.com/doador', formulario.value).pipe(map(res => res)).subscribe(dados => console.log(dados))
   }
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private modalService: BsModalService,
+    private httpClient: HttpClient
+  ) { }
+  
   ngOnInit(){}
+  
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, this.config);
+  }
+  
+  continuar(){}
+  
 }

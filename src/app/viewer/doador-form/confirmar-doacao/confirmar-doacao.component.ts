@@ -1,10 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-import { Observable, empty, of, Subject, EMPTY } from 'rxjs';
-import { catchError, switchMap, take } from 'rxjs/operators';
+import { Component, OnInit, TemplateRef  } from '@angular/core';
+import { ConfirmarService } from 'src/app/service/confirmar-service';
+import { Doador } from 'src/app/model/doador';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-confirmar-doacao',
@@ -13,19 +10,27 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ConfirmarDoacaoComponent implements OnInit {
 
-  deleteModalRef: BsModalRef;
-  doador: any = {nome: null, sobrenome: null};
- 
-  constructor( private httpClient: HttpClient) {}
-
-  ngOnInit(){} 
-
-  Continuar(formulario){
-    console.log(formulario);
-    this.httpClient.post('https://doacaodesangue.herokuapp.com/doacao', formulario.value).pipe(map(res => res)).subscribe(dados => console.log(dados))
-  }
+  public doador: Doador[]
+  modalRef: BsModalRef;
   
-  Cancelar(){}
+  config = {
+    backdrop: true,
+    ignoreBackdropClick: true
+  };
+  
+  constructor( 
+    private modalService: BsModalService,
+    private ConfirmarService: ConfirmarService
+  ) {}
 
-    
+  ngOnInit(){
+     this.ConfirmarService.getDoador().subscribe(doador => this.doador = doador)
+  } 
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, this.config);
+  }
+
+  continuar(){}
+
 }

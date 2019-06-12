@@ -20,7 +20,22 @@
   </div>
 </div>
 
-    <button type="submit" class="btn btn-primary" onclick="Confirmar()" [disabled]="!confirmarForm.valid">Continuar</button>
-    <button type="submit" class="btn btn-primary" style="margin:5px;" onclick="Cancelar()" [disabled]="!confirmarForm.valid">Cancelar</button>
+    <ng-template #template>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Deseja continuar?</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Atenção! Ao clicar em continuar você confirmará a doação.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" style="margin:5px;" data-dismiss="modal">Continuar</button>
+    </div>
+    </ng-template>
+
+    <button type="button" class="btn btn-primary" (click)="openModal(template)">Continuar</button>
+    <button type="submit" class="btn btn-primary" style="margin:5px;" routerLink="/hemocentro">Cancelar</button>
   </form>
 </div>

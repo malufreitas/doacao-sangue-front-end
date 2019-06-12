@@ -3,20 +3,75 @@
 
   <form #demandaForm="ngForm" (ngSubmit)="onSubmit(demandaForm)">
 
-    <div class="form-row ">
-      <div class="form-group col-md-6">
-        <label for="tipoSanguineo">Tipo Sanguineo</label>
-        <input type="text" class="form-control" name="tipoSanguineo" id="tipoSanguineo" placeholder="Informe o tipo Sanguíneo"
-          [ngModel]="usuario.tipoSanguineo" required #tipoSanguineo="ngModel">
+    <!--<div class="form-row ">-->
+    <!--  <div class="form-group col-md-6">-->
+    <!--    <label for="tipoSanguineo">Tipo Sanguineo</label>-->
+    <!--    <input type="text" class="form-control" name="tipoSanguineo" id="tipoSanguineo" placeholder="Informe o tipo Sanguíneo"-->
+    <!--      [ngModel]="usuario.tipoSanguineo" required #tipoSanguineo="ngModel">-->
 
-        <div *ngIf="!tipoSanguineo.valid && tipoSanguineo.touched" class="text-danger">
-          Tipo Sanguineo é obrigatório.
-        </div>
-      </div>
+    <!--    <div *ngIf="!tipoSanguineo.valid && tipoSanguineo.touched" class="text-danger">-->
+    <!--      Tipo Sanguineo é obrigatório.-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <!--</div>-->
+    
+        <p>Selecione um tipo sanguíneo:</p>
+    
+    <div>
+      <input type="radio" id="huey" name="drone" value="huey"
+             checked>
+      <label for="huey">A+</label>
+    </div>
+    
+    <div>
+      <input type="radio" id="dewey" name="drone" value="dewey">
+      <label for="dewey">A-</label>
+    </div>
+    
+    <div>
+      <input type="radio" id="louie" name="drone" value="louie">
+      <label for="louie">AB+</label>
     </div>
 
+    <div>
+      <input type="radio" id="louie" name="drone" value="louie">
+      <label for="louie">AB-</label>
+    </div>
+
+    <div>
+      <input type="radio" id="louie" name="drone" value="louie">
+      <label for="louie">B+</label>
+    </div>
+
+    <div>
+      <input type="radio" id="louie" name="drone" value="louie">
+      <label for="louie">B-</label>
+    </div>
+
+    <div>
+      <input type="radio" id="louie" name="drone" value="louie">
+      <label for="louie">O+</label>
+    </div>
+
+    <div>
+      <input type="radio" id="louie" name="drone" value="louie">
+      <label for="louie">O-</label>
+    </div>
+
+    <div>
+      <input type="radio" id="louie" name="drone" value="louie">
+      <label for="louie">B+</label>
+    </div>
+
+    <div>
+      <input type="radio" id="louie" name="drone" value="louie">
+      <label for="louie">B-</label>
+    </div>
+    
+
+
     <button type="submit" class="btn btn-primary" [disabled]="!demandaForm.valid">Continuar</button>
-    <button type="submit" class="btn btn-primary"  style="margin:5px;"  [disabled]="!demandaForm.valid">Cancelar</button>
+    <button type="submit" class="btn btn-primary"  style="margin:5px;"  routerLink="/hemocentro" [disabled]="!demandaForm.valid">Cancelar</button>
 
   </form>
 </div>
