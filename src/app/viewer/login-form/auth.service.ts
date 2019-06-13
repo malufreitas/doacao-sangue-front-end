@@ -24,7 +24,7 @@ export class AuthService {
       this.mostrarMenuEmitter.emit(true);
 
       // Direcionar para tela home
-      this.router.navigate(['/']);
+      this.router.navigate(['/produtos']);
     }
   }
 

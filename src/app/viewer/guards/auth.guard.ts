@@ -4,6 +4,11 @@ import { Observable } from 'rxjs';
 
 import { AuthService } from './../login-form/auth.service';
 
+/* Decorator: padrão de projeto de software que 
+permite adicionar um comportamento a um objeto já
+existente em tempo de execução, ou seja, agrega
+dinamicamente responsabilidades adicionais a um objeto.
+*/
 @Injectable({
   providedIn: 'root'
 })
@@ -25,8 +30,8 @@ export class AuthGuard implements CanActivate {
       return true;
     }
 
+    //else
     this.router.navigate(['/login']);
-
     return false;
   }
   
