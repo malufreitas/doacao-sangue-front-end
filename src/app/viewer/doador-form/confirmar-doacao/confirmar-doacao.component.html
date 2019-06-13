@@ -31,7 +31,7 @@
         Atenção! Ao clicar em continuar você confirmará a doação.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" style="margin:5px;" data-dismiss="modal">Continuar</button>
+        <button type="button" class="btn btn-primary" style="margin:5px;"[disabled]="!cadastroForm.valid"  data-dismiss="modal">Continuar</button>
     </div>
     </ng-template>
 

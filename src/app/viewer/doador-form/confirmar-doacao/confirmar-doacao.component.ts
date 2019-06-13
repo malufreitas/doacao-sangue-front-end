@@ -10,7 +10,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class ConfirmarDoacaoComponent implements OnInit {
 
-  public doador: Doador[]
+  public doador: Doador[];
   modalRef: BsModalRef;
   
   config = {

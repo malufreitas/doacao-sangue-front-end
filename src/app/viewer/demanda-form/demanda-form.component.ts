@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-demanda-form',
@@ -10,12 +11,30 @@ import { map } from 'rxjs/operators';
 export class DemandaFormComponent implements OnInit {
 
   demanda: any = {nome: null,sobrenome: null};
-
+  tipofator: string;
+  modalRef: BsModalRef;
+  
+  config = {
+    backdrop: true,
+    ignoreBackdropClick: true
+  };
+  
   onSubmit(formulario) {
     console.log(formulario);
-    this.httpClient.post('https://doacaodesangue.herokuapp.com/pessoa', formulario.value).pipe(map(res => res)).subscribe(dados => console.log(dados))
+    this.httpClient.post('https://doacaodesangue.herokuapp.com/demanda', this.tipofator).pipe(map(res => res)).subscribe(dados => console.log(dados))
   }
 
-  constructor(private httpClient: HttpClient) { }
+  myFunction(tipo) {
+  this.tipofator = tipo;
+  }
+  
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, this.config);
+  }
+  
+  constructor(
+    private modalService: BsModalService,
+    private httpClient: HttpClient
+  ) { }
   ngOnInit() {}
 }

@@ -3,13 +3,49 @@
 
   <form #confirmarForm="ngForm" (ngSubmit)="onSubmit(confirmarForm)">
 
-    <div class="form-row ">
-      <div class="form-group col-md-6">
-        <label for="cpf">CPF</label>
-        <input type="text" class="form-control" name="cpf" id="cpf" placeholder="Confirme seu CPF para prosseguir">
+  <p>Selecione um tipo sanguíneo:</p>
+    
+    <div>
+      <input type="radio" id="huey" name="drone" onclick="myFunction(this.value)" value="A+"
+             checked>
+      <label for="A+">A+</label>
     </div>
- </div>
- 
+    
+    <div>
+      <input type="radio" id="dewey" name="drone" onclick="myFunction(this.value)" value="A-">
+      <label for="A-">A-</label>
+    </div>
+    
+    <div>
+      <input type="radio" id="louie" name="drone" onclick="myFunction(this.value)" value="AB+">
+      <label for="AB+">AB+</label>
+    </div>
+
+    <div>
+      <input type="radio" id="louie" name="drone" onclick="myFunction(this.value)" value="AB-">
+      <label for="AB-">AB-</label>
+    </div>
+
+    <div>
+      <input type="radio" id="louie" name="drone" onclick="myFunction(this.value)" value="B+">
+      <label for="B+">B+</label>
+    </div>
+
+    <div>
+      <input type="radio" id="louie" name="drone" onclick="myFunction(this.value)" value="B-">
+      <label for="B-">B-</label>
+    </div>
+
+    <div>
+      <input type="radio" id="louie" name="drone" onclick="myFunction(this.value)" value="O+">
+      <label for="O+">O+</label>
+    </div>
+
+    <div>
+      <input type="radio" id="louie" name="drone" onclick="myFunction(this.value)" value="O-">
+      <label for="O-">O-</label>
+    </div>
+
     <ng-template #template>
       <div class="modal-header">
         <h4 class="modal-title pull-left">Deseja continuar?</h4>
@@ -21,7 +57,7 @@
         Atenção! Ao clicar em "Continuar" você declara que concorda com os requisitos para ser um doador.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" style="margin:5px;" data-dismiss="modal">Continuar</button>
+        <button type="button" class="btn btn-primary" style="margin:5px;" [disabled]="!cadastroForm.valid" data-dismiss="modal">Continuar</button>
     </div>
     </ng-template>
 

@@ -11,18 +11,25 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class DoadorFormComponent implements OnInit {
 
-  public doador: Doador[]
+  public doador: Doador;
   modalRef: BsModalRef;
+  tipofator: string;
   
   config = {
     backdrop: true,
     ignoreBackdropClick: true
   };
   
-  onSubmit(formulario) {
-    console.log(formulario);
-    this.httpClient.post('https://doacaodesangue.herokuapp.com/doador', formulario.value).pipe(map(res => res)).subscribe(dados => console.log(dados))
+  myFunction(tipo) {
+  this.tipofator = tipo;
   }
+
+  onSubmit(formulario) {
+    this.httpClient.post('https://doacaodesangue.herokuapp.com/doador', this.tipofator)
+    .pipe(map(res => res))
+    .subscribe(dados => console.log(dados))
+  }
+  
   constructor(
     private modalService: BsModalService,
     private httpClient: HttpClient
@@ -33,7 +40,5 @@ export class DoadorFormComponent implements OnInit {
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, this.config);
   }
-  
-  continuar(){}
   
 }
