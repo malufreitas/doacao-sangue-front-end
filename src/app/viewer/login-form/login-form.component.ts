@@ -2,6 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
+import { AuthService } from './auth.service';
+import { Usuario } from 'src/app/model/usuario';
+
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -9,22 +12,24 @@ import { map } from 'rxjs/operators';
 })
 
 export class LoginFormComponent implements OnInit {
-  
-  usuario: any = {
-    email: null,
-    senha: null
-  };
 
-  onSubmit(formulario) {
-    console.log(formulario);
+  private usuario: Usuario = new Usuario();
 
+  //onSubmit(formulario) {
+  fazerLogin() {
+    console.log(this.usuario);
+    this.authService.fazerLogin(this.usuario);
+
+    /*
     this.httpClient.post('https://doacaodesangue.herokuapp.com/login', formulario.value)
       .pipe(map(res => res))
       .subscribe(dados => console.log(dados))
+    */
   }
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {

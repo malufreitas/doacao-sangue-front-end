@@ -17,12 +17,13 @@ import { PagamentoComponent } from './viewer/compra-de-produtos/pagamento/pagame
 import { CarrinhoDeComprasComponent } from './viewer/compra-de-produtos/carrinho-de-compras/carrinho-de-compras.component';
 import { FinalizaCompraComponent } from './viewer/compra-de-produtos/finaliza-compra/finaliza-compra.component';
 import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component';
+import { AuthGuard } from './viewer/guards/auth.guard';
 
 const routes: Routes = [  
   { path: 'login', component: LoginFormComponent },
   { path: 'cadastro', component: CadastroFormComponent },
   { path: 'esqueciminhasenha', component: EsqueciMinhaSenhaComponent },
-  { path: 'produtos', component: ProdutosListaComponent },
+  { path: 'produtos', component: ProdutosListaComponent, canActivate: [AuthGuard] },
   { path: 'catalogo', component: CatalogoProdutosComponent },
   { path: 'carrinho', component: CarrinhoDeComprasComponent },
   { path: 'enderecodeentrega', component: DadosEntregaFormComponent },

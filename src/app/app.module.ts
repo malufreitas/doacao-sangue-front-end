@@ -1,3 +1,4 @@
+import { AuthGuard } from './viewer/guards/auth.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -19,6 +20,8 @@ import { DadosEntregaFormModule } from './viewer/compra-de-produtos/dados-entreg
 import { FinalizaCompraComponent } from './viewer/compra-de-produtos/finaliza-compra/finaliza-compra.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component';
+import { AuthService } from './viewer/login-form/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component'
     RelatorioModule,
     ModalModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
