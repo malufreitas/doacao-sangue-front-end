@@ -1,8 +1,8 @@
-import { AuthGuard } from './viewer/guards/auth.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,8 +11,6 @@ import { CadastroFormModule } from './viewer/cadastro-form/cadastro-form.module'
 import { LoginFormModule } from './viewer/login-form/login-form.module';
 import { ProdutoModule } from './viewer/produto/produto.module';
 import { CatalogoProdutosComponent } from './viewer/compra-de-produtos/catalogo-produtos/catalogo-produtos.component';
-import { RelatorioComponent } from './viewer/relatorio/relatorio.component';
-import { RelatorioModule } from './viewer/relatorio/relatorio.module';
 import { EsqueciMinhaSenhaComponent } from './viewer/esqueci-minha-senha/esqueci-minha-senha.component';
 import { CarrinhoDeComprasComponent } from './viewer/compra-de-produtos/carrinho-de-compras/carrinho-de-compras.component';
 import { PagamentoComponent } from './viewer/compra-de-produtos/pagamento/pagamento.component';
@@ -21,19 +19,19 @@ import { FinalizaCompraComponent } from './viewer/compra-de-produtos/finaliza-co
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component';
 import { AuthService } from './viewer/login-form/auth.service';
-
+import { AuthGuard } from './viewer/guards/auth.guard';
+import { RelatorioModule } from './viewer/relatorio/relatorio.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     DoacaoSangueComponent,
-    RelatorioComponent,
     CatalogoProdutosComponent,
     EsqueciMinhaSenhaComponent,
     CarrinhoDeComprasComponent,
     PagamentoComponent,
     FinalizaCompraComponent,
-    TesteModalComponent
+    TesteModalComponent  
   ],
   imports: [
     BrowserModule,
@@ -45,7 +43,9 @@ import { AuthService } from './viewer/login-form/auth.service';
     HttpClientModule,
     ProdutoModule,
     RelatorioModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    BrowserAnimationsModule
+    //,MatButtonModule
   ],
   providers: [
     AuthService,

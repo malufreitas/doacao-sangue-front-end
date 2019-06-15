@@ -19,24 +19,33 @@ import { FinalizaCompraComponent } from './viewer/compra-de-produtos/finaliza-co
 import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component';
 import { AuthGuard } from './viewer/guards/auth.guard';
 
-const routes: Routes = [  
+const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: 'cadastro', component: CadastroFormComponent },
   { path: 'esqueciminhasenha', component: EsqueciMinhaSenhaComponent },
-  { path: 'produtos', 
-      component: ProdutosListaComponent, 
-      canActivate: [AuthGuard] 
-    },
+  {
+    path: 'produtos',
+    component: ProdutosListaComponent,
+    canActivate: [AuthGuard] //Para guardar essa rota
+  },
   { path: 'catalogo', component: CatalogoProdutosComponent },
-  { path: 'carrinho', component: CarrinhoDeComprasComponent },
-  { path: 'enderecodeentrega', component: DadosEntregaFormComponent },
-  { path: 'pagamento', component: PagamentoComponent },
-  { path: 'finalizacompra', component: FinalizaCompraComponent },
-  { path: 'relatorios', component: RelatorioComponent },    
-  { path: 'relatorio1', component: Relatorio1Component },
-  { path: 'relatorio2', component: Relatorio2Component },
-  { path: 'relatorio3', component: Relatorio3Component },
-  { path: 'relatorio4', component: Relatorio4Component },
+  {
+    path: 'carrinho', component: CarrinhoDeComprasComponent,
+    canActivate: [AuthGuard] //Para guardar essa rota
+  },
+  {
+    path: 'enderecodeentrega', component: DadosEntregaFormComponent,
+    canActivate: [AuthGuard] //Para guardar essa rota 
+  },
+  {
+    path: 'pagamento', component: PagamentoComponent,
+    canActivate: [AuthGuard] //Para guardar essa rota
+  },
+  {
+    path: 'finalizacompra', component: FinalizaCompraComponent,
+    canActivate: [AuthGuard] //Para guardar essa rota
+  },
+  { path: 'relatorio', component: RelatorioComponent },
   { path: 'modal', component: TesteModalComponent },
   { path: '', component: DoacaoSangueComponent },
   //{ path: '', pathMatch: 'full', redirectTo: '' },
