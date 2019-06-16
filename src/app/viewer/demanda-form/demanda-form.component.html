@@ -1,20 +1,7 @@
 <br>
 <div class="container">
 
-  <form #demandaForm="ngForm" (ngSubmit)="onSubmit(demandaForm)">
-
-    <!--<div class="form-row ">-->
-    <!--  <div class="form-group col-md-6">-->
-    <!--    <label for="tipoSanguineo">Tipo Sanguineo</label>-->
-    <!--    <input type="text" class="form-control" name="tipoSanguineo" id="tipoSanguineo" placeholder="Informe o tipo Sanguíneo"-->
-    <!--      [ngModel]="usuario.tipoSanguineo" required #tipoSanguineo="ngModel">-->
-
-    <!--    <div *ngIf="!tipoSanguineo.valid && tipoSanguineo.touched" class="text-danger">-->
-    <!--      Tipo Sanguineo é obrigatório.-->
-    <!--    </div>-->
-    <!--  </div>-->
-    <!--</div>-->
-    
+  <form>
         <p>Selecione um tipo sanguíneo:</p>
     
     <div>
@@ -66,15 +53,16 @@
         </button>
       </div>
       <div class="modal-body">
-        Atenção! Ao clicar em continuar você confirmará a criação da demanda.
+        Atenção! Ao clicar em "Sim" você confirmará a criação da demanda.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" style="margin:5px;"[disabled]="!cadastroForm.valid"  data-dismiss="modal">Continuar</button>
+        <button type="button" class="btn btn-primary" style="margin:5px;" (click)="hideModal()" routerLink="/hemocentro" data-dismiss="modal">Sim</button>
+        <button type="submit" class="btn btn-primary" style="margin:5px;" (click)="justHide()">Não</button>
     </div>
     </ng-template>
 
     <button type="submit" class="btn btn-primary" (click)="openModal(template)">Continuar</button>
-    <button type="submit" class="btn btn-primary"  style="margin:5px;"  routerLink="/hemocentro" [disabled]="!demandaForm.valid">Cancelar</button>
+    <button type="submit" class="btn btn-primary"  style="margin:5px;"  routerLink="/hemocentro">Cancelar</button>
 
   </form>
 </div>

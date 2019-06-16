@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
@@ -10,31 +10,50 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class DemandaFormComponent implements OnInit {
 
-  demanda: any = {nome: null,sobrenome: null};
-  tipofator: string;
+
   modalRef: BsModalRef;
+  
+    demanda: any = {
+    id: 161,
+    status: 1,
+    nome: 'CRE Metropolitano',
+    tipofator: null,
+  };
   
   config = {
     backdrop: true,
     ignoreBackdropClick: true
   };
   
-  onSubmit(formulario) {
-    console.log(formulario);
-    this.httpClient.post('https://doacaodesangue.herokuapp.com/demanda', this.tipofator).pipe(map(res => res)).subscribe(dados => console.log(dados))
-  }
-
   myFunction(tipo) {
-  this.tipofator = tipo;
+  this.demanda.tipofator = tipo;
   }
   
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template, this.config);
+  hideModal(){
+    console.log();
+    this.modalRef.hide();
+    this.enviar();
+    alert('O cadastro de doador foi concluído.')
+  }
+  
+  enviar(){
+    this.httpClient.post('https://doacaodesangue.herokuapp.com/demanda', this.demanda)
+    .pipe(map(res => res))
+    .subscribe(dados => console.log(dados))
+  }
+  
+  justHide(){
+    this.modalRef.hide();
   }
   
   constructor(
     private modalService: BsModalService,
     private httpClient: HttpClient
   ) { }
-  ngOnInit() {}
+  
+  ngOnInit(){}
+  
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, this.config);
+  }
 }

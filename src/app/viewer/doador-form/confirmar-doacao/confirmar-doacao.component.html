@@ -1,8 +1,7 @@
 <br>
 <div class="container">
 
-  <form #confirmarForm="ngForm" (ngSubmit)="onSubmit(confirmarForm)">
-
+  <form>
     <div class="form-row ">
       <div class="form-group col-md-6">
         <label for="cpf">CPF do doador</label>
@@ -18,6 +17,7 @@
     <label for="observacao">Observação</label>
     <input type="text" class="form-control" name="observacao" id="observacao" placeholder="Observação">
   </div>
+
 </div>
 
     <ng-template #template>
@@ -28,13 +28,14 @@
         </button>
       </div>
       <div class="modal-body">
-        Atenção! Ao clicar em continuar você confirmará a doação.
+        Atenção! Ao clicar em "Sim" você confirmará a doação.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" style="margin:5px;"[disabled]="!cadastroForm.valid"  data-dismiss="modal">Continuar</button>
+        <button type="button" class="btn btn-primary" style="margin:5px;" (click)="hideModal()" routerLink="/hemocentro" data-dismiss="modal">Sim</button>
+        <button type="submit" class="btn btn-primary" style="margin:5px;" (click)="justHide()">Não</button>
     </div>
     </ng-template>
-
+    
     <button type="button" class="btn btn-primary" (click)="openModal(template)">Continuar</button>
     <button type="submit" class="btn btn-primary" style="margin:5px;" routerLink="/hemocentro">Cancelar</button>
   </form>

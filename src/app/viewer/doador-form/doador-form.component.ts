@@ -11,9 +11,20 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class DoadorFormComponent implements OnInit {
 
-  public doador: Doador;
   modalRef: BsModalRef;
-  tipofator: string;
+  
+  doador: any = {
+    id: 12,
+    nome: 'magali',
+    email: 'magali@mail.com',
+    tipofator: null,
+    hepatite: false,
+    hltv: false,
+    drogas: false,
+    malaria: false,
+    aids: false,
+    chagas: false,
+  };
   
   config = {
     backdrop: true,
@@ -21,11 +32,25 @@ export class DoadorFormComponent implements OnInit {
   };
   
   myFunction(tipo) {
-  this.tipofator = tipo;
+  this.doador.tipofator = tipo;
   }
-
-  onSubmit(formulario) {
-    this.httpClient.post('https://doacaodesangue.herokuapp.com/doador', this.tipofator)
+  
+  hideModal(){
+    this.justHide();
+    if (this.doador.hepatite == true || this.doador.hltv == true || this.doador.drogas == true || this.doador.malaria == true  ||  this.doador.aids == true || this.doador.chagas == true){
+       alert('Não foi possível terminar o seu cadastro de doador. Por favor, visite a página de "Dúvidas Frequentes" para mais informações.');
+    }else{
+      alert('O cadastro de doador foi concluído.');
+      this.enviar();
+    }
+  }
+  
+  justHide(){
+    this.modalRef.hide();
+  }
+  
+  enviar(){
+    this.httpClient.post('https://doacaodesangue.herokuapp.com/doador', this.doador)
     .pipe(map(res => res))
     .subscribe(dados => console.log(dados))
   }
@@ -40,5 +65,25 @@ export class DoadorFormComponent implements OnInit {
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, this.config);
   }
+  
+  hepatiteFunction(){
+    this.doador.hepatite = true;
+  }
+  hltvFunction(){
+    this.doador.hltv = true;
+  }
+  drogasFunction(){
+    this.doador.drogas = true;
+  }
+  malariaFunction(){
+    this.doador.malaria = true;
+  }
+  aidsFunction(){
+    this.doador.aids = true;
+  }
+  chagasFunction(){
+    this.doador.chagas = true;
+  }
+  
   
 }

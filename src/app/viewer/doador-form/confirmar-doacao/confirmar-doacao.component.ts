@@ -1,5 +1,6 @@
-import { Component, OnInit, TemplateRef  } from '@angular/core';
-import { ConfirmarService } from 'src/app/service/confirmar-service';
+import { Component, OnInit, TemplateRef,   } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 import { Doador } from 'src/app/model/doador';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
@@ -10,8 +11,14 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class ConfirmarDoacaoComponent implements OnInit {
 
-  public doador: Doador[];
+  
   modalRef: BsModalRef;
+  confirmar: any = {
+    cpf: null,
+    qtddoada: null,
+    observacao: null,
+    cnesHemocentro: 2486199,
+  };
   
   config = {
     backdrop: true,
@@ -20,17 +27,37 @@ export class ConfirmarDoacaoComponent implements OnInit {
   
   constructor( 
     private modalService: BsModalService,
-    private ConfirmarService: ConfirmarService
+    private httpClient: HttpClient
   ) {}
 
   ngOnInit(){
-     this.ConfirmarService.getDoador().subscribe(doador => this.doador = doador)
+   
   } 
+
+  hideModal(){
+    this.modalRef.hide();
+    this.enviar();
+    alert('A doação foi confirmada.')
+  }
+  
+  justHide(){
+    this.modalRef.hide();
+  }
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, this.config);
   }
 
+  enviar(){
+    this.httpClient.post('https://doacaodesangue.herokuapp.com/doacao', this.confirmar)
+    .pipe(map(res => res))
+    .subscribe(dados => console.log(dados))
+  }
+
   continuar(){}
 
 }
+
+
+//Caso problemas com CORS ocorra:
+//https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi/related
