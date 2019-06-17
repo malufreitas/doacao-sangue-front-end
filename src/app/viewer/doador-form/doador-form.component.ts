@@ -18,7 +18,8 @@ export class DoadorFormComponent implements OnInit {
     nome: 'magali',
     email: 'magali@mail.com',
     tipofator: null,
-    hepatite: false,
+    hepatiteB: false,
+    hepatiteC: false,
     hltv: false,
     drogas: false,
     malaria: false,
@@ -37,7 +38,13 @@ export class DoadorFormComponent implements OnInit {
   
   hideModal(){
     this.justHide();
-    if (this.doador.hepatite == true || this.doador.hltv == true || this.doador.drogas == true || this.doador.malaria == true  ||  this.doador.aids == true || this.doador.chagas == true){
+    if (this.doador.hepatiteB == true ||
+        this.doador.hepatiteC == true ||
+        this.doador.hltv == true || 
+        this.doador.drogas == true || 
+        this.doador.malaria == true  ||  
+        this.doador.aids == true || 
+        this.doador.chagas == true){
        alert('Não foi possível terminar o seu cadastro de doador. Por favor, visite a página de "Dúvidas Frequentes" para mais informações.');
     }else{
       alert('O cadastro de doador foi concluído.');
@@ -66,9 +73,12 @@ export class DoadorFormComponent implements OnInit {
     this.modalRef = this.modalService.show(template, this.config);
   }
   
-  hepatiteFunction(){
-    this.doador.hepatite = true;
+  hepatiteBFunction(){
+    this.doador.hepatiteB = true;
   }
+  hepatiteCFunction(){
+    this.doador.hepatiteC = true;
+  }  
   hltvFunction(){
     this.doador.hltv = true;
   }

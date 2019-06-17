@@ -49,6 +49,7 @@ export class ConfirmarDoacaoComponent implements OnInit {
   }
 
   enviar(){
+    console.log(this.confirmar);
     this.httpClient.post('https://doacaodesangue.herokuapp.com/doacao', this.confirmar)
     .pipe(map(res => res))
     .subscribe(dados => console.log(dados))

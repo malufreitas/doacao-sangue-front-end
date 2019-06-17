@@ -1,52 +1,32 @@
 <br>
 <div class="container">
-
+  <h3>Cadastro de perfil doador:</h3>
+  <br>
   <form>
-
+<div class="form-row">
+  <div class="form-group col-md-6">
   <p>Selecione um tipo sanguíneo:</p>
-     <div class="form-row ">
-      <div class="form-group col-md-6">
-        <div>
-          <input type="radio" id="huey" name="drone" onclick="myFunction(this.value)" value="A+"checked><label for="A+">A+</label>
-        </div>
-          <div>
-            <input type="radio" id="dewey" name="drone" onclick="myFunction(this.value)" value="A-"><label for="A-">A-</label>
-              </div>
-                <div>
-                  <input type="radio" id="louie" name="drone" onclick="myFunction(this.value)" value="AB+"><label for="AB+">AB+</label>
-                    </div>
-                      <div>
-                      <input type="radio" id="louie" name="drone" onclick="myFunction(this.value)" value="AB-"><label for="AB-">AB-</label>
-                        </div>
-                          <div>
-                            <input type="radio" id="louie" name="drone" onclick="myFunction(this.value)" value="B+"><label for="B+">B+</label>
-                          </div>
-                        <div>
-                      <input type="radio" id="louie" name="drone" onclick="myFunction(this.value)" value="B-"><label for="B-">B-</label>
-                    </div>
-                  <div>
-                <input type="radio" id="louie" name="drone" onclick="myFunction(this.value)" value="O+"><label for="O+">O+</label>
-              </div>
-            <div>
-          <input type="radio" id="louie" name="drone" onclick="myFunction(this.value)" value="O-"><label for="O-">O-</label>
-        </div>
-      </div>
-    </div>
+    <div><input type="radio" id="huey" name="drone" (click)="myFunction(this.value)" value="A+"><label for="A+">A+</label></div>
+    <div><input type="radio" id="dewey" name="drone" (click)="myFunction(this.value)" value="A-"><label for="A-">A-</label></div>
+    <div><input type="radio" id="louie" name="drone" (click)="myFunction(this.value)" value="AB+"><label for="AB+">AB+</label></div>
+    <div><input type="radio" id="louie" name="drone" (click)="myFunction(this.value)" value="AB-"><label for="AB-">AB-</label> </div>
+    <div><input type="radio" id="louie" name="drone" (click)="myFunction(this.value)" value="B+"><label for="B+">B+</label></div>
+    <div><input type="radio" id="louie" name="drone" (click)="myFunction(this.value)" value="B-"><label for="B-">B-</label></div>
+    <div><input type="radio" id="louie" name="drone" (click)="myFunction(this.value)" value="O+"><label for="O+">O+</label></div>
+    <div><input type="radio" id="louie" name="drone" (click)="myFunction(this.value)" value="O-"><label for="O-">O-</label> </div>
+  </div>
+</div>
+
   <p>Marque as opções abaixo nas quais você se encaixa:</p>
-        <div>
-          <input type="checkbox" id="hepatite" (click)="hepatiteFunction()" name="hepatite"><label for="hepatite">Tive hepatite após os 11 anos de idade.</label>
-          <br>
-          <input type="checkbox" id="hltv" (click)="hltvFunction()" name="hltv"><label for="hltv">Tenho doenças associadas aos vírus HTLV I ou II. </label>
-          <br>
-          <input type="checkbox" id="drogas" (click)="drogasFunction()" name="drogas"><label for="drogas">Em um momento da minha vida, usei drogas injetáveis ilícitas. </label>
-          <br>
-          <input type="checkbox" id="malaria" (click)="malariaFunction()" name="malaria"><label for="malaria">Tenho ou já tive malária.</label>
-          <br>
-          <input type="checkbox" id="aids" (click)="aidsFunction()" name="aids"><label for="aids">Tenho Aids (vírus HIV).</label>
-          <br>
-          <input type="checkbox" id="chagas" (click)="chagasFunction()" name="chagas"><label for="chagas">Tenho doença de Chagas.</label>
-          <br>
-        </div>  
+    <div>
+      <input type="checkbox" id="hepatiteB" (click)="hepatiteBFunction()" name="hepatiteB"><label for="hepatiteB">Já tive hepatite B.</label><br>
+      <input type="checkbox" id="hepatiteC" (click)="hepatiteCFunction()" name="hepatiteC"><label for="hepatiteC">Já tive hepatite C.</label><br>
+      <input type="checkbox" id="drogas" (click)="drogasFunction()" name="drogas"><label for="drogas">Em um momento da minha vida, usei drogas injetáveis ilícitas. </label><br>
+      <input type="checkbox" id="malaria" (click)="malariaFunction()" name="malaria"><label for="malaria">Tenho ou já tive malária.</label><br>
+      <input type="checkbox" id="aids" (click)="aidsFunction()" name="aids"><label for="aids">Tenho Aids (vírus HIV).</label><br>
+      <input type="checkbox" id="chagas" (click)="chagasFunction()" name="chagas"><label for="chagas">Tenho doença de Chagas.</label><br>
+      <input type="checkbox" id="hltv" (click)="hltvFunction()" name="hltv"><label for="hltv">Tenho doenças associadas aos vírus HTLV I ou II. </label><br>          
+    </div>  
 
     <ng-template #template>
       <div class="modal-header">
