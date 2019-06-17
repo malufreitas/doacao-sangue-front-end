@@ -1,12 +1,18 @@
 <br>
 
+<div class="row">
 
-<div class="btn-group-vertical">
-    <h4>Relatórios</h4>
-    <a href="/relatorio/1" class="btn btn-dark button1" role="button" aria-pressed="true">Relatorio 1</a>
-    <a href="/relatorio/2" class="btn btn-dark button1" role="button" aria-pressed="true">Relatorio 2</a>
-    <a href="/relatorio/3" class="btn btn-dark button1" role="button" aria-pressed="true">Relatorio 3</a>
+    <div class="col s1">
+        <div class="btn-group-vertical">
+            <h4>Relatórios</h4>
+            <a [routerLink]="1" class="btn btn-dark button1" role="button" aria-pressed="true">Relatorio 1</a>
+            <a [routerLink]="2" class="btn btn-dark button1" role="button" aria-pressed="true">Relatorio 2</a>
+            <a [routerLink]="3" class="btn btn-dark button1" role="button" aria-pressed="true">Relatorio 3</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+
 </div>
-
-
-<router-outlet></router-outlet>

@@ -28,7 +28,6 @@ export class LoginFormComponent implements OnInit {
   }
 
   constructor(
-    private httpClient: HttpClient,
     private authService: AuthService
   ) { }
 

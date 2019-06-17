@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarrinhoDeComprasComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    //private service: CatalogoProdutosService,
+  ) { }
 
   ngOnInit() {
   }
