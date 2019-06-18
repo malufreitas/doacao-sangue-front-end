@@ -1,6 +1,8 @@
 div {
-  border: 100px solid white;
-  padding: 8px;
+  border: 70px solid white;
+  padding: 15px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 h3 {

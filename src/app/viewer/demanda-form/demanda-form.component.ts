@@ -37,6 +37,7 @@ export class DemandaFormComponent implements OnInit {
   }
   
   enviar(){
+    console.log(this.demanda);
     this.httpClient.post('https://doacaodesangue.herokuapp.com/demanda', this.demanda)
     .pipe(map(res => res))
     .subscribe(dados => console.log(dados))

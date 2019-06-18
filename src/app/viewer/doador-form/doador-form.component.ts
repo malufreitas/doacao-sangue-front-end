@@ -57,6 +57,7 @@ export class DoadorFormComponent implements OnInit {
   }
   
   enviar(){
+    console.log(this.doador);
     this.httpClient.post('https://doacaodesangue.herokuapp.com/doador', this.doador)
     .pipe(map(res => res))
     .subscribe(dados => console.log(dados))
