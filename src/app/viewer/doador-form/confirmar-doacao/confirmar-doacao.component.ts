@@ -15,7 +15,7 @@ export class ConfirmarDoacaoComponent implements OnInit {
   modalRef: BsModalRef;
   confirmar: any = {
     cpf: null,
-    qtddoada: null,
+    qtd: null,
     observacao: null,
     cnesHemocentro: 2486199,
   };
@@ -34,30 +34,31 @@ export class ConfirmarDoacaoComponent implements OnInit {
    
   } 
 
-  hideModal(){
+  hideModal(formulario){
     this.modalRef.hide();
-    this.enviar();
-    alert('A doação foi confirmada.')
+    this.enviar(formulario);
   }
   
   justHide(){
     this.modalRef.hide();
   }
 
+  
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, this.config);
   }
-
-  enviar(){
-    console.log(this.confirmar);
-    this.httpClient.post('https://doacaodesangue.herokuapp.com/doacao', this.confirmar)
+    
+  enviar(formulario){
+    console.log(formulario.value);
+    this.httpClient.post('https://doacaodesangue.herokuapp.com/doacao', formulario.value)
     .pipe(map(res => res))
-    .subscribe(dados => console.log(dados))
+    .subscribe(dados => console.log(dados));
+    alert('A doação foi confirmada.');
   }
 
   continuar(){}
 
-}
+  }
 
 
 //Caso problemas com CORS ocorra:

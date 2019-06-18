@@ -1,5 +1,4 @@
 import { AjudaPageComponent } from './viewer/ajuda-page/ajuda-page.component';
-import { HelpPageComponent } from './viewer/hemocentro-page/help-page.component';
 import { ConfirmarDoacaoComponent } from './viewer/doador-form/confirmar-doacao/confirmar-doacao.component';
 import { ProdutosListaComponent } from './viewer/produto/produtos-lista/produtos-lista.component';
 import { NgModule } from '@angular/core';
@@ -32,7 +31,6 @@ const routes: Routes = [
   { path: 'confirmar', component: ConfirmarDoacaoComponent },
   { path: 'demanda', component: DemandaFormComponent },
   { path: 'doador', component: DoadorFormComponent },
-  { path: 'hemocentro', component: HelpPageComponent },
   { path: '', component: DoacaoSangueComponent },
   { path: 'ajuda', component: AjudaPageComponent },
   //{ path: '', pathMatch: 'full', redirectTo: '' },

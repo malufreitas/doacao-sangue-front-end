@@ -29,16 +29,22 @@
             <li class="nav-link">
                 <a routerLink="/catalogo">Catálogo</a>
             </li>
-
-            <li class="nav-link">
-                <a routerLink="/hemocentro">Hemocentro</a>
-            </li>   
+      
             <li class="nav-link">
                 <a routerLink="/doador">Ser um doador</a>
             </li>    
             <li class="nav-link">
                 <a routerLink="/ajuda">Dúvidas Frequentes</a>
             </li>    
+
+            <div ngbDropdown>
+              <button class="btn btn-outline-primary" id="dropdownConfig" ngbDropdownToggle>Hemocentro</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+                <button ngbDropdownItem routerLink="/confirmar">Confirmar a realização de uma doação</button>
+                <button ngbDropdownItem routerLink="/relatorio1">Acessar a página de relatórios</button>
+                <button ngbDropdownItem routerLink="/demanda">Criar uma nova demanda</button>
+              </div>
+            </div>
           
 
         </ul>

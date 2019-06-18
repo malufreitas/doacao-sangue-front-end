@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {NgbDropdownConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'doacao-sangue-front-end';
+  
+    constructor(config: NgbDropdownConfig) {
+    // customize default values of dropdowns used by this component tree
+    config.placement = '';
+    config.autoClose = true;
+  }
+  
 }

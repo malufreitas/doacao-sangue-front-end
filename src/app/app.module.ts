@@ -16,7 +16,6 @@ import { RelatorioModule } from './viewer/relatorio/relatorio.module';
 import { DemandaFormComponent } from './viewer/demanda-form/demanda-form.component';
 import { DoadorFormComponent } from './viewer/doador-form/doador-form.component';
 import { ConfirmarDoacaoComponent } from './viewer/doador-form/confirmar-doacao/confirmar-doacao.component';
-import { HelpPageComponent } from './viewer/hemocentro-page/help-page.component';
 import { AjudaPageComponent } from './viewer/ajuda-page/ajuda-page.component';
 //Bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -35,7 +34,6 @@ import { ConfirmarService } from './service/confirmar-service';
     DemandaFormComponent,
     DoadorFormComponent,
     ConfirmarDoacaoComponent,
-    HelpPageComponent,
     AjudaPageComponent
   ],
   imports: [
