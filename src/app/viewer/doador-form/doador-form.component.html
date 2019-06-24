@@ -1,23 +1,24 @@
 <br>
+<form #myForm="ngForm"  ng-controller="ExampleController">
 <div class="container">
   <h3>Cadastro de perfil doador:</h3>
   <br>
-  <form>
-<div class="form-row">
-  <div class="form-group col-md-6">
-  <p>Selecione um tipo sanguíneo:</p>
-    <div><input type="radio" id="huey" name="drone" (click)="myFunction(this.value)" value="A+"><label for="A+">A+</label></div>
-    <div><input type="radio" id="dewey" name="drone" (click)="myFunction(this.value)" value="A-"><label for="A-">A-</label></div>
-    <div><input type="radio" id="louie" name="drone" (click)="myFunction(this.value)" value="AB+"><label for="AB+">AB+</label></div>
-    <div><input type="radio" id="louie" name="drone" (click)="myFunction(this.value)" value="AB-"><label for="AB-">AB-</label> </div>
-    <div><input type="radio" id="louie" name="drone" (click)="myFunction(this.value)" value="B+"><label for="B+">B+</label></div>
-    <div><input type="radio" id="louie" name="drone" (click)="myFunction(this.value)" value="B-"><label for="B-">B-</label></div>
-    <div><input type="radio" id="louie" name="drone" (click)="myFunction(this.value)" value="O+"><label for="O+">O+</label></div>
-    <div><input type="radio" id="louie" name="drone" (click)="myFunction(this.value)" value="O-"><label for="O-">O-</label> </div>
-  </div>
-</div>
 
-  <p>Marque as opções abaixo nas quais você se encaixa:</p>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+    <p>Selecione um tipo sanguíneo:</p>
+      <div><input type="radio" id="1" name="drone" (click)="setTipo('A+')" value="A+"><label for="A+">A+</label></div>
+      <div><input type="radio" id="2" name="drone" (click)="setTipo('A-')"><label for="A-">A-</label></div>
+      <div><input type="radio" id="3" name="drone" (click)="setTipo('AB+')"><label for="AB+">AB+</label></div>
+      <div><input type="radio" id="4" name="drone" (click)="setTipo('AB-')"><label for="AB-">AB-</label> </div>
+      <div><input type="radio" id="5" name="drone" (click)="setTipo('B+')"><label for="B+">B+</label></div>
+      <div><input type="radio" id="6" name="drone" (click)="setTipo('B-')"><label for="B-">B-</label></div>
+      <div><input type="radio" id="7" name="drone" (click)="setTipo('O+')"><label for="O+">O+</label></div>
+      <div><input type="radio" id="8" name="drone" (click)="setTipo('O-')"><label for="O-">O-</label></div>
+    </div>
+  </div>
+
+  <p> Marque as opções abaixo nas quais você se encaixa:</p>
     <div>
       <input type="checkbox" id="hepatiteB" (click)="hepatiteBFunction()" name="hepatiteB"><label for="hepatiteB">Já tive hepatite B.</label><br>
       <input type="checkbox" id="hepatiteC" (click)="hepatiteCFunction()" name="hepatiteC"><label for="hepatiteC">Já tive hepatite C.</label><br>
@@ -27,6 +28,11 @@
       <input type="checkbox" id="chagas" (click)="chagasFunction()" name="chagas"><label for="chagas">Tenho doença de Chagas.</label><br>
       <input type="checkbox" id="hltv" (click)="hltvFunction()" name="hltv"><label for="hltv">Tenho doenças associadas aos vírus HTLV I ou II. </label><br>          
     </div>  
+
+    <button type="button" class="btn btn-primary" (click)="openModal(template)">Continuar</button>
+    <button type="submit" class="btn btn-primary" style="margin:5px;" routerLink="">Cancelar</button>
+</div>
+</form>
 
     <ng-template #template>
       <div class="modal-header">
@@ -43,8 +49,3 @@
         <button type="submit" class="btn btn-primary" style="margin:5px;" (click)="justHide()">Não</button>
     </div>
     </ng-template>
-
-    <button type="button" class="btn btn-primary" (click)="openModal(template)">Continuar</button>
-    <button type="submit" class="btn btn-primary" style="margin:5px;" routerLink="">Cancelar</button>
-  </form>
-</div>

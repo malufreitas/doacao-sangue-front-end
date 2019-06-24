@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Doador } from 'src/app/model/doador';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-doador-form',
@@ -32,8 +33,8 @@ export class DoadorFormComponent implements OnInit {
     ignoreBackdropClick: true
   };
   
-  myFunction(tipo) {
-  this.doador.tipofator = tipo;
+  setTipo(tipo){
+    this.doador.tipofator = tipo;
   }
   
   hideModal(){
@@ -45,11 +46,11 @@ export class DoadorFormComponent implements OnInit {
         this.doador.malaria == true  ||  
         this.doador.aids == true || 
         this.doador.chagas == true){
-       alert('Não foi possível terminar o seu cadastro de doador. Por favor, visite a página de "Dúvidas Frequentes" para mais informações.');
-    }else{
-      alert('O cadastro de doador foi concluído.');
-      this.enviar();
+           alert('O seu cadastro de doador foi concluído, porém por motivos de saúde você não está apto a doar.'); 
+    }else {
+      alert('O seu cadastro de doador foi concluído.');
     }
+    this.enviar();
   }
   
   justHide(){
@@ -71,6 +72,7 @@ export class DoadorFormComponent implements OnInit {
   ngOnInit(){}
   
   openModal(template: TemplateRef<any>) {
+    console.log(template);
     this.modalRef = this.modalService.show(template, this.config);
   }
   

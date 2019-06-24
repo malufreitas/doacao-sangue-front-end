@@ -25,15 +25,15 @@ export class DemandaFormComponent implements OnInit {
     ignoreBackdropClick: true
   };
   
-  myFunction(tipo) {
-  this.demanda.tipofator = tipo;
-  }
-  
   hideModal(){
     console.log();
     this.modalRef.hide();
     this.enviar();
-    alert('O cadastro de doador foi concluído.')
+    alert('O cadastro da demanda foi concluído.')
+  }
+  
+  setTipo(tipo){
+    this.demanda.tipofator = tipo;
   }
   
   enviar(){
