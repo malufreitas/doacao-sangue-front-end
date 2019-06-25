@@ -12,7 +12,7 @@ import { tap } from 'rxjs/operators';
 export class AuthService {
 
   private usuarioAutenticado: boolean = false;
-  mostrarMenuEmitter =  new EventEmitter<boolean>();
+  //mostrarMenuEmitter =  new EventEmitter<boolean>();
 
   pessoas: Pessoa[];
   
@@ -42,7 +42,7 @@ export class AuthService {
       this.usuarioAutenticado = true;
       
       // Para mostrar o menu caso o usuário estiver logado
-      this.mostrarMenuEmitter.emit(true);
+      //this.mostrarMenuEmitter.emit(true);
 
       // Direcionar para tela home
       this.router.navigate(['/produtos']);

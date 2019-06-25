@@ -9,16 +9,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'doacao-sangue-front-end';
 
-  mostrarMenu: boolean = false;
+  //mostrarMenu: boolean = false;
 
   constructor(
-    private authService: AuthService
+    //private authService: AuthService
   ) {}
 
   ngOnInit() {
+    /*
     this.authService.mostrarMenuEmitter.subscribe(
       mostrar => this.mostrarMenu = mostrar
     );
+    */
   }
 
 

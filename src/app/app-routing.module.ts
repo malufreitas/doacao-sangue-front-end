@@ -45,7 +45,6 @@ const routes: Routes = [
     path: 'finalizacompra', component: FinalizaCompraComponent,
     canActivate: [AuthGuard] //Para guardar essa rota
   },
-  { path: 'relatorio', component: RelatorioComponent },
   { path: 'modal', component: TesteModalComponent },
   { path: '', component: DoacaoSangueComponent },
   //{ path: '', pathMatch: 'full', redirectTo: '' },

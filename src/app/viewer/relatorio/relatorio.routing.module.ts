@@ -1,6 +1,7 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
+
 import { RelatorioComponent } from './relatorio.component';
 import { Relatorio1Component } from './relatorio1/relatorio1.component';
 import { Relatorio2Component } from './relatorio2/relatorio2.component';
