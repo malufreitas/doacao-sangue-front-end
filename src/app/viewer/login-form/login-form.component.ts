@@ -16,9 +16,11 @@ export class LoginFormComponent implements OnInit {
   private usuario: Usuario = new Usuario();
 
   //onSubmit(formulario) {
-  fazerLogin() {
-    console.log(this.usuario);
-    this.authService.fazerLogin(this.usuario);
+  fazerLogin(formulario) {
+    //console.log(formulario.value);
+    //this.authService.fazerLoginAutenticacao(this.usuario);
+    this.authService.fazerLoginAutenticacao(formulario);
+    //this.authService.login(formulario);
 
     /*
     this.httpClient.post('https://doacaodesangue.herokuapp.com/login', formulario.value)
