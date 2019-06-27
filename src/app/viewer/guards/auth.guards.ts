@@ -13,7 +13,7 @@ dinamicamente responsabilidades adicionais a um objeto.
   providedIn: 'root'
 })
 
-export class AuthGuard implements CanActivate {
+export class AuthGuard  implements CanActivate {
 
   constructor(
     private authService: AuthService,
@@ -24,7 +24,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ) : Observable<boolean> | boolean {
+  ): Observable<boolean> | boolean {
 
     if (this.authService.usuarioEstaAutenticado()) {
       return true;
@@ -34,6 +34,7 @@ export class AuthGuard implements CanActivate {
     this.router.navigate(['/login']);
     return false;
   }
-  
+
+
 
 }

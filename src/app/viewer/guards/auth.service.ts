@@ -1,65 +1,87 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Pessoa } from 'src/app/model/pessoa';
 
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class AuthService {
 
-  private usuarioAutenticado: boolean = false;
-  //mostrarMenuEmitter =  new EventEmitter<boolean>();
 
-  private resposta;
+    private usuarioAutenticado: boolean = false;
+    //mostrarMenuEmitter =  new EventEmitter<boolean>();
 
-  pessoas: Pessoa[];
+    private resposta;
 
-  constructor(
-    private router: Router,
-    private http: HttpClient
-  ) { }
+    pessoas: Pessoa[];
 
-
-  login(formulario) {
-    this.http.post<Pessoa[]>('https://doacaodesangue.herokuapp.com/auth/login', formulario.value)
-      .pipe()
-      .subscribe(
-        success => this.resposta = success,
-        error => console.log(error),
-        () => console.log('request completo')
-      );
-
-      return this.resposta;
-  }
+    constructor(
+        private router: Router,
+        private http: HttpClient
+    ) { }
 
 
-  //fazerLoginAutenticacao(formulario) { 
-  fazerLoginAutenticacao(resposta) {
-    //status: 404 erro  -   200 sucesso
 
-    //console.log(formulario);
-    if (this.resposta.status == '200') {
-    //if (formulario.value.email == 'usuario@email.com' && formulario.value.senha == '123') {
-      // Se usuario for autenticado
-      this.usuarioAutenticado = true;
+    autenticacao(formulario) {
+        this.http.post<any>('https://doacaodesangue.herokuapp.com/auth/login', formulario.value)
+            .pipe()
+            .subscribe(
+                success => this.resposta = success,
+                error => console.log(error),
+                () => console.log('request completo')
+            );
 
-      // Para mostrar o menu caso o usuário estiver logado
-      //this.mostrarMenuEmitter.emit(true);
-
-      // Direcionar para tela:
-      this.router.navigate(['/produtos']);
+        return this.resposta;
     }
 
 
-  }
 
 
-  usuarioEstaAutenticado() {
-    return this.usuarioAutenticado;
-  }
+    login(formulario) {
+        this.resposta = this.autenticacao(formulario);
+        //fazerLoginAutenticacao(resposta) {
+        //status: 404 erro  -   200 sucesso
+
+        //if (this.resposta.status == '200') {
+        if (formulario.value.email == 'usuario@email.com' && formulario.value.senha == '123') {
+            // Se usuario for autenticado
+            this.usuarioAutenticado = true;
+
+            // Para mostrar o menu caso o usuário estiver logado
+            //this.mostrarMenuEmitter.emit(true);
+
+            // Direcionar para tela:
+            this.router.navigate(['/produtos']);
+        }
+
+
+    }
+
+
+    usuarioEstaAutenticado() {
+        return this.usuarioAutenticado;
+    }
+
+
+    
+    /*
+        logout(): void {
+            // Limpa o token removendo o usuário do local store para efetuar o logout
+            this.token = null;
+            localStorage.removeItem('currentUser');
+        }
+    */
+
 
 
 }
+
+
+
+
+
