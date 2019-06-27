@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { CadastroFormComponent } from './cadastro-form.component';
+import { CadastroComponent } from './cadastro.component';
 
 @NgModule({
   declarations: [
-    CadastroFormComponent  
+    CadastroComponent  
   ],
   imports: [
     CommonModule,
@@ -15,7 +15,7 @@ import { CadastroFormComponent } from './cadastro-form.component';
     HttpClientModule
   ],
   exports: [
-    CadastroFormComponent
+    CadastroComponent
   ]
 })
-export class CadastroFormModule { }
+export class CadastroModule { }

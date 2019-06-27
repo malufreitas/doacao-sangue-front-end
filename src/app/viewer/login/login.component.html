@@ -2,11 +2,12 @@
 
 <div class="container">
 
-  <aside class="col-sm-4">
+  <!-- essa 'class do aside' deixou o card do login no meio -->
+  <aside class="col-xs-12 col-sm-6 col-md-4 mx-auto">
 
     <div class="card">
 
-      <article class="card-body">
+      <article class="card-body text-center">
 
         <!-- Cadastro padrão -->
         <a href="/cadastro" class="float-right btn btn-outline-success">Quero me cadastrar</a>
@@ -49,7 +50,8 @@
             <!-- Botão submit -->
             <div class="col-md-6">
               <div class="form-group">
-                <button (click)="logar(loginForm)" type="submit" class="btn btn-primary btn-block" [disabled]="!loginForm.valid"> Login
+                <button (click)="logar(loginForm)" type="submit" class="btn btn-primary btn-block"
+                  [disabled]="!loginForm.valid"> Login
                 </button>
               </div>
             </div>

@@ -3,11 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-cadastro-form',
-  templateUrl: './cadastro-form.component.html',
-  styleUrls: ['./cadastro-form.component.css']
+  selector: 'app-cadastro',
+  templateUrl: './cadastro.component.html',
+  styleUrls: ['./cadastro.component.css']
 })
-export class CadastroFormComponent implements OnInit {
+export class CadastroComponent implements OnInit {
 
   usuario: any = {
     nome: null,

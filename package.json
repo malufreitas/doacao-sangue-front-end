@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --host $IP --port $PORT --public-host $C9_HOSTNAME",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -22,6 +22,9 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "@mdi/font": "^3.6.95",
+    "@ng-bootstrap/ng-bootstrap": "^4.2.1",
+    "alertify.js": "^1.0.12",
+    "alertifyjs": "^1.11.3",
     "angular": "^1.7.8",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",

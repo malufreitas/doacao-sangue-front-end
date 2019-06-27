@@ -4,8 +4,8 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { catchError, map } from 'rxjs/operators';
 
 import { ProdutosListaService } from './produtos-lista.service';
-import { Produto } from '../../../model/produto';
 import { HttpClient } from 'selenium-webdriver/http';
+import { Produto } from 'src/app/model/produto';
 
 
 @Component({
