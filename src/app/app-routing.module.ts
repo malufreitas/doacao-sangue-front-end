@@ -17,7 +17,8 @@ import { PagamentoComponent } from './viewer/compra-de-produtos/pagamento/pagame
 import { CarrinhoDeComprasComponent } from './viewer/compra-de-produtos/carrinho-de-compras/carrinho-de-compras.component';
 import { FinalizaCompraComponent } from './viewer/compra-de-produtos/finaliza-compra/finaliza-compra.component';
 import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component';
-import { AuthGuard } from './viewer/guards/auth.guard';
+import { AuthGuard } from './viewer/guards/auth.guards';
+
 
 const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
