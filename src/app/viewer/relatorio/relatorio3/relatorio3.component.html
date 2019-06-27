@@ -1,18 +1,110 @@
-<br>
+<div class="container">
+  <nav>
+    <ul class="mcd-menu">
+      <li>
+        <a href="/demanda">
+          <i class="fa fa-home"></i>
+          <strong>Demanda</strong>
+          <small>Cadastrar uma demanda</small>
+        </a>
+      </li>
+      <br />
+      <li>
+        <a href="/confirmar">
+          <i class="fa fa-edit"></i>
+          <strong>Doação</strong>
+          <small>Confirmar uma doação</small>
+        </a>
+      </li>
+      <!--<br>-->
+      <!--<li>-->
+      <!--	<a href="">-->
+      <!--		<i class="fa fa-gift"></i>-->
+      <!--		<strong>Features</strong>-->
+      <!--		<small>sweet home</small>-->
+      <!--	</a>-->
+      <!--</li>-->
+      <!--<br>-->
+      <!--<li>-->
+      <!--	<a href="">-->
+      <!--		<i class="fa fa-globe"></i>-->
+      <!--		<strong>News</strong>-->
+      <!--		<small>sweet home</small>-->
+      <!--	</a>-->
+      <!--</li>-->
+      <br />
+      <li>
+        <a>
+          <i class="fa fa-comments-o"></i>
+          <strong>Relatórios</strong>
+          <small>Relatórios disponíveis</small>
+        </a>
+        <ul>
+          <li>
+            <a href="/relatorio1"
+              ><i class="fa fa-globe"></i>Quantidade de demandas por tipo
+              sanguíneo</a
+            >
+          </li>
+          <li>
+            <a href="/relatorio2"
+              ><i class="fa fa-group"></i>Quantidade de doadores por tipo
+              sanguíneo</a
+            >
+            <!--<ul>-->
+            <!--	<li><a href="#"><i class="fa fa-female"></i>Leyla Sparks</a></li>-->
+            <!--	<li>-->
+            <!--		<a href="#"><i class="fa fa-male"></i>Gleb Ismailov</a>-->
+            <!--		<ul>-->
+            <!--			<li><a href="#"><i class="fa fa-leaf"></i>About</a></li>-->
+            <!--			<li><a href="#"><i class="fa fa-tasks"></i>Skills</a></li>-->
+            <!--		</ul>-->
+            <!--	</li>-->
+            <!--	<li><a href="#"><i class="fa fa-female"></i>Viktoria Gibbers</a></li>-->
+            <!--</ul>-->
+          </li>
+          <li>
+            <a href="/relatorio3"
+              ><i class="fa fa-trophy"></i>Demandas atendidas por hemocentros
+              com base no tipo sanguíneo</a
+            >
+          </li>
+          <!--<li><a href="#"><i class="fa fa-certificate"></i>Certificates</a></li>-->
+        </ul>
+      </li>
+      <br />
+      <br />
+      <li>
+        <a href="">
+          <i class="fa fa-picture-o"></i>
+          <strong>Sair</strong>
+          <!--<small></small>-->
+        </a>
+      </li>
+      <br />
+      <!--<li>-->
+      <!--	<a href="">-->
+      <!--		<i class="fa fa-envelope-o"></i>-->
+      <!--		<strong>Contacts</strong>-->
+      <!--		<small>drop a line</small>-->
+      <!--	</a>-->
+      <!--</li>-->
+    </ul>
+  </nav>
+</div>
+<!-- Inicio da página relatorio 3-->
+<br />
 
-<div class="row">
-
-  <!-- Tabela de Relatórios -->
-  <div class="container">
+<!-- Tabela de Relatórios -->
+<div class="container2">
+  <div class="center">
     <div class="text-center">
       <h4>Quantidade de demandas por tipo sanguíneo</h4>
-      <br>
+      <br />
 
       <div class="col-md-0">
         <div class="card">
-
           <table class="table table-hover table-striped">
-
             <thead>
               <tr>
                 <th>Tipo sanguíneo</th>
@@ -26,15 +118,9 @@
                 <td>{{ relatorio.count }}</td>
               </tr>
             </tbody>
-
           </table>
-
         </div>
       </div>
     </div>
-
-
-
   </div>
-
 </div>

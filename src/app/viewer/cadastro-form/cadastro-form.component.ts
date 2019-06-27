@@ -30,6 +30,7 @@ export class CadastroFormComponent implements OnInit {
   }
 
   onSubmit(formulario) {
+    
     console.log(formulario);
 
     //this.httpClient.post('https://doacao-de-sangue-helenfranca.c9users.io/pessoa', formulario.value)

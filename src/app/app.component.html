@@ -1,21 +1,23 @@
-<!--
-<head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    
-</head>
--->
+<nav
+  class="navbar navbar-expand-lg navbar bg"
+  style="background-color: #CAEFF2;"
+>
+  <a class="navbar-brand text-danger" href="">Home</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand text-danger" href="">Doação de Sangue</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-
-            <!--
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <!-- 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -29,36 +31,27 @@
                 </div>
             </li>
             -->
+      <li class="nav-link">
+        <a routerLink="">Tuntum</a>
+      </li>
 
-            <li class="nav-link">
-                <a routerLink="">Home</a>
-            </li>
+      <li class="nav-link">
+        <a routerLink="/catalogo">Loja</a>
+      </li>
 
-            <li class="nav-link">
-                <a routerLink="/login">Acessar meu perfil</a>
-            </li>
+      <li class="nav-link">
+        <a routerLink="/login">Login</a>
+      </li>
 
+      <li class="nav-link">
+        <a routerLink="/admin-hemo">Admin-Hemocentro</a>
+      </li>
 
-            <li class="nav-link">
-                <a routerLink="/catalogo">Catálogo</a>
-            </li>
-
-            <li class="nav-link">
-                <a routerLink="/relatorio/1">Relatórios</a>
-            </li>
-
-
-        </ul>
-
-        <!--
-        <form class="form-inline my-2 my-lg-0" #busca="ngForm" (ngSubmit)="onSubmit(busca)">
-            <input class="form-control mr-sm-2" type="search" name="pesquisa" id="pesquisa" placeholder="Search"
-                aria-label="Search" [ngModel]="busca.pesquisa" #pesquisa="ngModel">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        -->
-    </div>
-
+      <li class="nav-link">
+        <a routerLink="/admin-loja">Admin-Loja</a>
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <!-- Onde da o espaço nas laterais do site 

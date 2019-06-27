@@ -1,0 +1,22 @@
+div {
+  border: 70px solid white;
+  padding: 15px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+h3 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #4CAF50;
+}
+
+p {
+  text-align: justify;
+  letter-spacing: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: #008CBA;
+}

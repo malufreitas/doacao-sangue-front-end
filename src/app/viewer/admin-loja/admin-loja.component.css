@@ -15,16 +15,6 @@ body {
     *zoom: 1;
 }
 
-.container2 {
-    top: 100px;
-    left: 300px;
-    width: 900px;
-    position: absolute;
-    margin: 0px auto;
-    padding: 50px 0;
-    clear: both;
-}
-
 .container {
     font-size: 20px;
     top: 50px;
@@ -620,24 +610,10 @@ body {
 		top: 35px;
 	}
 	.mcd-menu li ul a {
-		font-size:50px;
+		font-size:12px;
 	}
 	.mcd-menu li ul a i {
-		font-size:56px;
+		font-size:14px;
 	}
     
 }
-
-
-.button1 {
-    background-color: #555555; /* Black */
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
