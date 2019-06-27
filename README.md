@@ -6,6 +6,9 @@ $ng add angular
 Executar localhost:4200
 $ng serve
 
+Executar em outra porta:
+$ng serve --port 80
+
 Executar localhost:3000
 $json-server --watch db.json
 
@@ -13,7 +16,7 @@ Adicionando o "modals" ao componente (sempre necessário):
 $ng add ngx-bootstrap  --component modals
 
 Adicionando o "carousel" ao componente (sempre necessário):
-ng add ngx-bootstrap  --component carousel
+$ng add ngx-bootstrap  --component carousel
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.

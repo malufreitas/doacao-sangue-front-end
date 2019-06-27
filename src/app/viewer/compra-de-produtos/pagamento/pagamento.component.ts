@@ -24,7 +24,7 @@ export class PagamentoComponent implements AfterViewChecked {
 
 
   // Boleto fácil
-  
+
   // Boleto fácil
 
 
@@ -47,7 +47,7 @@ export class PagamentoComponent implements AfterViewChecked {
             { amount: { total: this.totalAmount, currency: 'BRL' } }
           ]
         }
-      });   
+      });
 
     },
 
@@ -57,7 +57,7 @@ export class PagamentoComponent implements AfterViewChecked {
         window.alert('Pagamento efetuado!');
 
         this.endereco_cobranca = {
-          'rua': payment.payer.payer_info.shipping_address.line1 ,
+          'rua': payment.payer.payer_info.shipping_address.line1,
           'bairro': payment.payer.payer_info.shipping_address.line2,
           'cidade': payment.payer.payer_info.shipping_address.city,
           'estado': payment.payer.payer_info.shipping_address.state,
@@ -65,9 +65,9 @@ export class PagamentoComponent implements AfterViewChecked {
         };
 
         this.compra = {
-          'status': payment.state,  // payment.payer.status ??
+          'status': payment.state,  
           'data': payment.create_time,
-          'pagamento': payment.payer.payment_method, 
+          'pagamento': payment.payer.payment_method,
           'valorTotal': payment.trasactions.amount.total,  //this.totalAmount
           'idendereco': 0,
           'idpessoa': 0
@@ -117,6 +117,8 @@ export class PagamentoComponent implements AfterViewChecked {
     })
   }
 
+
+  //'https://sandbox.boletobancario.com/boletofacil/integration/api/v1/issue-charge'
 
 
 

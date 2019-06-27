@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LoginFormComponent } from './viewer/login-form/login-form.component';
 import { CadastroFormComponent } from './viewer/cadastro-form/cadastro-form.component';
 import { ProdutosListaComponent } from './viewer/produto/produtos-lista/produtos-lista.component';
 import { DadosEntregaFormComponent } from './viewer/compra-de-produtos/dados-entrega-form/dados-entrega-form.component';
-import { DoacaoSangueComponent } from './viewer/doacao-sangue/doacao-sangue.component';
+import { IndexComponent } from './viewer/index/index.component';
 import { RelatorioComponent } from './viewer/relatorio/relatorio.component';
 import { Relatorio1Component } from './viewer/relatorio/relatorio1/relatorio1.component';
 import { Relatorio2Component } from './viewer/relatorio/relatorio2/relatorio2.component';
@@ -18,6 +17,7 @@ import { CarrinhoDeComprasComponent } from './viewer/compra-de-produtos/carrinho
 import { FinalizaCompraComponent } from './viewer/compra-de-produtos/finaliza-compra/finaliza-compra.component';
 import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component';
 import { AuthGuard } from './viewer/guards/auth.guard';
+import { LoginFormComponent } from './viewer/login/login.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
@@ -39,14 +39,14 @@ const routes: Routes = [
   },
   {
     path: 'pagamento', component: PagamentoComponent,
-    canActivate: [AuthGuard] //Para guardar essa rota
+    //canActivate: [AuthGuard] //Para guardar essa rota
   },
   {
     path: 'finalizacompra', component: FinalizaCompraComponent,
     canActivate: [AuthGuard] //Para guardar essa rota
   },
   { path: 'modal', component: TesteModalComponent },
-  { path: '', component: DoacaoSangueComponent },
+  { path: '', component: IndexComponent },
   //{ path: '', pathMatch: 'full', redirectTo: '' },
 ];
 

@@ -1,4 +1,3 @@
-import { AuthService } from './viewer/login-form/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'doacao-sangue-front-end';
+  title = 'Tumtun Doação de Sangue';
 
   //mostrarMenu: boolean = false;
 

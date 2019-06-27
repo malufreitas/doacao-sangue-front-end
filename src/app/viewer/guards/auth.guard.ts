@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { AuthService } from './auth.service';
 
-import { AuthService } from './../login-form/auth.service';
 
 /* Decorator: padrão de projeto de software que 
 permite adicionar um comportamento a um objeto já
