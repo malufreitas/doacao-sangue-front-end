@@ -14,10 +14,8 @@ export class DemandaFormComponent implements OnInit {
   modalRef: BsModalRef;
   
     demanda: any = {
-    id: 161,
-    status: 1,
-    nome: 'CRE Metropolitano',
-    tipofator: null,
+    idhemocentro:3,
+    tiposanguineo: null,
   };
   
   config = {
@@ -33,7 +31,7 @@ export class DemandaFormComponent implements OnInit {
   }
   
   setTipo(tipo){
-    this.demanda.tipofator = tipo;
+    this.demanda.tiposanguineo = tipo;
   }
   
   enviar(){

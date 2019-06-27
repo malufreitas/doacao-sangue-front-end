@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Doador } from 'src/app/model/doador';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-confirmar-doacao',
   templateUrl: './confirmar-doacao.component.html',

@@ -23,6 +23,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 //Bootstrap
 //Services
 import { ConfirmarService } from './service/confirmar-service';
+import { AdminHemocentroComponent } from './viewer/admin-hemocentro/admin-hemocentro.component';
+import { AdminLojaComponent } from './viewer/admin-loja/admin-loja.component';
 //Services
 
 @NgModule({
@@ -34,7 +36,9 @@ import { ConfirmarService } from './service/confirmar-service';
     DemandaFormComponent,
     DoadorFormComponent,
     ConfirmarDoacaoComponent,
-    AjudaPageComponent
+    AjudaPageComponent,
+    AdminHemocentroComponent,
+    AdminLojaComponent
   ],
   imports: [
     NgbModule,

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar bg" style="background-color: #CAEFF2;">
-    <a class="navbar-brand text-danger" href="">Doação de Sangue</a>
+    <a class="navbar-brand text-danger" href="">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,37 +23,25 @@
             </li>
             -->
             <li class="nav-link">
-                <a routerLink="/login">Acessar meu perfil</a>
+                <a routerLink="">Tuntum</a>
             </li>
 
             <li class="nav-link">
-                <a routerLink="/catalogo">Catálogo</a>
+                <a routerLink="/catalogo">Loja</a>
             </li>
       
             <li class="nav-link">
-                <a routerLink="/doador">Ser um doador</a>
-            </li>    
+                <a routerLink="/login">Login</a>
+            </li>  
+            
             <li class="nav-link">
-                <a routerLink="/ajuda">Dúvidas Frequentes</a>
+                <a routerLink="/admin-hemo">Admin-Hemocentro</a>
+            </li>
+            
+            <li class="nav-link">
+                <a routerLink="/admin-loja">Admin-Loja</a>
             </li>    
-
-            <div ngbDropdown>
-              <button class="btn btn-outline-primary" id="dropdownConfig" ngbDropdownToggle>Hemocentro</button>
-              <div ngbDropdownMenu aria-labelledby="dropdownConfig">
-                <button ngbDropdownItem routerLink="/confirmar">Confirmar a realização de uma doação</button>
-                <button ngbDropdownItem routerLink="/relatorio1">Acessar a página de relatórios</button>
-                <button ngbDropdownItem routerLink="/demanda">Criar uma nova demanda</button>
-              </div>
-            </div>
-          
-
         </ul>
-
-        <form class="form-inline my-2 my-lg-0" #busca="ngForm" (ngSubmit)="onSubmit(busca)">
-            <input class="form-control mr-sm-2" type="search" name="pesquisa" id="pesquisa" placeholder="Search"
-                aria-label="Search" [ngModel]="busca.pesquisa" #pesquisa="ngModel">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
     </div>
     
     

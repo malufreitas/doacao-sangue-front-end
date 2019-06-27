@@ -16,6 +16,8 @@ import { Relatorio3Component } from './viewer/relatorio/relatorio3/relatorio3.co
 import { Relatorio4Component } from './viewer/relatorio/relatorio4/relatorio4.component';
 import { DoadorFormComponent } from './viewer/doador-form/doador-form.component';
 import { DemandaFormComponent } from './viewer/demanda-form/demanda-form.component';
+import { AdminHemocentroComponent } from './viewer/admin-hemocentro/admin-hemocentro.component';
+import { AdminLojaComponent } from './viewer/admin-loja/admin-loja.component';
 
 const routes: Routes = [  
   { path: 'login', component: LoginFormComponent },
@@ -33,6 +35,8 @@ const routes: Routes = [
   { path: 'doador', component: DoadorFormComponent },
   { path: '', component: DoacaoSangueComponent },
   { path: 'ajuda', component: AjudaPageComponent },
+  { path: 'admin-hemo', component: AdminHemocentroComponent },
+  { path: 'admin-loja', component: AdminLojaComponent },
   //{ path: '', pathMatch: 'full', redirectTo: '' },
 ];
 

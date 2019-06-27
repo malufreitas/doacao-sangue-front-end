@@ -15,9 +15,7 @@ export class DoadorFormComponent implements OnInit {
   modalRef: BsModalRef;
   
   doador: any = {
-    id: 12,
-    nome: 'magali',
-    email: 'magali@mail.com',
+    cpf:78945612300,
     tipofator: null,
     hepatiteB: false,
     hepatiteC: false,
@@ -72,7 +70,6 @@ export class DoadorFormComponent implements OnInit {
   ngOnInit(){}
   
   openModal(template: TemplateRef<any>) {
-    console.log(template);
     this.modalRef = this.modalService.show(template, this.config);
   }
   

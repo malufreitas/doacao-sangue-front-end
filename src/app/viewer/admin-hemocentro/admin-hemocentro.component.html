@@ -1,4 +1,3 @@
-
 <div class="container">
 <nav>
 		<ul class="mcd-menu">
@@ -79,38 +78,4 @@
 			<!--</li>-->
 		</ul>
 	</nav>
-</div>
-<!-- Inicio da página relatorio 2-->
-<br>
-
-  <!-- Tabela de Relatórios -->
-  <div class="container2">
-  <div class="center">
-    <div class="text-center">
-      <h4>Quantidade de doadores por tipo sanguíneo</h4>
-      <br>
-
-      <div class="col-md-0">
-        <div class="card">
-
-          <table class="table table-hover table-striped">
-
-            <thead>
-              <tr>
-                <th>Tipo sanguíneo</th>
-                <th>Quantidade de doadores</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr *ngFor="let relatorio of relatorios">
-                <td>{{ relatorio.tipofator }}</td>
-                <td>{{ relatorio.qtddoador }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
