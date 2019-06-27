@@ -8,15 +8,67 @@
       <h4>Produtos</h4>
     </div>
 
+
     <div class="float-right">
       <!--button type="button" class="btn btn-primary" [routerLink]="['novoProduto']"-->
-      <button type="button" class="btn btn-primary">
+      <button (click)="novoProdutoModal(template)" type="button" class="btn btn-primary">
+        <!-- Pendente, novo produto -->
         Novo Produto
       </button>
+
+      <!-- Abre um pop-up modal para inserir um novo produto -->
+      <ng-template #template>
+
+        <div class="modal-body text-center">
+          <form #formulario>
+
+            <!-- Camisas - Radio button -->
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-input" id="camisa" name="inlineDefaultRadiosExample"
+                mdbInput>
+              <label class="custom-control-label" for="defaultInline1">Camisa</label>
+            </div>
+
+            <!-- Canecas - Radio button -->
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-input" id="caneca" name="inlineDefaultRadiosExample"
+                mdbInput>
+              <label class="custom-control-label" for="defaultInline2">Caneca</label>
+            </div>
+
+            <!-- Botton - Radio button -->
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-input" id="botton" name="inlineDefaultRadiosExample"
+                mdbInput>
+              <label class="custom-control-label" for="defaultInline3">Botton</label>
+            </div>
+
+            <input type="text" class="form-control" name="nomeProduto" id="nomeProduto" placeholder="Nome do produto">
+            <input type="number" class="form-control" name="valorUnitario" id="valorUnitario"
+              placeholder="Valor do produto">
+            <input type="number" class="form-control" name="quantidade" id="quantidade" placeholder="Quantidade">
+            <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Descrição">
+            <!--
+            <div class="form-row ">
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome">
+              </div>
+            </div>
+            -->
+          </form>
+          <button type="button" class="btn btn-default" (click)="cancelar()">Cancelar</button>
+          <button type="button" class="btn btn-primary" (click)="salvar(formulario)">Salvar</button>
+        </div>
+
+      </ng-template>
+
     </div>
 
   </div>
 
+
+
+  <!-- Tabela para listar os produtos -->
   <div class="card-body">
 
     <!--Só vai mostrar produtos caso exista produtos-->
@@ -42,10 +94,12 @@
           <td>
             <span class="float-right">
               <button class="btn btn-outline-warning mb-1 btn-sm">
+                <!-- Pendendo botão atualizar -->
                 Atualizar
               </button>
               {{ '' }}
               <button class="btn btn-outline-danger mb-1 btn-sm">
+                <!-- Pendente botão remover -->
                 Remover
               </button>
             </span>
@@ -69,4 +123,3 @@
   </div>
 
 </div>
-

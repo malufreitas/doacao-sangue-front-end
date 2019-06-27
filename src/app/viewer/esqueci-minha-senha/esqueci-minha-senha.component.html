@@ -1,0 +1,25 @@
+<br>
+
+<div class="container">
+
+  
+    <article class="card-body">
+
+  <form #esqueciSenhaForm="ngForm" (ngSubmit)="onSubmit(esqueciSenhaForm)">
+
+    <div class="form-row ">
+
+      <div class="form-group col-md-12">
+        <label for="email">Recuperar minha senha</label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="nome@email.com">
+          <!-- [ngModel]="email" required email #email="ngModel" -->
+      </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary" >Submit</button>
+    <!-- [disabled]="!esqueciSenhaForm.valid" -->
+
+  </form>
+    </article>
+</div>

@@ -1,0 +1,47 @@
+<br><br>
+
+
+<div class="container">
+
+  <div class="card">
+
+    <div class="card-header">
+
+      <div class="float-left">
+        <h4>Formas de pagamento</h4>
+      </div>
+
+    </div>
+
+    <div class="card-body">
+
+      <div class="text-center">
+        <!-- Botão de pagamento paypal -->
+        <input type="number" [(ngModel)]="totalAmount" style="padding-bottom: 10px;">
+        <h2 *ngIf="paypalLoad">Paypal button is loading...</h2>
+        <div id="paypal-checkout-btn"></div>
+        <!-- Botão de pagamento paypal -->
+
+
+        <!-- Botão de pagamento boleto -->
+        <form action="https://sandbox.boletobancario.com/boletofacil/integration/button/checkout.html" method="post">
+          <input type="hidden" name="code" value="C43BEA185DCCEC4F" />
+          <input type="image"
+            src="https://sandbox.boletobancario.com/boletofacil/img/payment-buttons/button-box-medium.png" name="submit"
+            alt="Pague com Boleto Banc&aacute;rio!" />
+          <div id="boleto-checkout-btn"></div>
+        </form>
+        <!-- Botão de pagamento boleto -->
+
+      </div>
+
+
+      <a href="/enderecodeentrega" class="float-left btn btn-outline-warning">Voltar</a>
+
+      <a href="/finalizacompra" class="float-right btn btn-outline-success">Finalizar compra</a>
+
+    </div>
+
+  </div>
+
+</div>

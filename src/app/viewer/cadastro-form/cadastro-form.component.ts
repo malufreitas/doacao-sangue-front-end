@@ -21,7 +21,16 @@ export class CadastroFormComponent implements OnInit {
     confirmarSenha: null
   };
 
+
+  constructor(
+    private httpClient: HttpClient
+  ) { }
+
+  ngOnInit() {
+  }
+
   onSubmit(formulario) {
+    
     console.log(formulario);
 
     //this.httpClient.post('https://doacao-de-sangue-helenfranca.c9users.io/pessoa', formulario.value)
@@ -29,13 +38,6 @@ export class CadastroFormComponent implements OnInit {
     .pipe(map(res => res))
     .subscribe(dados => console.log(dados))
 
-  }
-
-  constructor(
-    private httpClient: HttpClient
-  ) { }
-
-  ngOnInit() {
   }
 
 }

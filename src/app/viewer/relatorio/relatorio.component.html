@@ -1,8 +1,48 @@
-<br>
+<br />
 
-<div class="btn-group-vertical">
-    <h4>Relatórios</h4>
-    <a href="/relatorio1" class="btn btn-dark button1" role="button" aria-pressed="true">Relatorio 1</a>
-    <a href="/relatorio2" class="btn btn-dark button1" role="button" aria-pressed="true">Relatorio 2</a>
-    <a href="/relatorio3" class="btn btn-dark button1" role="button" aria-pressed="true">Relatorio 3</a>
+<!--
+<div class="col-xl-3 col-lg-4 col-md-5">
+  
+    <div class="sidebar-categories">
+  
+      <div class="head bg-danger text-white rounded">
+          <ul routerLink="/login">Olá</ul>
+          <ul>Olá</ul>
+          <ul>Olá</ul>
+        </div>
+    </div>
+</div>
+-->
+
+<div class="row">
+  <div class="col s1">
+    <div class="btn-group-vertical">
+      <h4>Relatórios</h4>
+      <a
+        [routerLink]="1"
+        class="btn btn-dark button1"
+        role="button"
+        aria-pressed="true"
+        >Relatorio 1</a
+      >
+      <a
+        [routerLink]="2"
+        class="btn btn-dark button1"
+        role="button"
+        aria-pressed="true"
+        >Relatorio 2</a
+      >
+      <a
+        [routerLink]="3"
+        class="btn btn-dark button1"
+        role="button"
+        aria-pressed="true"
+        >Relatorio 3</a
+      >
+    </div>
+  </div>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 </div>

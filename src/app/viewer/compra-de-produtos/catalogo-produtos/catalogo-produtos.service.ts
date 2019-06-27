@@ -2,9 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-import { Categoria } from '../../model/categoria';
-import { Genero } from '../../model/genero';
+import { Categoria } from 'src/app/model/categoria';
+import { Genero } from 'src/app/model/genero';
 import { Produto } from 'src/app/model/produto';
+
 
 @Injectable({
   providedIn: 'root'
