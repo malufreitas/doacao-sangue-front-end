@@ -31,7 +31,7 @@ export class AuthService {
         this.http.post<any>('https://doacaodesangue.herokuapp.com/auth/login', formulario.value)
             .pipe()
             .subscribe(
-                success => this.resposta = success,
+                success => console.log(success), //resposta do servidor com o status 404 ou 200
                 error => console.log(error),
                 () => console.log('request completo')
             );
@@ -44,6 +44,7 @@ export class AuthService {
 
     login(formulario) {
         this.resposta = this.autenticacao(formulario);
+        console.log('>>>>>>>', this.resposta);
         //fazerLoginAutenticacao(resposta) {
         //status: 404 erro  -   200 sucesso
 
