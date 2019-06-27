@@ -1,3 +1,4 @@
+import { HomeComponent } from './viewer/home/home';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,7 +9,6 @@ import { CarouselModule } from 'ngx-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DoacaoSangueComponent } from './viewer/doacao-sangue/doacao-sangue.component';
 import { CadastroFormModule } from './viewer/cadastro-form/cadastro-form.module';
 import { LoginFormModule } from './viewer/login-form/login-form.module';
 import { ProdutoModule } from './viewer/produto/produto.module';
@@ -20,14 +20,14 @@ import { DadosEntregaFormModule } from './viewer/compra-de-produtos/dados-entreg
 import { FinalizaCompraComponent } from './viewer/compra-de-produtos/finaliza-compra/finaliza-compra.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component';
-import { AuthService } from './viewer/login-form/auth.service';
-import { AuthGuard } from './viewer/guards/auth.guard';
 import { RelatorioModule } from './viewer/relatorio/relatorio.module';
+import { AuthService } from './viewer/guards/auth.service';
+import { AuthGuard } from './viewer/guards/auth.guards';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DoacaoSangueComponent,
+    HomeComponent,
     CatalogoProdutosComponent,
     EsqueciMinhaSenhaComponent,
     CarrinhoDeComprasComponent,

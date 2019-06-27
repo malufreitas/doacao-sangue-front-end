@@ -5,7 +5,6 @@ import { LoginFormComponent } from './viewer/login-form/login-form.component';
 import { CadastroFormComponent } from './viewer/cadastro-form/cadastro-form.component';
 import { ProdutosListaComponent } from './viewer/produto/produtos-lista/produtos-lista.component';
 import { DadosEntregaFormComponent } from './viewer/compra-de-produtos/dados-entrega-form/dados-entrega-form.component';
-import { DoacaoSangueComponent } from './viewer/doacao-sangue/doacao-sangue.component';
 import { RelatorioComponent } from './viewer/relatorio/relatorio.component';
 import { Relatorio1Component } from './viewer/relatorio/relatorio1/relatorio1.component';
 import { Relatorio2Component } from './viewer/relatorio/relatorio2/relatorio2.component';
@@ -18,6 +17,7 @@ import { CarrinhoDeComprasComponent } from './viewer/compra-de-produtos/carrinho
 import { FinalizaCompraComponent } from './viewer/compra-de-produtos/finaliza-compra/finaliza-compra.component';
 import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component';
 import { AuthGuard } from './viewer/guards/auth.guards';
+import { HomeComponent } from './viewer/home/home';
 
 
 const routes: Routes = [
@@ -47,7 +47,7 @@ const routes: Routes = [
     canActivate: [AuthGuard] //Para guardar essa rota
   },
   { path: 'modal', component: TesteModalComponent },
-  { path: '', component: DoacaoSangueComponent },
+  { path: '', component: HomeComponent },
   //{ path: '', pathMatch: 'full', redirectTo: '' },
 ];
 

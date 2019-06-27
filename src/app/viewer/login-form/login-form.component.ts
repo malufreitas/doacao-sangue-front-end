@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
-import { AuthService } from './auth.service';
 import { Usuario } from 'src/app/model/usuario';
+import { AuthService } from '../guards/auth.service';
 
 @Component({
   selector: 'app-login-form',

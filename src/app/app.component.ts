@@ -1,4 +1,3 @@
-import { AuthService } from './viewer/login-form/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
