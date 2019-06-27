@@ -22,7 +22,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component';
 import { RelatorioModule } from './viewer/relatorio/relatorio.module';
 import { AuthService } from './viewer/guards/auth.service';
-import { AuthGuard } from './viewer/guards/auth.guards';
+import { AuthGuard } from './viewer/guards/auth.guard';
 
 @NgModule({
   declarations: [

@@ -16,10 +16,6 @@ export class AuthService {
     private usuarioAutenticado: boolean = false;
     //mostrarMenuEmitter =  new EventEmitter<boolean>();
 
-    private resposta;
-
-    pessoas: Pessoa[];
-
     constructor(
         private router: Router,
         private http: HttpClient
@@ -35,17 +31,15 @@ export class AuthService {
                 error => console.log(error),
                 () => console.log('request completo')
             );
-
-        return this.resposta;
     }
 
 
 
 
     login(formulario) {
-        this.resposta = this.autenticacao(formulario);
-        console.log('>>>>>>>', this.resposta);
-        //fazerLoginAutenticacao(resposta) {
+        //this.resposta = this.autenticacao(formulario);
+        //console.log('>>>>>>>', this.resposta);
+
         //status: 404 erro  -   200 sucesso
 
         //if (this.resposta.status == '200') {
@@ -69,7 +63,7 @@ export class AuthService {
     }
 
 
-    
+
     /*
         logout(): void {
             // Limpa o token removendo o usuário do local store para efetuar o logout

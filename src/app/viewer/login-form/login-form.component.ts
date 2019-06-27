@@ -1,6 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
 
 import { Usuario } from 'src/app/model/usuario';
 import { AuthService } from '../guards/auth.service';

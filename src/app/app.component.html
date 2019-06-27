@@ -31,21 +31,31 @@
             -->
 
             <li class="nav-link">
-                <a routerLink="">Home</a>
+                <a [routerLink]="['']">Home</a>
             </li>
 
             <li class="nav-link">
-                <a routerLink="/login">Acessar meu perfil</a>
+                <a [routerLink]="['/login']">Acessar meu perfil</a>
             </li>
 
 
             <li class="nav-link">
-                <a routerLink="/catalogo">Catálogo</a>
+                <a [routerLink]="['/catalogo']">Catálogo</a>
             </li>
 
             <li class="nav-link">
-                <a routerLink="/relatorio/1">Relatórios</a>
+                <a [routerLink]="['/relatorio/1']">Relatórios</a>
             </li>
+
+            <!--
+            <ul *ngIf="logado">
+                <li><a [routerLink]="" (click)="sair()">Sair</a></li>
+            </ul>
+            <ul *ngIf="!logado">
+                <li><a [routerLink]="['/login']" style="color:white;padding-right: 10px;padding-left: 10px;">Logar</a>
+                </li>
+            </ul>
+-->
 
 
         </ul>
