@@ -21,21 +21,19 @@ import { ConfirmarDoacaoComponent } from "./viewer/doador-form/confirmar-doacao/
 import { AjudaPageComponent } from "./viewer/ajuda-page/ajuda-page.component";
 import { AdminHemocentroComponent } from "./viewer/admin-hemocentro/admin-hemocentro.component";
 import { AdminLojaComponent } from "./viewer/admin-loja/admin-loja.component";
-import { HomeComponent } from './viewer/home/home';
-import { RelatorioComponent } from './viewer/relatorio/relatorio.component';
-import { Relatorio1Component } from './viewer/relatorio/relatorio1/relatorio1.component';
-import { Relatorio2Component } from './viewer/relatorio/relatorio2/relatorio2.component';
-import { Relatorio3Component } from './viewer/relatorio/relatorio3/relatorio3.component';
-import { Relatorio4Component } from './viewer/relatorio/relatorio4/relatorio4.component';
-import { DemandaFormComponent } from './viewer/admin-hemocentro/demanda-form/demanda-form.component';
-import { ProdutoModule } from './viewer/admin-loja/produto/produto.module';
-import { LoginModule } from './viewer/login/login.module';
-import { AuthService } from './viewer/guards/auth.service';
-import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component';
-import { CadastroModule } from './viewer/cadastro/cadastro.module';
-import { ConfirmarService } from './viewer/doador-form/confirmar-doacao/confirmar-service';
-
-
+import { HomeComponent } from "./viewer/home/home";
+import { RelatorioComponent } from "./viewer/relatorio/relatorio.component";
+import { Relatorio1Component } from "./viewer/relatorio/relatorio1/relatorio1.component";
+import { Relatorio2Component } from "./viewer/relatorio/relatorio2/relatorio2.component";
+import { Relatorio3Component } from "./viewer/relatorio/relatorio3/relatorio3.component";
+import { Relatorio4Component } from "./viewer/relatorio/relatorio4/relatorio4.component";
+import { DemandaFormComponent } from "./viewer/admin-hemocentro/demanda-form/demanda-form.component";
+import { ProdutoModule } from "./viewer/admin-loja/produto/produto.module";
+import { LoginModule } from "./viewer/login/login.module";
+import { AuthService } from "./viewer/guards/auth.service";
+import { TesteModalComponent } from "./viewer/teste-modal/teste-modal.component";
+import { CadastroModule } from "./viewer/cadastro/cadastro.module";
+import { ConfirmarService } from "./viewer/doador-form/confirmar-doacao/confirmar-service";
 
 @NgModule({
   declarations: [
@@ -75,11 +73,8 @@ import { ConfirmarService } from './viewer/doador-form/confirmar-doacao/confirma
     CarouselModule.forRoot()
     //,MatButtonModule
   ],
-  providers: [
-    AuthService, 
-    AuthGuard, 
-    ConfirmarService
-  ],
-  bootstrap: [AppComponent]
+  providers: [AuthService, AuthGuard, ConfirmarService],
+  bootstrap: [AppComponent],
+  entryComponents: [ConfirmarDoacaoComponent]
 })
 export class AppModule {}
