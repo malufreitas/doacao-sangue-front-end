@@ -131,4 +131,7 @@ export class PagamentoComponent implements AfterViewChecked {
   .subscribe();
  }
 
+ openBoleto() {
+  'https://sandbox.boletobancario.com/boletofacil/integration/button/checkout.html?code=AF98B551FBA7C2CF'
+ }
 }
