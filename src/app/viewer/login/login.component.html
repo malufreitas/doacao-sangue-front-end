@@ -26,7 +26,7 @@
           <!-- E-mail -->
           <div class="form-group">
             <input type="text" class="form-control" name="email" id="email" placeholder="Login"
-              [(ngModel)]="usuario.login" required #email="ngModel">
+              [(ngModel)]="usuario.email" required #email="ngModel">
 
             <div *ngIf="!email.valid && email.touched" class="text-danger">
               E-mail é obrigatório.

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tap, delay } from 'rxjs/operators';
+import { tap, delay, map } from 'rxjs/operators';
 
 import { environment } from 'src/environments/environment';
 import { Produto } from 'src/app/model/produto';
@@ -10,8 +10,11 @@ import { Produto } from 'src/app/model/produto';
 })
 export class ProdutosListaService {
 
-  private readonly API = `${environment.API}produto`;
-  //private readonly API = 'http://localhost:3000/produto'
+  //private readonly API = `${environment.API}produto`;
+  private readonly API = 'http://localhost:3000/produto'
+  //private readonly API = 'https://doacaodesangue.herokuapp.com/produto'
+
+  
 
   constructor(
     private http: HttpClient
@@ -19,10 +22,16 @@ export class ProdutosListaService {
 
   list() {
     return this.http.get<Produto[]>(this.API).
-    pipe(
-      delay(2000),
-      tap(console.log) //para debugar, ver os erros
-    );
+      pipe(
+        delay(2000),
+        tap(console.log) //para debugar, ver os erros
+      );
+  }
+
+  salvarProdutos(formulario) {
+    this.http.post(this.API, formulario.value)
+      .pipe(map(res => res))
+      .subscribe(dados => console.log(dados))
   }
 
 }

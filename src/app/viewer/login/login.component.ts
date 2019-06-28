@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
 import { AuthService } from '../guards/auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -10,17 +10,24 @@ import { AuthService } from '../guards/auth.service';
 
 export class LoginComponent implements OnInit {
 
-  logar(formulario) {
-    console.log(formulario.value);
-    this.authService.autenticacao(formulario);
-    //this.authService.login(formulario);
-  }
+  
+  usuario: any = {
+    email: null,
+    senha: null
+  };
+
 
   constructor(
     private authService: AuthService
   ) { }
 
   ngOnInit() {
+  }
+
+  logar(formulario) {
+    console.log(formulario.value);
+    //this.authService.autenticacao(formulario);
+    this.authService.login(formulario);
   }
 
   verificaValidTouched(campo) {

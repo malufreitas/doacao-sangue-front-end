@@ -11,7 +11,7 @@
 
     <div class="float-right">
       <!--button type="button" class="btn btn-primary" [routerLink]="['novoProduto']"-->
-      <button (click)="novoProdutoModal(template)" type="button" class="btn btn-primary">
+      <button (click)="openModal(template)" type="button" class="btn btn-primary">
         <!-- Pendente, novo produto -->
         Novo Produto
       </button>
@@ -24,29 +24,29 @@
 
             <!-- Camisas - Radio button -->
             <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" class="custom-control-input" id="camisa" name="inlineDefaultRadiosExample"
-                mdbInput>
-              <label class="custom-control-label" for="defaultInline1">Camisa</label>
+              <input (click)="setCategoria('Camisa')" type="radio" class="custom-control-input" id="camisa" name="camisa" mdbInput>
+              <label class="custom-control-label" for="camisa">Camisa</label>
             </div>
 
             <!-- Canecas - Radio button -->
             <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" class="custom-control-input" id="caneca" name="inlineDefaultRadiosExample"
-                mdbInput>
-              <label class="custom-control-label" for="defaultInline2">Caneca</label>
+              <input (click)="setCategoria('Caneca')" type="radio" class="custom-control-input" id="caneca" name="caneca" mdbInput>
+              <label class="custom-control-label" for="caneca">Caneca</label>
             </div>
 
             <!-- Botton - Radio button -->
             <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" class="custom-control-input" id="botton" name="inlineDefaultRadiosExample"
-                mdbInput>
-              <label class="custom-control-label" for="defaultInline3">Botton</label>
+              <input (click)="setCategoria('Botton')" type="radio" class="custom-control-input" id="botton" name="botton" mdbInput>
+              <label class="custom-control-label" for="botton">Botton</label>
             </div>
 
             <input type="text" class="form-control" name="nomeProduto" id="nomeProduto" placeholder="Nome do produto">
             <input type="number" class="form-control" name="valorUnitario" id="valorUnitario"
               placeholder="Valor do produto">
             <input type="number" class="form-control" name="quantidade" id="quantidade" placeholder="Quantidade">
+            <input type="text" class="form-control" name="tamanho" id="tamanho" placeholder="Tamanho">
+            <input type="text" class="form-control" name="volume" id="volume" placeholder="Volume">
+            <input type="text" class="form-control" name="material" id="material" placeholder="Material">
             <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Descrição">
             <!--
             <div class="form-row ">

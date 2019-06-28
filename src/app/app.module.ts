@@ -36,7 +36,6 @@ import { CadastroModule } from './viewer/cadastro/cadastro.module';
 import { ConfirmarService } from './viewer/doador-form/confirmar-doacao/confirmar-service';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,8 +71,7 @@ import { ConfirmarService } from './viewer/doador-form/confirmar-doacao/confirma
     // RelatorioModule,
     ModalModule.forRoot(),
     BrowserAnimationsModule,
-    CarouselModule.forRoot()
-    //,MatButtonModule
+    CarouselModule.forRoot()   
   ],
   providers: [
     AuthService, 

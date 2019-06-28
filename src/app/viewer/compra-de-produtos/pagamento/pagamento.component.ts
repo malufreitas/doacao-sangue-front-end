@@ -1,4 +1,5 @@
 import { Component, AfterViewChecked } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 
 declare let paypal: any;
@@ -26,6 +27,12 @@ export class PagamentoComponent implements AfterViewChecked {
   // Boleto fácil
   
   // Boleto fácil
+
+
+  constructor(
+    private http: HttpClient
+    ) { }
+
 
 
   // Paypal
@@ -107,6 +114,7 @@ export class PagamentoComponent implements AfterViewChecked {
 
 
   //Boleto Fácil
+  /*
   addBoletoScript() {
     this.addScript = true;
     return new Promise((resolve, reject) => {
@@ -116,8 +124,11 @@ export class PagamentoComponent implements AfterViewChecked {
       document.body.appendChild(scripttagElement);
     })
   }
+  */
 
-
-
+ addBoletoScript(code) {
+  this.http.post('https://sandbox.boletobancario.com/boletofacil/integration/button/checkout.html', code)
+  .subscribe();
+ }
 
 }

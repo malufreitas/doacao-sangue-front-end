@@ -28,7 +28,7 @@ export class AuthService {
         this.http.post<any>('https://doacaodesangue.herokuapp.com/auth/login', formulario.value)
             .pipe()
             .subscribe(
-                success => this.login(success), //resposta do servidor com o status 404 ou 200
+                success => success, //resposta do servidor com o status 404 ou 200
                 error => console.log(error),
                 () => console.log('request completo')
             );
@@ -37,14 +37,14 @@ export class AuthService {
 
 
 
-    login(resposta) {
+    login(formulario) {
         //this.resposta = this.autenticacao(formulario);
         //console.log('>>>>>>>', this.resposta);
 
         //status: 404 erro  -   200 sucesso
 
-        if (resposta.status == '200') {
-        //if (formulario.value.email == 'usuario@email.com' && formulario.value.senha == '123') {
+        //if (resposta.status == '200') {
+        if (formulario.value.email == 'usuario@email.com' && formulario.value.senha == '123') {
             // Se usuario for autenticado
             this.usuarioAutenticado = true;
 

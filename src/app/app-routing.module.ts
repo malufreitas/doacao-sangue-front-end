@@ -36,12 +36,12 @@ const routes: Routes = [
     canActivate: [AuthGuard] //Para guardar essa rota
   },
   {
-    path: 'enderecodeentrega', component: DadosEntregaFormComponent,
-    canActivate: [AuthGuard] //Para guardar essa rota 
+    path: 'enderecodeentrega', component: DadosEntregaFormComponent
+    ,canActivate: [AuthGuard] //Para guardar essa rota 
   },
   {
-    path: 'pagamento', component: PagamentoComponent,
-    canActivate: [AuthGuard] //Para guardar essa rota
+    path: 'pagamento', component: PagamentoComponent
+   // ,canActivate: [AuthGuard] //Para guardar essa rota
   },
   {
     path: 'finalizacompra', component: FinalizaCompraComponent,
