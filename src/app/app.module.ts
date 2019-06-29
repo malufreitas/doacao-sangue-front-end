@@ -9,7 +9,7 @@ import { ModalModule } from "ngx-bootstrap/modal";
 
 //import { MatButtonModule } from '@angular/material/button';
 import { CookieService } from 'ngx-cookie-service';
-
+import { StorageServiceModule} from 'angular-webstorage-service';
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -75,8 +75,9 @@ import { ConfirmarService } from './viewer/doador-form/confirmar-doacao/confirma
     // RelatorioModule,
     ModalModule.forRoot(),
     BrowserAnimationsModule,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
     //,MatButtonModule  
+    StorageServiceModule
   ],
   providers: [
     ConfirmarService,

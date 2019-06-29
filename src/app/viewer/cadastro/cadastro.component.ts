@@ -36,6 +36,8 @@ export class CadastroComponent implements OnInit {
     .pipe(map(res => res))
     .subscribe(dados => console.log(dados))
 
+    alert("Usuário cadastrado!");
+
   }
 
 }

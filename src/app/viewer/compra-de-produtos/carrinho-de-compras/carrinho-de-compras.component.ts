@@ -18,6 +18,7 @@ export class CarrinhoDeComprasComponent implements OnInit {
 
   public produtos: Produto[];
   public sucRequi: boolean = false;
+  
 
   carrinho = {
     compraProdutos: []
