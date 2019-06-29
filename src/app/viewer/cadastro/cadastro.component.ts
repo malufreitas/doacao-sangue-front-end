@@ -32,7 +32,6 @@ export class CadastroComponent implements OnInit {
   onSubmit(formulario) {
     console.log(formulario);
 
-    //this.httpClient.post('https://doacao-de-sangue-helenfranca.c9users.io/pessoa', formulario.value)
     this.httpClient.post('https://doacaodesangue.herokuapp.com/pessoa', formulario.value)
     .pipe(map(res => res))
     .subscribe(dados => console.log(dados))

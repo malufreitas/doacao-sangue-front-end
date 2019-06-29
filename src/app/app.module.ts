@@ -7,6 +7,10 @@ import { CarouselModule } from "ngx-bootstrap";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { ModalModule } from "ngx-bootstrap/modal";
 
+//import { MatButtonModule } from '@angular/material/button';
+import { CookieService } from 'ngx-cookie-service';
+
+
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { CatalogoProdutosComponent } from "./viewer/compra-de-produtos/catalogo-produtos/catalogo-produtos.component";
@@ -71,12 +75,14 @@ import { ConfirmarService } from './viewer/doador-form/confirmar-doacao/confirma
     // RelatorioModule,
     ModalModule.forRoot(),
     BrowserAnimationsModule,
-    CarouselModule.forRoot()   
+    CarouselModule.forRoot()
+    //,MatButtonModule  
   ],
   providers: [
+    ConfirmarService,
     AuthService, 
-    AuthGuard, 
-    ConfirmarService
+    AuthGuard,
+    CookieService  
   ],
   bootstrap: [AppComponent]
 })

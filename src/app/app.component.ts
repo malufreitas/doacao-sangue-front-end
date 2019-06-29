@@ -8,19 +8,20 @@ import { Component } from "@angular/core";
 export class AppComponent {
   title = 'doacao-sangue-front-end';
 
-  //mostrarMenu: boolean = false;
+  /*
+  usuario: any = {
+    email: null,
+    senha: null
+  };
+
+  erro: boolean = false
+  admin: boolean = this.cookieService.check('numeroregistro');
+  logado: boolean = this.cookieService.check('idpessoa');
+  user: any
+  */
 
   constructor(
-    //private authService: AuthService
-  ) {}
-
-  ngOnInit() {
-    /*
-    this.authService.mostrarMenuEmitter.subscribe(
-      mostrar => this.mostrarMenu = mostrar
-    );
-    */
-  }
+  ) { }
 
 
 }

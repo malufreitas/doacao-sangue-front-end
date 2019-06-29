@@ -10,7 +10,6 @@ import { AuthService } from '../guards/auth.service';
 
 export class LoginComponent implements OnInit {
 
-  
   usuario: any = {
     email: null,
     senha: null
@@ -24,10 +23,18 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  logar(formulario) {
-    console.log(formulario.value);
-    //this.authService.autenticacao(formulario);
-    this.authService.login(formulario);
+  logar() {
+    console.log(this.usuario);
+    this.authService.login(this.usuario)
+    .subscribe(
+      success => {
+        console.log('>>>>>>>>', success)
+        this.authService.salvacookie(success)
+        window.location.href = "";
+      },
+      error => {
+        console.log(error);
+      });
   }
 
   verificaValidTouched(campo) {
