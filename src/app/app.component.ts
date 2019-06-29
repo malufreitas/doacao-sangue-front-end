@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { AuthService } from './viewer/guards/auth.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: "app-root",
@@ -7,6 +9,9 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   title = 'doacao-sangue-front-end';
+
+  logado: boolean = this.cookieService.check('idpessoa');
+
 
   /*
   usuario: any = {
@@ -21,7 +26,14 @@ export class AppComponent {
   */
 
   constructor(
+    private authService: AuthService,
+    private cookieService: CookieService
   ) { }
+
+  sair() {
+    this.authService.logout()
+    window.location.href = "/"; 
+  }
 
 
 }
