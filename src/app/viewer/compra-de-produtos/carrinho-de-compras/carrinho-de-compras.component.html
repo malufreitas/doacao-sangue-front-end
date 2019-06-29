@@ -21,7 +21,7 @@
 
       <!--Só vai mostrar produtos caso exista produtos-->
 
-      <table id="produtos" class="table table-hover">
+      <table id="produtos" class="table table-hover" *ngIf="produtos$ | async as produtos; else loadingError">
         <thead>
           <tr>
             <th>#</th>
@@ -34,21 +34,17 @@
         </thead>
 
         <tbody>
-
-          <!--
-        <tr *ngFor="let produto of produtos">
-        -->
-          <tr>
-            <!--
-          <td>{{ produto.id }}</td>
-          -->
+          <tr *ngFor="let produto of produtos">
+            <td>{{ produto.nome }}</td>
+            <td>{{ produto.quantidade }}</td>
+            <td>{{ produto.valorunitario }}</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td>
               <span class="float-right">
-                <button class="btn btn-outline-danger mb-1 btn-sm">
+                <button (click)="deletar(produto.id)" class="btn btn-outline-danger mb-1 btn-sm">
                   <!-- Pendente botão remover -->
                   X
                 </button>
@@ -59,6 +55,15 @@
         </tbody>
 
       </table>
+
+      <ng-template #loadingError>
+        <div *ngIf="error$ | async; else loading">
+          Carrinho vazio!
+        </div>
+        <ng-template #loading>
+          <span>Carregando Carrinho...</span>
+        </ng-template>
+      </ng-template>
 
       <a href="/enderecodeentrega" class="float-right btn btn-outline-success">Próximo</a>
 

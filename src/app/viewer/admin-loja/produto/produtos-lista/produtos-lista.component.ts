@@ -5,7 +5,6 @@ import { catchError, map } from 'rxjs/operators';
 
 import { ProdutosListaService } from './produtos-lista.service';
 import { Produto } from 'src/app/model/produto';
-import { element, by } from 'protractor';
 
 
 @Component({
@@ -45,8 +44,9 @@ export class ProdutosListaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.produtos$ = this.service.list().
-    pipe(
+    console.log(this.produtos$)
+    this.produtos$ = this.service.list()
+    .pipe(
       catchError(error =>{
         console.error(error);
         this.error$.next(true);

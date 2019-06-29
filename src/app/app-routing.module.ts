@@ -27,17 +27,17 @@ const routes: Routes = [
   { path: 'esqueciminhasenha', component: EsqueciMinhaSenhaComponent },
   {
     path: 'produtos',
-    component: ProdutosListaComponent,
-    canActivate: [AuthGuard] //Para guardar essa rota
+    component: ProdutosListaComponent
+    //,canActivate: [AuthGuard] //Para guardar essa rota
   },
   { path: 'catalogo', component: CatalogoProdutosComponent },
   {
-    path: 'carrinho', component: CarrinhoDeComprasComponent,
-    canActivate: [AuthGuard] //Para guardar essa rota
+    path: 'carrinho', component: CarrinhoDeComprasComponent
+    //,canActivate: [AuthGuard] //Para guardar essa rota
   },
   {
     path: 'enderecodeentrega', component: DadosEntregaFormComponent
-    ,canActivate: [AuthGuard] //Para guardar essa rota 
+    //,canActivate: [AuthGuard] //Para guardar essa rota 
   },
   {
     path: 'pagamento', component: PagamentoComponent

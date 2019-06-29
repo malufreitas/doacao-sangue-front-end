@@ -82,7 +82,8 @@ import { ConfirmarService } from './viewer/doador-form/confirmar-doacao/confirma
     ConfirmarService,
     AuthService, 
     AuthGuard,
-    CookieService  
+    CookieService,
+    CarrinhoDeComprasComponent
   ],
   bootstrap: [AppComponent]
 })
