@@ -54,8 +54,16 @@ export class AppComponent {
   getFromLocal(key): void {
     console.log('recieved= key:' + key);
     this.data[key]= this.storage.get(key);
-    console.log(this.data);
+    console.log('data em app > ', this.data);
    }
+
+  getData() {
+    return this.data;
+  }
+
+  getStorage(key) {
+    return this.storage.get(key);
+  }
 
   sair() {
     this.authService.logout()

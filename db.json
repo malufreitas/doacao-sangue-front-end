@@ -161,18 +161,6 @@
     }
   ],
   "carrinho": [
-    {
-      "id": 2,
-      "nome": "Sou um herói!",
-      "quantidade": 10,
-      "descricao": "T-shirt",
-      "valorunitario": 15.5,
-      "categoria": "Camisa",
-      "tamanho": "GG",
-      "volume": "Não Possui",
-      "material": "Malha",
-      "genero": "Feminino",
-      "urlimagem": "https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/dev-malu/images/camisa%20-%20heroi.jpg"
-    }
+   
   ]
 }

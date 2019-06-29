@@ -4,6 +4,7 @@ import { delay, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 import { Produto } from 'src/app/model/produto';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-carrinho-de-compras',
@@ -29,13 +30,18 @@ export class CarrinhoDeComprasComponent implements OnInit {
   }
 
 
+
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private app: AppComponent
+    // SESSION_STORAGE
   ) { }
 
   // Ao abrir a pagina, aparece os elementos do carrinho
   ngOnInit() {
-    console.log(this.produtos$);
+    console.log('storage >>>>', this.app.getData());
+    console.log('data em carrinho > ', this.app.data)
+    //console.log(this.produtos$);
 
     this.produtos$ = this.http.get('http://localhost:3000/carrinho');
     
@@ -58,10 +64,18 @@ export class CarrinhoDeComprasComponent implements OnInit {
   }
   */
 
+  /* Anterior, no banco jb.json
   setCarrinho(produto) {
     this.carrinho.compraProdutos.push(produto);
     console.log(this.carrinho.compraProdutos);
   }
+  */
+
+  // TENTANDO CARRINHO DE NOVO AAAA
+  // SESSION_STORAGE
+  getCarrinho() {
+    //this.app.getFromLocal();
+  }  
 
   pegaProdutoID(filtro?) {
     console.log(filtro);
@@ -77,5 +91,6 @@ export class CarrinhoDeComprasComponent implements OnInit {
       })
 
   }
+
 
 }

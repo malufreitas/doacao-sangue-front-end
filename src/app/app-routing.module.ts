@@ -20,6 +20,7 @@ import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component'
 import { LoginComponent } from './viewer/login/login.component';
 import { ProdutosListaComponent } from './viewer/admin-loja/produto/produtos-lista/produtos-lista.component';
 import { CadastroComponent } from './viewer/cadastro/cadastro.component';
+import { RelatorioComponent } from './viewer/relatorio/relatorio.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -57,6 +58,7 @@ const routes: Routes = [
   { path: "ajuda", component: AjudaPageComponent },
   { path: "admin-hemo", component: AdminHemocentroComponent },
   { path: "admin-loja", component: AdminLojaComponent },
+  { path: "relatorio", component: RelatorioComponent },
 
   { path: '', component: HomeComponent },
 ];

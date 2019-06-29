@@ -9,7 +9,7 @@ import { Genero } from 'src/app/model/genero';
 import { Tamanho } from 'src/app/model/tamanho';
 import { Material } from 'src/app/model/material';
 import { Produto } from 'src/app/model/produto';
-import { CarrinhoDeComprasComponent } from './../carrinho-de-compras/carrinho-de-compras.component';
+import { AppComponent } from './../../../app.component';
 
 
 @Component({
@@ -48,7 +48,7 @@ export class CatalogoProdutosComponent implements OnInit {
   constructor(
     private service: CatalogoProdutosService,
     private http: HttpClient,
-    private carrinho: CarrinhoDeComprasComponent
+    private app: AppComponent
   ) { }
 
 
@@ -200,5 +200,16 @@ export class CatalogoProdutosComponent implements OnInit {
     window.location.href = "/carrinho";
     //
   }
+
+
+  // TENTANDO CARRINHO DE NOVO AAAA
+  // SESSION_STORAGE
+  testeCompra(key, val) {
+    this.app.saveInLocal(key, val);
+    console.log('data em catalogo >', this.app.data);
+    //window.location.href = "/carrinho";
+    
+  }
+
 
 }

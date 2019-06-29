@@ -38,6 +38,7 @@ import { AuthService } from './viewer/guards/auth.service';
 import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component';
 import { CadastroModule } from './viewer/cadastro/cadastro.module';
 import { ConfirmarService } from './viewer/doador-form/confirmar-doacao/confirmar-service';
+import { RelatorioModule } from './viewer/relatorio/relatorio.module';
 
 
 @NgModule({
@@ -72,12 +73,12 @@ import { ConfirmarService } from './viewer/doador-form/confirmar-doacao/confirma
     DadosEntregaFormModule,
     HttpClientModule,
     ProdutoModule,
-    // RelatorioModule,
     ModalModule.forRoot(),
     BrowserAnimationsModule,
     CarouselModule.forRoot(),
     //,MatButtonModule  
-    StorageServiceModule
+    StorageServiceModule,
+    RelatorioModule
   ],
   providers: [
     ConfirmarService,
