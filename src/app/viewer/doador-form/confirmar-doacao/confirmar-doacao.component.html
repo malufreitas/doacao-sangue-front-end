@@ -19,10 +19,10 @@
       <div class="form-group col-md-6" #qtd>
         <label for="qtd">Quantidade Doada</label>
         <input
-          [ngModel]="confirmar.qtd"
+          [ngModel]="confirmar.quantidade"
           type="text"
           class="form-control"
-          name="qtd"
+          name="quantidade"
           id="qtd"
           placeholder="ml"
         />
@@ -76,7 +76,7 @@
     Cpf: {{ message?.cpf }}
     <br />
     <br />
-    Quantidade doada: {{ confirmar?.qtd }} ml
+    Quantidade doada: {{ confirmar?.quantidade }} ml
     <br />
     Observação: {{ confirmar?.observacao }}
     <br />

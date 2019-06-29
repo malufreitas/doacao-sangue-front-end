@@ -1,12 +1,19 @@
 import { OnInit, TemplateRef, Component, Input } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { map } from "rxjs/operators";
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpErrorResponse
+} from "@angular/common/http";
+import { map, catchError } from "rxjs/operators";
 import { Doador } from "src/app/model/doador";
 import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
 
 import { environment } from "src/environments/environment";
 import { Pessoa } from "src/app/model/pessoa";
 import { NgIf } from "@angular/common";
+import { Observable } from "rxjs";
+import { Doacao } from "src/app/model/doacao";
+import { MessageService } from "primeng/components/common/messageservice";
 
 @Component({
   selector: "app-confirmar-doacao",
@@ -23,10 +30,24 @@ export class ConfirmarDoacaoComponent implements OnInit {
   pessoa: Pessoa;
   doador: Doador;
 
-  confirmar: any = {
-    qtd: null,
+  confirmar = {
+    quantidade: null,
     observacao: "",
-    cnesHemocentro: 2486199
+    cnesHemocentro: 2486199,
+    cpf: null
+  };
+
+  cnes = 123;
+
+  retorno: any = {};
+  response: any = {};
+  bla: any = {};
+
+  body = {
+    quantidade: null,
+    observacao: "",
+    cnes: null,
+    cpf: null
   };
 
   config = {
@@ -53,13 +74,20 @@ export class ConfirmarDoacaoComponent implements OnInit {
   async openModal(template: TemplateRef<any>, formulario) {
     await this.httpClient
       .get<Pessoa>(`${environment.API}` + "pessoa/" + formulario.value.cpf)
-      .subscribe(async dados => await (this.pessoa = dados));
-
-    if (this.verificaNull(this.pessoa)) {
-      this.renderiza(template);
+      .subscribe(
+        val => (this.pessoa = val), //Caso ok
+        response => (this.retorno = response) //Casso Erro
+      );
+    console.log(this.retorno.status);
+    if (this.retorno.status == 404) {
+      alert("Doador não encontrado! Por favor, verifique o cpf");
+    } else {
+      if (this.verificaNull(this.pessoa)) {
+        this.renderiza(template);
+      }
+      this.message = this.pessoa;
+      this.confirmar = formulario.value;
     }
-    this.message = this.pessoa;
-    this.confirmar = formulario.value;
   }
 
   verificaNull(pessoa) {
@@ -73,13 +101,16 @@ export class ConfirmarDoacaoComponent implements OnInit {
   }
 
   async enviar(formulario) {
-    console.log(formulario.value);
-    await this.httpClient
+    this.body = formulario.value;
+    this.body.cnes = this.cnes;
+
+    this.httpClient
       // .post("https://doacaodesangue.herokuapp.com/doacao", formulario.value)
-      .post(`${environment.API}` + "doacao", formulario.value)
-      .pipe(map(res => res))
-      .subscribe(dados => console.log(dados));
-    alert("A doação foi confirmada.");
+      .post(`${environment.API}` + "doacao", this.body)
+      .pipe(map(res => (this.bla = res)))
+      .subscribe(val => val, response => response);
+
+    alert("Doação confirmada com sucesso!");
   }
 
   continuar() {}

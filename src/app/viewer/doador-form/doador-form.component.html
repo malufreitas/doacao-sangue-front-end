@@ -1,51 +1,182 @@
-<br>
-<form #myForm="ngForm"  ng-controller="ExampleController">
-<div class="container">
-  <h3>Cadastro de perfil doador:</h3>
-  <br>
+<br />
+<form #myForm="ngForm" ng-controller="ExampleController">
+  <div class="container">
+    <h3>Cadastro de perfil doador:</h3>
+    <br />
 
-  <div class="form-row">
-    <div class="form-group col-md-6">
-    <p>Selecione um tipo sanguíneo:</p>
-      <div><input type="radio" id="1" name="drone" (click)="setTipo('A+')" value="A+"><label for="A+">A+</label></div>
-      <div><input type="radio" id="2" name="drone" (click)="setTipo('A-')"><label for="A-">A-</label></div>
-      <div><input type="radio" id="3" name="drone" (click)="setTipo('AB+')"><label for="AB+">AB+</label></div>
-      <div><input type="radio" id="4" name="drone" (click)="setTipo('AB-')"><label for="AB-">AB-</label> </div>
-      <div><input type="radio" id="5" name="drone" (click)="setTipo('B+')"><label for="B+">B+</label></div>
-      <div><input type="radio" id="6" name="drone" (click)="setTipo('B-')"><label for="B-">B-</label></div>
-      <div><input type="radio" id="7" name="drone" (click)="setTipo('O+')"><label for="O+">O+</label></div>
-      <div><input type="radio" id="8" name="drone" (click)="setTipo('O-')"><label for="O-">O-</label></div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <p>Selecione um tipo sanguíneo:</p>
+        <div>
+          <input
+            type="radio"
+            id="1"
+            name="drone"
+            (click)="setTipo('A+')"
+            value="A+"
+          /><label for="A+">A+</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="2"
+            name="drone"
+            (click)="setTipo('A-')"
+          /><label for="A-">A-</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="3"
+            name="drone"
+            (click)="setTipo('AB+')"
+          /><label for="AB+">AB+</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="4"
+            name="drone"
+            (click)="setTipo('AB-')"
+          /><label for="AB-">AB-</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="5"
+            name="drone"
+            (click)="setTipo('B+')"
+          /><label for="B+">B+</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="6"
+            name="drone"
+            (click)="setTipo('B-')"
+          /><label for="B-">B-</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="7"
+            name="drone"
+            (click)="setTipo('O+')"
+          /><label for="O+">O+</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="8"
+            name="drone"
+            (click)="setTipo('O-')"
+          /><label for="O-">O-</label>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <p> Marque as opções abaixo nas quais você se encaixa:</p>
+    <p>Marque as opções abaixo nas quais você se encaixa:</p>
     <div>
-      <input type="checkbox" id="hepatiteB" (click)="hepatiteBFunction()" name="hepatiteB"><label for="hepatiteB">Já tive hepatite B.</label><br>
-      <input type="checkbox" id="hepatiteC" (click)="hepatiteCFunction()" name="hepatiteC"><label for="hepatiteC">Já tive hepatite C.</label><br>
-      <input type="checkbox" id="drogas" (click)="drogasFunction()" name="drogas"><label for="drogas">Em um momento da minha vida, usei drogas injetáveis ilícitas. </label><br>
-      <input type="checkbox" id="malaria" (click)="malariaFunction()" name="malaria"><label for="malaria">Tenho ou já tive malária.</label><br>
-      <input type="checkbox" id="aids" (click)="aidsFunction()" name="aids"><label for="aids">Tenho Aids (vírus HIV).</label><br>
-      <input type="checkbox" id="chagas" (click)="chagasFunction()" name="chagas"><label for="chagas">Tenho doença de Chagas.</label><br>
-      <input type="checkbox" id="hltv" (click)="hltvFunction()" name="hltv"><label for="hltv">Tenho doenças associadas aos vírus HTLV I ou II. </label><br>          
-    </div>  
+      <input
+        type="checkbox"
+        id="hepatiteB"
+        (click)="hepatiteBFunction()"
+        name="hepatiteB"
+      /><label for="hepatiteB">Já tive hepatite B.</label><br />
+      <input
+        type="checkbox"
+        id="hepatiteC"
+        (click)="hepatiteCFunction()"
+        name="hepatiteC"
+      /><label for="hepatiteC">Já tive hepatite C.</label><br />
+      <input
+        type="checkbox"
+        id="hepatite11"
+        (click)="hepatite11Function()"
+        name="hepatite11"
+      /><label for="hepatite11">Tive hepatite depois de 11 anos de idade.</label
+      ><br />
+      <input
+        type="checkbox"
+        id="droga"
+        (click)="drogasFunction()"
+        name="droga"
+      /><label for="droga">Já utilizei drogas injetáveis ilícitas.</label><br />
+      <input
+        type="checkbox"
+        id="malaria"
+        (click)="malariaFunction()"
+        name="malaria"
+      /><label for="malaria">Tenho ou já tive malária.</label><br />
+      <input
+        type="checkbox"
+        id="hiv"
+        (click)="hivFunction()"
+        name="hiv"
+      /><label for="hiv">Tenho Aids (vírus HIV).</label><br />
+      <input
+        type="checkbox"
+        id="chagas"
+        (click)="chagasFunction()"
+        name="chagas"
+      /><label for="chagas">Tenho doença de Chagas.</label><br />
+      <input
+        type="checkbox"
+        id="htlv"
+        (click)="htlvFunction()"
+        name="htlv"
+      /><label for="htlv"
+        >Tenho doenças associadas aos vírus HTLV I ou II. </label
+      ><br />
+    </div>
 
-    <button type="button" class="btn btn-primary" (click)="openModal(template)">Continuar</button>
-    <button type="submit" class="btn btn-primary" style="margin:5px;" routerLink="">Cancelar</button>
-</div>
+    <button type="button" class="btn btn-primary" (click)="openModal(template)">
+      Continuar
+    </button>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      style="margin:5px;"
+      routerLink=""
+    >
+      Cancelar
+    </button>
+  </div>
 </form>
 
-    <ng-template #template>
-      <div class="modal-header">
-        <h4 class="modal-title pull-left">Deseja continuar?</h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       "Atenção! Ao clicar em "Sim", você concluirá o cadastro do seu perfil de doador.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" style="margin:5px;" (click)="hideModal()" routerLink="" data-dismiss="modal">Sim</button>
-        <button type="submit" class="btn btn-primary" style="margin:5px;" (click)="justHide()">Não</button>
-    </div>
-    </ng-template>
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Deseja continuar?</h4>
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    "Atenção! Ao clicar em "Sim", você concluirá o seu cadastro de doador.
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-primary"
+      style="margin:5px;"
+      (click)="hideModal()"
+      routerLink=""
+      data-dismiss="modal"
+    >
+      Sim
+    </button>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      style="margin:5px;"
+      (click)="justHide()"
+    >
+      Não
+    </button>
+  </div>
+</ng-template>
