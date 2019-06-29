@@ -12,7 +12,7 @@ export class DoadorFormComponent implements OnInit {
   modalRef: BsModalRef;
 
   doador: any = {
-    cpf: "123.456.789-08", //mudar para pegar do usuário da sessão
+    cpf: "148.914.247-96", //mudar para pegar do usuário da sessão
     tiposanguineo: null,
     malaria: false,
     hepatite11: false,
@@ -33,7 +33,7 @@ export class DoadorFormComponent implements OnInit {
     this.doador.tiposanguineo = tipo;
   }
 
-  hideModal() {
+  hideModal(ngForm) {
     this.justHide();
     if (
       this.doador.hepatite11 == true ||
@@ -60,10 +60,12 @@ export class DoadorFormComponent implements OnInit {
 
   enviar() {
     console.log(this.doador);
+
     this.httpClient
       .post("https://doacaodesangue.herokuapp.com/doador", this.doador)
+      // .post("http://localhost:3000/doador", this.doador)
       .pipe(map(res => res))
-      .subscribe(val => console.log(val), response => console.log(response));
+      .subscribe(val => console.log(val));
   }
 
   constructor(

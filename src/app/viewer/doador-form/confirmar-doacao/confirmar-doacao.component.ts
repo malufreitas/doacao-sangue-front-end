@@ -72,24 +72,28 @@ export class ConfirmarDoacaoComponent implements OnInit {
   }
 
   async openModal(template: TemplateRef<any>, formulario) {
-    await this.httpClient
-      .get<Pessoa>(`${environment.API}` + "pessoa/" + formulario.value.cpf)
-      .subscribe(
-        val => (this.pessoa = val), //Caso ok
-        response => (this.retorno = response) //Casso Erro
-      );
-    console.log(this.retorno.status);
-    if (this.retorno.status == 404) {
+    if (formulario.value.cpf != null && formulario.value.cpf != "") {
+      this.confirmar.cpf = formulario.value.cpf;
+
+      await this.httpClient
+        .get<Pessoa>(`${environment.API}` + "pessoa/" + this.confirmar.cpf)
+        .subscribe(
+          val => (this.pessoa = val), //Caso ok
+          response => (this.retorno = response)
+        ); //Casso Erro
+    }
+    if (this.retorno.status == 404 && this.confirmar.cpf != this.pessoa.cpf) {
       alert("Doador não encontrado! Por favor, verifique o cpf");
     } else {
-      if (this.verificaNull(this.pessoa)) {
-        this.renderiza(template);
+      if (this.pessoa.cpf == this.confirmar.cpf) {
+        if (this.verificaNull(this.pessoa)) {
+          this.renderiza(template);
+        }
+        this.message = this.pessoa;
+        this.confirmar = formulario.value;
       }
-      this.message = this.pessoa;
-      this.confirmar = formulario.value;
     }
   }
-
   verificaNull(pessoa) {
     if (pessoa != null) {
       return true;
