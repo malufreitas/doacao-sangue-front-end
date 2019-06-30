@@ -47,7 +47,8 @@ export class CadastroComponent implements OnInit {
         this.user = dados;
         console.log(this.user);
         if (this.user != null) {
-          window.location.href = "/";
+          alert("Usuário já cadastrado!");
+          window.location.href = "/login";
         }
       });
   }

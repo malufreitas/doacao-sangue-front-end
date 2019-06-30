@@ -9,15 +9,17 @@ import { CookieService } from "ngx-cookie-service";
 export class AppComponent {
   title = "doacao-sangue-front-end";
 
-  //mostrarMenu: boolean = false;
+  user: boolean = false;
 
-  constructor(
-    private serviceCookie: CookieService //private authService: AuthService
-  ) {}
+  constructor(private serviceCookie: CookieService) {}
   usuario_nome = "";
   ngOnInit() {
     this.usuario_nome = this.serviceCookie.get("nome");
+    this.user = this.serviceCookie.check("token");
   }
 
-  // usuario_nome = this.serviceCookie.get("nome");
+  logout(): void {
+    this.serviceCookie.deleteAll();
+    window.location.href = "/";
+  }
 }

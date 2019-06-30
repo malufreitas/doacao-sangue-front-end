@@ -32,11 +32,5 @@ export class SistemaGuard implements CanActivate {
     ) {
       return true;
     }
-    // this.router.navigate(["/login"]);
-    // return false;
   }
-  // Usuario autenticado
-  // if (this.authService.usuarioEstaAutenticado()) {
-  //   return true;
-  // }
 }

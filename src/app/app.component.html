@@ -52,12 +52,15 @@
       <li class="nav-link">
         <a [routerLink]="['/relatorio/1']">Relatórios</a>
       </li>
+
+      <!-- Nome do usuário -->
       <li class="nav-link">
         <a *ngIf="usuario_nome != ''"> Bem vindo(a), {{ usuario_nome }} </a>
       </li>
-      <!-- Implementando essa parte -->
-      <li class="nav-link" *ngIf="logado">
-        <a [routerLink]="" (click)="sair()">Sair</a>
+
+      <!-- Logout -->
+      <li class="nav-link" *ngIf="user">
+        <a [routerLink]="" (click)="logout()">Sair</a>
       </li>
       <!-- Implementando essa parte -->
     </ul>
