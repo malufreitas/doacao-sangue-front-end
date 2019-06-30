@@ -153,7 +153,8 @@
                       <!-- Tratar o valor impresso do produto -->
                       <p class="card-product__price">R$ {{ produto.valorunitario }}</p>
                     </div>
-                    <button class="btn btn-success rounded" (click)="testeCompra(produto.id, produto)">Adicionar ao carrinho <i class="fas fa-trash-alt"></i></button>
+                    <!--[routerLink]="/carrinho"-->
+                    <button class="btn btn-success rounded" (click)="addCart(produto)">Adicionar ao carrinho <i class="fas fa-trash-alt"></i></button>
 
                   </div>
                 </div>

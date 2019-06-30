@@ -1,10 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Observable, Subject, empty } from 'rxjs';
 import { delay, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+
+//import { default as swal } from 'sweetalert2'
 
 import { Produto } from 'src/app/model/produto';
 import { AppComponent } from 'src/app/app.component';
+import { CarrinhoDeComprasService } from './carrinho-de-compras.service';
+
 
 @Component({
   selector: 'app-carrinho-de-compras',
@@ -18,69 +23,100 @@ export class CarrinhoDeComprasComponent implements OnInit {
   error$ = new Subject<boolean>();
 
   public produtos: Produto[];
-  public sucRequi: boolean = false;
-  
 
-  carrinho = {
-    compraProdutos: []
-  }
+  // Criei para um função de teste
+  public sucRequi: boolean = false;
+
 
   public filtros = {
     id: ''
   }
 
+  // Uso para o Modal
+  modalRef: BsModalRef;
+  message: string;
+  // Uso para o Modal
 
 
   constructor(
     private http: HttpClient,
-    private app: AppComponent
-    // SESSION_STORAGE
+    private app: AppComponent,
+    private carrinhoService: CarrinhoDeComprasService,
+    private modalService: BsModalService
   ) { }
 
   // Ao abrir a pagina, aparece os elementos do carrinho
   ngOnInit() {
-    console.log('storage >>>>', this.app.getData());
-    console.log('data em carrinho > ', this.app.data)
-    //console.log(this.produtos$);
+    //this.produtos$ = this.http.get('http://localhost:3000/carrinho');
 
-    this.produtos$ = this.http.get('http://localhost:3000/carrinho');
-    
-    // Não ta funcionando ainda
-    if (this.produtos$ == undefined){
-      this.error$.next(true);
+    let carrinhoSession = sessionStorage.getItem("cart");
+    if (carrinhoSession != null) {
+      this.carrinhoService.items = JSON.parse(carrinhoSession);
     }
-    //this.pegaProdutoID()
-    //this.service.getProdutos();
-    //this.produtos$ = this.pegaProdutoID(filtro)
+
+    console.log(this.items)
+    console.log(sessionStorage)
+    console.log(carrinhoSession)
+
   }
 
-  // Apaga o elemento que o cliente escolheu deletar
-  /*
-  deletar(id) {
-    this.http.delete('http://localhost:3000/carrinho', id)
-    .subscribe(
-      dados => console.log(dados)
-      );
+  items(): Produto[] {
+    console.log(this.carrinhoService.items.length)
+    return this.carrinhoService.items;
   }
-  */
 
-  /* Anterior, no banco jb.json
-  setCarrinho(produto) {
-    this.carrinho.compraProdutos.push(produto);
-    console.log(this.carrinho.compraProdutos);
+  removeItem(Produto) {
+    let c = this.carrinhoService
+    alert('Item excluído do carrinho.')
+    return c.removeItem(Produto);
+    /*
+    swal({
+      title: 'Confirmação',
+      text: "Você tem certeza que deseja remover este item do carrinho?",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#449d44',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sim'
+    })
+    .then(function () {
+      swal(
+        'Excluído!',
+        'Item excluído do carrinho.',
+        'success'
+      )
+      return c.removeItem(Produto)
+    })
+    */
   }
-  */
 
-  // TENTANDO CARRINHO DE NOVO AAAA
-  // SESSION_STORAGE
-  getCarrinho() {
-    //this.app.getFromLocal();
-  }  
+  total(): number {
+    return this.carrinhoService.total()
+  }
 
+
+  // Abre modal pedindo confirmação para excluir o produto do carrinho
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
+  }
+ 
+  // Caso queira excluir o prroduto do carrinho
+  confirm(Produto): void {
+    this.removeItem(Produto);
+    this.modalRef.hide();
+  }
+ 
+  // Caso queira manter o produto do carrinho
+  decline(): void {
+    this.modalRef.hide();
+  }
+
+
+  // Apenas um teste, não to usando para nada
   pegaProdutoID(filtro?) {
     console.log(filtro);
-    
-    return this.http.get<any[]>('http://localhost:3000/carrinho', { params: filtro })
+
+    return this.http.get<any[]>('http://localhost:3000/produto', { params: filtro })
       .pipe(
         delay(2000),
         tap(console.log)

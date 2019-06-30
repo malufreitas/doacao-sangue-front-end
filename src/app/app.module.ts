@@ -39,6 +39,7 @@ import { TesteModalComponent } from './viewer/teste-modal/teste-modal.component'
 import { CadastroModule } from './viewer/cadastro/cadastro.module';
 import { ConfirmarService } from './viewer/doador-form/confirmar-doacao/confirmar-service';
 import { RelatorioModule } from './viewer/relatorio/relatorio.module';
+import { DadosEntregaFormComponent } from './viewer/compra-de-produtos/dados-entrega-form/dados-entrega-form.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { RelatorioModule } from './viewer/relatorio/relatorio.module';
     ConfirmarDoacaoComponent,
     AjudaPageComponent,
     AdminHemocentroComponent,
-    AdminLojaComponent
+    AdminLojaComponent,
+    DadosEntregaFormComponent
   ],
   imports: [
     NgbModule,
@@ -70,15 +72,14 @@ import { RelatorioModule } from './viewer/relatorio/relatorio.module';
     FormsModule,
     LoginModule,
     CadastroModule,
-    DadosEntregaFormModule,
+    //DadosEntregaFormModule,
     HttpClientModule,
     ProdutoModule,
     ModalModule.forRoot(),
     BrowserAnimationsModule,
     CarouselModule.forRoot(),
     //,MatButtonModule  
-    StorageServiceModule,
-    RelatorioModule
+    StorageServiceModule
   ],
   providers: [
     ConfirmarService,

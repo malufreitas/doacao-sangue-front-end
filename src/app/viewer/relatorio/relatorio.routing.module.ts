@@ -7,7 +7,7 @@ import { Relatorio2Component } from './relatorio2/relatorio2.component';
 import { Relatorio3Component } from './relatorio3/relatorio3.component';
 import { Relatorio4Component } from './relatorio4/relatorio4.component';
 
-
+/*
 const relatorioRoutes = [
     {path: 'relatorio', component: RelatorioComponent, 
     children: [
@@ -17,19 +17,15 @@ const relatorioRoutes = [
         {path: '4', component: Relatorio4Component}
     ]}
 ];
+*/
 
 @NgModule({
     imports: [
-        //RouterModule.forChild(relatorioRoutes),
-        Relatorio1Component,
-        Relatorio2Component,
-        Relatorio3Component,
-        Relatorio4Component
+        //RouterModule.forChild(relatorioRoutes)
     ],
     exports: [
         RouterModule
     ]
-
 })
 
 export class RelatorioRoutingModule {
