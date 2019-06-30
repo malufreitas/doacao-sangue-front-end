@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve ",
+    "start": "ng serve.js ",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -37,6 +37,7 @@
     "ngx-bootstrap": "^4.1.1",
     "ngx-cookie-service": "^2.2.0",
     "ngx-materialize": "^6.1.3",
+    "path": "^0.12.7",
     "primeng": "^8.0.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
