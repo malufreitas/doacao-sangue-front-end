@@ -52,11 +52,6 @@ import { DadosEntregaFormComponent } from './viewer/compra-de-produtos/dados-ent
     PagamentoComponent,
     FinalizaCompraComponent,
     TesteModalComponent,
-    RelatorioComponent,
-    Relatorio1Component,
-    Relatorio2Component,
-    Relatorio3Component,
-    Relatorio4Component,
     DemandaFormComponent,
     DoadorFormComponent,
     ConfirmarDoacaoComponent,
@@ -79,7 +74,8 @@ import { DadosEntregaFormComponent } from './viewer/compra-de-produtos/dados-ent
     BrowserAnimationsModule,
     CarouselModule.forRoot(),
     //,MatButtonModule  
-    StorageServiceModule
+    StorageServiceModule,
+    RelatorioModule
   ],
   providers: [
     ConfirmarService,

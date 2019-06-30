@@ -19,7 +19,6 @@ import { RelatorioRoutingModule } from './relatorio.routing.module';
   imports: [
     CommonModule,
     RelatorioRoutingModule
-    //,MatButtonModule
   ]
 })
 export class RelatorioModule { }
