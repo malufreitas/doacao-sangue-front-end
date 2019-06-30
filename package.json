@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve ",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -22,13 +21,16 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
+    "@brunoc/ngx-viacep": "^2.1.2",
     "@mdi/font": "^3.6.95",
     "@ng-bootstrap/ng-bootstrap": "^4.2.1",
     "alertify.js": "^1.0.12",
     "alertifyjs": "^1.11.3",
     "angular": "^1.7.8",
+    "angular-webstorage-service": "^1.0.2",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
+    "express": "^4.17.1",
     "hammerjs": "^2.0.8",
     "jquery": "^2.2.4",
     "materialize-css": "^1.0.0",
@@ -37,7 +39,6 @@
     "ngx-materialize": "^6.1.3",
     "primeng": "^8.0.0",
     "rxjs": "~6.3.3",
-    "startbootstrap-simple-sidebar": "^5.1.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },
@@ -63,7 +64,7 @@
     "typescript": "~3.2.2"
   },
   "engines": {
-    "node": "10.13.0",
+    "node": "10.15.3",
     "npm": "6.4.1"
   }
 }
