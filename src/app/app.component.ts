@@ -13,9 +13,12 @@ export class AppComponent {
 
   constructor(private serviceCookie: CookieService) {}
   usuario_nome = "";
+  usuario_admin;
+
   ngOnInit() {
     this.usuario_nome = this.serviceCookie.get("nome");
     this.user = this.serviceCookie.check("token");
+    this.usuario_admin = this.serviceCookie.check("admin");
   }
 
   logout(): void {

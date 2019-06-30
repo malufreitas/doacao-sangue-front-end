@@ -17,16 +17,6 @@ export class AuthService {
     private cookieService: CookieService
   ) {}
 
-  autenticacao(formulario) {
-    this.http
-      .post<any>(`${environment.API}` + "auth/login", formulario)
-      .pipe()
-      .subscribe(
-        success => this.login(success), //resposta do servidor com o status 404 ou 200
-        error => console.log(error)
-      );
-  }
-
   salvaCookie(resposta) {
     let dt = new Date();
 
@@ -39,7 +29,8 @@ export class AuthService {
     this.cookieService.set("nome", resposta.user_id.nome);
     this.cookieService.set("sobrenome", resposta.user_id.sobrenome);
     this.cookieService.set("datanascimento", resposta.user_id.datanascimento);
-    this.cookieService.set("sexo", resposta.user_id.cpf);
+    this.cookieService.set("cpf", resposta.user_id.cpf);
+    this.cookieService.set("sexo", resposta.user_id.sexo);
     this.cookieService.set("email", resposta.user_id.email);
     this.cookieService.set("telefone", resposta.user_id.telefone);
     if (resposta.user_id.admin != null) {
@@ -56,12 +47,22 @@ export class AuthService {
     window.location.href = "/";
   }
 
-  usuarioEstaAutenticado() {
-    return this.usuarioAutenticado;
-  }
-
   logout(): void {
     this.cookieService.deleteAll();
     this.router.navigate(["/"]);
+  }
+
+  autenticacao(formulario) {
+    this.http
+      .post<any>(`${environment.API}` + "auth/login", formulario)
+      .pipe()
+      .subscribe(
+        success => this.login(success), //resposta do servidor com o status 404 ou 200
+        error => console.log(error)
+      );
+  }
+
+  usuarioEstaAutenticado() {
+    return this.usuarioAutenticado;
   }
 }
