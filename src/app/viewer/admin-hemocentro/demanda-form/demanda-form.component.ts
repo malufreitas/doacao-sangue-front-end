@@ -2,6 +2,7 @@ import { Component, OnInit, TemplateRef } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
+import { environment } from "src/environments/environment.prod";
 
 @Component({
   selector: "app-demanda-form",
@@ -9,6 +10,13 @@ import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
   styleUrls: ["./demanda-form.component.css"]
 })
 export class DemandaFormComponent implements OnInit {
+  constructor(
+    private modalService: BsModalService,
+    private httpClient: HttpClient
+  ) {}
+
+  ngOnInit() {}
+
   modalRef: BsModalRef;
 
   demanda: any = {
@@ -35,7 +43,7 @@ export class DemandaFormComponent implements OnInit {
   enviar() {
     console.log(this.demanda);
     this.httpClient
-      .post("https://doacaodesangue.herokuapp.com/demanda", this.demanda)
+      .post(`${environment.API}` + "demanda", this.demanda)
       // .post("http://localhost:3000/demanda", this.demanda)
       .pipe(map(res => res))
       .subscribe(dados => console.log(dados));
@@ -44,13 +52,6 @@ export class DemandaFormComponent implements OnInit {
   justHide() {
     this.modalRef.hide();
   }
-
-  constructor(
-    private modalService: BsModalService,
-    private httpClient: HttpClient
-  ) {}
-
-  ngOnInit() {}
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, this.config);

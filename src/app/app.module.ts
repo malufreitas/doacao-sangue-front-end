@@ -35,6 +35,7 @@ import { TesteModalComponent } from "./viewer/teste-modal/teste-modal.component"
 import { CadastroModule } from "./viewer/cadastro/cadastro.module";
 import { ConfirmarService } from "./viewer/doador-form/confirmar-doacao/confirmar-service";
 import { MessageService } from "primeng/components/common/messageservice";
+import { CookieService } from "ngx-cookie-service";
 
 @NgModule({
   declarations: [
@@ -74,7 +75,13 @@ import { MessageService } from "primeng/components/common/messageservice";
     CarouselModule.forRoot()
     //,MatButtonModule
   ],
-  providers: [AuthService, AuthGuard, ConfirmarService, MessageService],
+  providers: [
+    AuthService,
+    AuthGuard,
+    ConfirmarService,
+    MessageService,
+    CookieService
+  ],
   bootstrap: [AppComponent],
   entryComponents: [ConfirmarDoacaoComponent]
 })

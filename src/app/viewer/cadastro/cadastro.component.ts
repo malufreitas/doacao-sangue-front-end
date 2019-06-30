@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { Component, OnInit } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { map } from "rxjs/operators";
+import { environment } from "src/environments/environment";
 
 @Component({
-  selector: 'app-cadastro',
-  templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.css']
+  selector: "app-cadastro",
+  templateUrl: "./cadastro.component.html",
+  styleUrls: ["./cadastro.component.css"]
 })
 export class CadastroComponent implements OnInit {
-
   usuario: any = {
     nome: null,
     sobrenome: null,
@@ -20,23 +20,35 @@ export class CadastroComponent implements OnInit {
     senha: null,
     confirmarSenha: null
   };
+  user: any = {
+    nome: null,
+    sobrenome: null,
+    datanascimento: null,
+    sexo: null,
+    cpf: null,
+    telefone: null,
+    email: null,
+    senha: null,
+    confirmarSenha: null
+  };
 
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(
-    private httpClient: HttpClient
-  ) { }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
-  onSubmit(formulario) {
-    console.log(formulario);
+  onSubmit() {
+    console.log(this.usuario);
 
     //this.httpClient.post('https://doacao-de-sangue-helenfranca.c9users.io/pessoa', formulario.value)
-    this.httpClient.post('https://doacaodesangue.herokuapp.com/pessoa', formulario.value)
-    .pipe(map(res => res))
-    .subscribe(dados => console.log(dados))
-
+    this.httpClient
+      .post(`${environment.API}` + "pessoa", this.usuario)
+      .pipe(map(res => res))
+      .subscribe(dados => {
+        this.user = dados;
+        console.log(this.user);
+        if (this.user != null) {
+          window.location.href = "/";
+        }
+      });
   }
-
 }

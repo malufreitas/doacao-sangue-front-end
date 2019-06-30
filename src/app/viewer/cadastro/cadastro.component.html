@@ -8,195 +8,194 @@
 
 <br />
 <div class="container">
-  <form #cadastroForm="ngForm" (ngSubmit)="onSubmit(cadastroForm)">
-    <div class="form-row ">
-      <div class="form-group col-md-6">
-        <label for="nome">Nome</label>
-        <input
-          type="text"
-          class="form-control"
-          name="nome"
-          id="nome"
-          placeholder="Nome"
-          [ngModel]="usuario.nome"
-          required
-          #nome="ngModel"
-        />
+  <div class="form-row ">
+    <div class="form-group col-md-6">
+      <label for="nome">Nome</label>
+      <input
+        type="text"
+        class="form-control"
+        name="nome"
+        id="nome"
+        placeholder="Nome"
+        [(ngModel)]="usuario.nome"
+        required
+        #nome="ngModel"
+      />
 
-        <!--
+      <!--
         <div *ngIf="!nome.valid && nome.touched" class="alert alert-danger" role="alert">
           -->
-        <div *ngIf="!nome.valid && nome.touched" class="text-danger">
-          Nome é obrigatório.
-        </div>
-      </div>
-
-      <div class="form-group col-md-6">
-        <label for="sobrenome">Sobrenome</label>
-        <input
-          type="text"
-          class="form-control"
-          name="sobrenome"
-          id="sobrenome"
-          placeholder="Sobrenome"
-          [ngModel]="usuario.sobrenome"
-          required
-          #sobrenome="ngModel"
-        />
-
-        <div *ngIf="!sobrenome.valid && sobrenome.touched" class="text-danger">
-          Sobrenome é obrigatório.
-        </div>
+      <div *ngIf="!nome.valid && nome.touched" class="text-danger">
+        Nome é obrigatório.
       </div>
     </div>
 
-    <div class="form-row ">
-      <div class="form-group col-md-3">
-        <label for="datanascimento">Data de Nascimento</label>
-        <input
-          type="text"
-          class="form-control"
-          name="datanascimento"
-          id="datanascimento"
-          placeholder="dd/mm/aaaa"
-          [ngModel]="usuario.datanascimento"
-          required
-          #datanascimento="ngModel"
-        />
+    <div class="form-group col-md-6">
+      <label for="sobrenome">Sobrenome</label>
+      <input
+        type="text"
+        class="form-control"
+        name="sobrenome"
+        id="sobrenome"
+        placeholder="Sobrenome"
+        [(ngModel)]="usuario.sobrenome"
+        required
+        #sobrenome="ngModel"
+      />
 
-        <div
-          *ngIf="!datanascimento.valid && datanascimento.touched"
-          class="text-danger"
-        >
-          Data de Nascimento é obrigatório.
-        </div>
+      <div *ngIf="!sobrenome.valid && sobrenome.touched" class="text-danger">
+        Sobrenome é obrigatório.
       </div>
+    </div>
+  </div>
 
-      <div class="form-group col-md-3">
-        <label for="sexo">Sexo</label>
-        <select
-          class="custom-select"
-          name="sexo"
-          id="sexo"
-          [ngModel]="usuario.sexo"
-          required
-          #sexo="ngModel"
-        >
-          <!--option selected>Selecione...</option-->
-          <option value="F">F</option>
-          <option value="M">M</option>
-        </select>
+  <div class="form-row ">
+    <div class="form-group col-md-3">
+      <label for="datanascimento">Data de Nascimento</label>
+      <input
+        type="text"
+        class="form-control"
+        name="datanascimento"
+        id="datanascimento"
+        placeholder="dd/mm/aaaa"
+        [(ngModel)]="usuario.datanascimento"
+        required
+        #datanascimento="ngModel"
+      />
 
-        <div *ngIf="!sexo.valid && sexo.touched" class="text-danger">
-          É necessário informar o sexo.
-        </div>
-      </div>
-
-      <div class="form-group col-md-3">
-        <label for="cpf">CPF</label>
-        <input
-          type="text"
-          class="form-control"
-          name="cpf"
-          id="cpf"
-          placeholder="Digite apenas os números"
-          [ngModel]="usuario.cpf"
-          required
-          #cpf="ngModel"
-        />
-
-        <div *ngIf="!cpf.valid && cpf.touched" class="text-danger">
-          CPF é obrigatório.
-        </div>
-      </div>
-
-      <div class="form-group col-md-3">
-        <label for="telefone">Telefone</label>
-        <input
-          type="text"
-          class="form-control"
-          name="telefone"
-          id="telefone"
-          placeholder="Digite apenas os números"
-          [ngModel]="usuario.telefone"
-          required
-          #telefone="ngModel"
-        />
-
-        <div *ngIf="!telefone.valid && telefone.touched" class="text-danger">
-          Telefone é obrigatório.
-        </div>
+      <div
+        *ngIf="!datanascimento.valid && datanascimento.touched"
+        class="text-danger"
+      >
+        Data de Nascimento é obrigatório.
       </div>
     </div>
 
-    <div class="form-row ">
-      <div class="form-group col-md-12">
-        <label for="email">E-mail</label>
-        <input
-          type="email"
-          class="form-control"
-          name="email"
-          id="email"
-          placeholder="nome@email.com"
-          [ngModel]="usuario.email"
-          required
-          email
-          #email="ngModel"
-        />
+    <div class="form-group col-md-3">
+      <label for="sexo">Sexo</label>
+      <select
+        class="custom-select"
+        name="sexo"
+        id="sexo"
+        [(ngModel)]="usuario.sexo"
+        required
+        #sexo="ngModel"
+      >
+        <!--option selected>Selecione...</option-->
+        <option value="F">F</option>
+        <option value="M">M</option>
+      </select>
 
-        <div *ngIf="!email.valid && email.touched" class="text-danger">
-          E-mail é obrigatório.
-        </div>
+      <div *ngIf="!sexo.valid && sexo.touched" class="text-danger">
+        É necessário informar o sexo.
       </div>
     </div>
 
-    <div class="form-row ">
-      <div class="form-group col-md-6">
-        <label for="senha">Senha</label>
-        <input
-          type="password"
-          class="form-control"
-          name="senha"
-          id="senha"
-          placeholder="Senha"
-          [ngModel]="usuario.senha"
-          required
-          #senha="ngModel"
-        />
+    <div class="form-group col-md-3">
+      <label for="cpf">CPF</label>
+      <input
+        type="text"
+        class="form-control"
+        name="cpf"
+        id="cpf"
+        placeholder="Digite apenas os números"
+        [(ngModel)]="usuario.cpf"
+        required
+        #cpf="ngModel"
+      />
 
-        <div *ngIf="!senha.valid && senha.touched" class="text-danger">
-          Senha é obrigatório.
-        </div>
-      </div>
-
-      <div class="form-group col-md-6">
-        <label for="confirmarSenha">Confirmar senha</label>
-        <input
-          type="password"
-          class="form-control"
-          name="confirmarSenha"
-          id="confirmarSenha"
-          placeholder="Confirmar senha"
-          [ngModel]="usuario.confirmarSenha"
-          required
-          #confirmarSenha="ngModel"
-        />
-
-        <div
-          *ngIf="!confirmarSenha.valid && confirmarSenha.touched"
-          class="text-danger"
-        >
-          É obrigatório confirmar a senha.
-        </div>
+      <div *ngIf="!cpf.valid && cpf.touched" class="text-danger">
+        CPF é obrigatório.
       </div>
     </div>
 
-    <button
-      type="submit"
-      class="btn btn-primary"
-      [disabled]="!cadastroForm.valid"
-    >
-      Submit
-    </button>
-  </form>
+    <div class="form-group col-md-3">
+      <label for="telefone">Telefone</label>
+      <input
+        type="text"
+        class="form-control"
+        name="telefone"
+        id="telefone"
+        placeholder="Digite apenas os números"
+        [(ngModel)]="usuario.telefone"
+        required
+        #telefone="ngModel"
+      />
+
+      <div *ngIf="!telefone.valid && telefone.touched" class="text-danger">
+        Telefone é obrigatório.
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row ">
+    <div class="form-group col-md-12">
+      <label for="email">E-mail</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        id="email"
+        placeholder="nome@email.com"
+        [(ngModel)]="usuario.email"
+        required
+        email
+        #email="ngModel"
+      />
+
+      <div *ngIf="!email.valid && email.touched" class="text-danger">
+        E-mail é obrigatório.
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row ">
+    <div class="form-group col-md-6">
+      <label for="senha">Senha</label>
+      <input
+        type="password"
+        class="form-control"
+        name="senha"
+        id="senha"
+        placeholder="Senha"
+        [(ngModel)]="usuario.senha"
+        required
+        #senha="ngModel"
+      />
+
+      <div *ngIf="!senha.valid && senha.touched" class="text-danger">
+        Senha é obrigatório.
+      </div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="confirmarSenha">Confirmar senha</label>
+      <input
+        type="password"
+        class="form-control"
+        name="confirmarSenha"
+        id="confirmarSenha"
+        placeholder="Confirmar senha"
+        [(ngModel)]="usuario.confirmarSenha"
+        required
+        #confirmarSenha="ngModel"
+      />
+
+      <div
+        *ngIf="!confirmarSenha.valid && confirmarSenha.touched"
+        class="text-danger"
+      >
+        É obrigatório confirmar a senha.
+      </div>
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="!usuario.valid"
+    (click)="onSubmit()"
+  >
+    Submit
+  </button>
 </div>

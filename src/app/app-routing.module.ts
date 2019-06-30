@@ -19,17 +19,28 @@ import { TesteModalComponent } from "./viewer/teste-modal/teste-modal.component"
 import { LoginComponent } from "./viewer/login/login.component";
 import { ProdutosListaComponent } from "./viewer/admin-loja/produto/produtos-lista/produtos-lista.component";
 import { CadastroComponent } from "./viewer/cadastro/cadastro.component";
+import { HemoGuard } from "./viewer/guards/hemoGuard.guard";
+import { SistemaGuard } from "./viewer/guards/sistemaGuard.guard";
 
 const routes: Routes = [
+  //Liberadas
+
+  { path: "", component: HomeComponent },
+  { path: "info", component: AjudaPageComponent },
   { path: "login", component: LoginComponent },
   { path: "cadastro", component: CadastroComponent },
   { path: "esqueciminhasenha", component: EsqueciMinhaSenhaComponent },
+  { path: "catalogo", component: CatalogoProdutosComponent },
+
+  { path: "modal", component: TesteModalComponent },
+
+  // Para usuários comuns
+  { path: "doador", component: DoadorFormComponent, canActivate: [AuthGuard] },
   {
     path: "produtos",
     component: ProdutosListaComponent,
     canActivate: [AuthGuard] //Para guardar essa rota
   },
-  { path: "catalogo", component: CatalogoProdutosComponent },
   {
     path: "carrinho",
     component: CarrinhoDeComprasComponent,
@@ -50,17 +61,29 @@ const routes: Routes = [
     component: FinalizaCompraComponent,
     canActivate: [AuthGuard] //Para guardar essa rota
   },
-  { path: "modal", component: TesteModalComponent },
+  // Somente para Admin Hemocentro
+  {
+    path: "doacao",
+    component: ConfirmarDoacaoComponent,
+    canActivate: [HemoGuard]
+  },
+  {
+    path: "demanda",
+    component: DemandaFormComponent,
+    canActivate: [HemoGuard]
+  },
+  {
+    path: "hemocentro",
+    component: AdminHemocentroComponent,
+    canActivate: [HemoGuard]
+  },
 
-  // Rotas Guilherme (para auxiliar a Helen)
-  { path: "doacao", component: ConfirmarDoacaoComponent },
-  { path: "demanda", component: DemandaFormComponent },
-  { path: "doador", component: DoadorFormComponent },
-  { path: "ajuda", component: AjudaPageComponent },
-  { path: "admin-hemo", component: AdminHemocentroComponent },
-  { path: "admin-loja", component: AdminLojaComponent },
-
-  { path: "", component: HomeComponent }
+  // Somente para Admin Sistema
+  {
+    path: "sistema",
+    component: AdminLojaComponent,
+    canActivate: [SistemaGuard]
+  }
 ];
 
 @NgModule({

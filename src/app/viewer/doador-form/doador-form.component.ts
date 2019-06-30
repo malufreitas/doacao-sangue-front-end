@@ -2,6 +2,7 @@ import { Component, OnInit, TemplateRef } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
+import { CookieService } from "ngx-cookie-service";
 
 @Component({
   selector: "app-doador-form",
@@ -9,10 +10,18 @@ import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
   styleUrls: ["./doador-form.component.css"]
 })
 export class DoadorFormComponent implements OnInit {
+  constructor(
+    private modalService: BsModalService,
+    private httpClient: HttpClient,
+    private serviceCookie: CookieService
+  ) {}
+
+  ngOnInit() {}
+
   modalRef: BsModalRef;
 
   doador: any = {
-    cpf: "148.914.247-96", //mudar para pegar do usuário da sessão
+    cpf: "", //mudar para pegar do usuário da sessão
     tiposanguineo: null,
     malaria: false,
     hepatite11: false,
@@ -59,6 +68,7 @@ export class DoadorFormComponent implements OnInit {
   }
 
   enviar() {
+    this.doador.cpf = this.serviceCookie.get("cpf");
     console.log(this.doador);
 
     this.httpClient
@@ -67,13 +77,6 @@ export class DoadorFormComponent implements OnInit {
       .pipe(map(res => res))
       .subscribe(val => console.log(val));
   }
-
-  constructor(
-    private modalService: BsModalService,
-    private httpClient: HttpClient
-  ) {}
-
-  ngOnInit() {}
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, this.config);

@@ -1,71 +1,85 @@
-<br>
+<br />
 
 <div class="container">
-
   <!-- essa 'class do aside' deixou o card do login no meio -->
   <aside class="col-xs-12 col-sm-6 col-md-4 mx-auto">
-
     <div class="card">
-
       <article class="card-body text-center">
-
         <!-- Cadastro padrão -->
-        <a href="/cadastro" class="float-right btn btn-outline-success">Quero me cadastrar</a>
+        <a href="/cadastro" class="float-right btn btn-outline-success"
+          >Quero me cadastrar</a
+        >
         <h4 class="card-title mb-4 mt-1">Login</h4>
 
         <!-- Cadastro e Login Google -->
         <p>
-          <a href="" class="btn btn-block btn-outline-primary"> <i class="fab fa-google"></i> Login via Google</a>
+          <a href="" class="btn btn-block btn-outline-primary">
+            <i class="fab fa-google"></i> Login com Google</a
+          >
         </p>
-        <hr>
+        <hr />
 
-        <form #loginForm="ngForm">
+        <!-- <form #loginForm="ngForm"> -->
+        <!-- Login padrão -->
 
-          <!-- Login padrão -->
+        <!-- E-mail -->
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="email"
+            id="email"
+            placeholder="Login"
+            [(ngModel)]="usuario.login"
+            required
+            #email="ngModel"
+          />
 
-          <!-- E-mail -->
-          <div class="form-group">
-            <input type="text" class="form-control" name="email" id="email" placeholder="Login"
-              [(ngModel)]="usuario.login" required #email="ngModel">
+          <div *ngIf="!email.valid && email.touched" class="text-danger">
+            E-mail é obrigatório.
+          </div>
+        </div>
 
-            <div *ngIf="!email.valid && email.touched" class="text-danger">
-              E-mail é obrigatório.
+        <!-- Senha -->
+        <div class="form-group">
+          <input
+            type="password"
+            class="form-control"
+            name="senha"
+            id="senha"
+            placeholder="Senha"
+            [(ngModel)]="usuario.senha"
+            required
+            #senha="ngModel"
+          />
+
+          <div *ngIf="!senha.valid && senha.touched" class="text-danger">
+            Senha é obrigatória.
+          </div>
+        </div>
+
+        <!-- Submit e Esqueci minha senha -->
+        <div class="row">
+          <!-- Botão submit -->
+          <div class="col-md-6">
+            <div class="form-group">
+              <button
+                (click)="logar()"
+                type="submit"
+                class="btn btn-primary btn-block"
+                [disabled]="!usuario"
+              >
+                Login
+              </button>
             </div>
           </div>
 
-          <!-- Senha -->
-          <div class="form-group">
-            <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha"
-              [(ngModel)]="usuario.senha" required #senha="ngModel">
-
-            <div *ngIf="!senha.valid && senha.touched" class="text-danger">
-              Senha é obrigatória.
-            </div>
+          <!-- Esqueci minha senha -->
+          <div class="col-md-6 text-right">
+            <a class="small" href="/esqueciminhasenha">Esqueci minha senha</a>
           </div>
-
-
-          <!-- Submit e Esqueci minha senha -->
-          <div class="row">
-
-            <!-- Botão submit -->
-            <div class="col-md-6">
-              <div class="form-group">
-                <button (click)="logar(loginForm)" type="submit" class="btn btn-primary btn-block"
-                  [disabled]="!loginForm.valid"> Login
-                </button>
-              </div>
-            </div>
-
-            <!-- Esqueci minha senha -->
-            <div class="col-md-6 text-right">
-              <a class="small" href="/esqueciminhasenha">Esqueci minha senha</a>
-            </div>
-
-          </div>
-
-
-        </form>
-
+        </div>
+        <!-- </form> -->
       </article>
     </div>
   </aside>

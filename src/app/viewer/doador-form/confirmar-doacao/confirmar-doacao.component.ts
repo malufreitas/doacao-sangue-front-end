@@ -14,6 +14,7 @@ import { NgIf } from "@angular/common";
 import { Observable } from "rxjs";
 import { Doacao } from "src/app/model/doacao";
 import { MessageService } from "primeng/components/common/messageservice";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-confirmar-doacao",
@@ -33,7 +34,7 @@ export class ConfirmarDoacaoComponent implements OnInit {
   confirmar = {
     quantidade: null,
     observacao: "",
-    cnesHemocentro: 2486199,
+    cnes: 2486199,
     cpf: null
   };
 
@@ -62,36 +63,36 @@ export class ConfirmarDoacaoComponent implements OnInit {
 
   ngOnInit() {}
 
-  hideModal(formulario) {
+  hideModal() {
     this.modalRef.hide();
-    this.enviar(formulario);
+    this.enviar();
   }
 
   justHide() {
     this.modalRef.hide();
   }
 
-  async openModal(template: TemplateRef<any>, formulario) {
-    if (formulario.value.cpf != null && formulario.value.cpf != "") {
-      this.confirmar.cpf = formulario.value.cpf;
+  openModal(template: TemplateRef<any>) {
+    if (this.confirmar.cpf != null && this.confirmar.cpf != "") {
+      // this.confirmar.cpf = formulario.cpf;
 
-      await this.httpClient
+      this.httpClient
         .get<Pessoa>(`${environment.API}` + "pessoa/" + this.confirmar.cpf)
         .subscribe(
-          val => (this.pessoa = val), //Caso ok
-          response => (this.retorno = response)
-        ); //Casso Erro
-    }
-    if (this.retorno.status == 404 && this.confirmar.cpf != this.pessoa.cpf) {
-      alert("Doador não encontrado! Por favor, verifique o cpf");
-    } else {
-      if (this.pessoa.cpf == this.confirmar.cpf) {
-        if (this.verificaNull(this.pessoa)) {
-          this.renderiza(template);
-        }
-        this.message = this.pessoa;
-        this.confirmar = formulario.value;
-      }
+          val => {
+            //Caso ok
+            this.pessoa = val;
+            if (this.verificaNull(this.pessoa)) {
+              this.renderiza(template);
+            }
+            this.message = this.pessoa;
+            this.confirmar = this.confirmar;
+          },
+          error => {
+            //Caso Erro
+            alert("Doador não encontrado! Por favor, verifique o cpf");
+          }
+        );
     }
   }
   verificaNull(pessoa) {
@@ -104,8 +105,8 @@ export class ConfirmarDoacaoComponent implements OnInit {
     this.modalRef = this.modalService.show(template, { class: "modal-body" });
   }
 
-  async enviar(formulario) {
-    this.body = formulario.value;
+  async enviar() {
+    this.body = this.confirmar;
     this.body.cnes = this.cnes;
 
     this.httpClient

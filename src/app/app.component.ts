@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { CookieService } from "ngx-cookie-service";
 
 @Component({
   selector: "app-root",
@@ -6,21 +7,17 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = 'doacao-sangue-front-end';
+  title = "doacao-sangue-front-end";
 
   //mostrarMenu: boolean = false;
 
   constructor(
-    //private authService: AuthService
+    private serviceCookie: CookieService //private authService: AuthService
   ) {}
-
+  usuario_nome = "";
   ngOnInit() {
-    /*
-    this.authService.mostrarMenuEmitter.subscribe(
-      mostrar => this.mostrarMenu = mostrar
-    );
-    */
+    this.usuario_nome = this.serviceCookie.get("nome");
   }
 
-
+  // usuario_nome = this.serviceCookie.get("nome");
 }

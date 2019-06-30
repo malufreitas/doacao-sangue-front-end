@@ -1,23 +1,71 @@
-<br>
+<br />
 <div class="container">
   <h3>Cadastro de nova demanda:</h3>
-  <br>
+  <br />
   <form>
     <p>Selecione um tipo sanguíneo:</p>
 
-    <div><input type="radio" id="1" name="drone" (click)="setTipo('A+')" value="A+"><label for="A+">A+</label></div>
-    <div><input type="radio" id="2" name="drone" (click)="setTipo('A-')"><label for="A-">A-</label></div>
-    <div><input type="radio" id="3" name="drone" (click)="setTipo('AB+')"><label for="AB+">AB+</label></div>
-    <div><input type="radio" id="4" name="drone" (click)="setTipo('AB-')"><label for="AB-">AB-</label> </div>
-    <div><input type="radio" id="5" name="drone" (click)="setTipo('B+')"><label for="B+">B+</label></div>
-    <div><input type="radio" id="6" name="drone" (click)="setTipo('B-')"><label for="B-">B-</label></div>
-    <div><input type="radio" id="7" name="drone" (click)="setTipo('O+')"><label for="O+">O+</label></div>
-    <div><input type="radio" id="8" name="drone" (click)="setTipo('O-')"><label for="O-">O-</label></div>
-    
+    <div>
+      <input
+        type="radio"
+        id="1"
+        name="drone"
+        (click)="setTipo('A+')"
+        value="A+"
+      /><label for="A+">A+</label>
+    </div>
+    <div>
+      <input type="radio" id="2" name="drone" (click)="setTipo('A-')" /><label
+        for="A-"
+        >A-</label
+      >
+    </div>
+    <div>
+      <input type="radio" id="3" name="drone" (click)="setTipo('AB+')" /><label
+        for="AB+"
+        >AB+</label
+      >
+    </div>
+    <div>
+      <input type="radio" id="4" name="drone" (click)="setTipo('AB-')" /><label
+        for="AB-"
+        >AB-</label
+      >
+    </div>
+    <div>
+      <input type="radio" id="5" name="drone" (click)="setTipo('B+')" /><label
+        for="B+"
+        >B+</label
+      >
+    </div>
+    <div>
+      <input type="radio" id="6" name="drone" (click)="setTipo('B-')" /><label
+        for="B-"
+        >B-</label
+      >
+    </div>
+    <div>
+      <input type="radio" id="7" name="drone" (click)="setTipo('O+')" /><label
+        for="O+"
+        >O+</label
+      >
+    </div>
+    <div>
+      <input type="radio" id="8" name="drone" (click)="setTipo('O-')" /><label
+        for="O-"
+        >O-</label
+      >
+    </div>
+
     <ng-template #template>
       <div class="modal-header">
         <h4 class="modal-title pull-left">Deseja continuar?</h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <button
+          type="button"
+          class="close pull-right"
+          aria-label="Close"
+          (click)="modalRef.hide()"
+        >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -25,13 +73,38 @@
         Atenção! Ao clicar em "Sim" você confirmará a criação da demanda.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" style="margin:5px;" (click)="hideModal()" routerLink="" data-dismiss="modal">Sim</button>
-        <button type="button" class="btn btn-primary" style="margin:5px;" (click)="justHide()">Não</button>
-    </div>
+        <a href="/hemocentro"
+          ><button
+            type="button"
+            class="btn btn-primary"
+            style="margin:5px;"
+            (click)="hideModal()"
+            data-dismiss="modal"
+          >
+            Sim
+          </button></a
+        >
+        <button
+          type="button"
+          class="btn btn-primary"
+          style="margin:5px;"
+          (click)="justHide()"
+        >
+          Não
+        </button>
+      </div>
     </ng-template>
 
-    <button type="submit" class="btn btn-primary" (click)="openModal(template)">Continuar</button>
-    <button type="button" class="btn btn-primary"  style="margin:5px;"  routerLink="">Cancelar</button>
-
+    <button type="submit" class="btn btn-primary" (click)="openModal(template)">
+      Continuar
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      style="margin:5px;"
+      routerLink=""
+    >
+      Cancelar
+    </button>
   </form>
 </div>

@@ -2,60 +2,55 @@
 <div class="container">
   <h3>Confirmar uma doação:</h3>
   <br />
-  <form #cadastroForm="ngForm">
-    <div class="form-row ">
-      <div class="form-group col-md-6" #cpf>
-        <label for="cpf">CPF do doador</label>
-        <input
-          [ngModel]="confirmar.cpf"
-          type="text"
-          class="form-control"
-          name="cpf"
-          id="cpf"
-          placeholder="11122233344"
-        />
-      </div>
 
-      <div class="form-group col-md-6" #qtd>
-        <label for="qtd">Quantidade Doada</label>
-        <input
-          [ngModel]="confirmar.quantidade"
-          type="text"
-          class="form-control"
-          name="quantidade"
-          id="qtd"
-          placeholder="ml"
-        />
-      </div>
-
-      <div class="form-group col-md-6" #observacao>
-        <label for="observacao">Observação</label>
-        <input
-          [ngModel]="confirmar.observacao"
-          type="text"
-          class="form-control"
-          name="observacao"
-          id="observacao"
-          placeholder=""
-        />
-      </div>
+  <div class="form-row ">
+    <div class="form-group col-md-6" #cpf>
+      <label for="cpf">CPF do doador</label>
+      <input
+        [(ngModel)]="confirmar.cpf"
+        type="text"
+        class="form-control"
+        name="cpf"
+        id="cpf"
+        placeholder="11122233344"
+      />
     </div>
-    <button
-      type="submit"
-      class="btn btn-primary"
-      (click)="openModal(template, cadastroForm)"
-    >
-      Continuar
-    </button>
-    <button
-      type="submit"
-      class="btn btn-primary"
-      style="margin:5px;"
-      routerLink=""
-    >
-      Cancelar
-    </button>
-  </form>
+
+    <div class="form-group col-md-6" #qtd>
+      <label for="qtd">Quantidade Doada</label>
+      <input
+        [(ngModel)]="confirmar.quantidade"
+        type="text"
+        class="form-control"
+        name="quantidade"
+        id="qtd"
+        placeholder="ml"
+      />
+    </div>
+
+    <div class="form-group col-md-6" #observacao>
+      <label for="observacao">Observação</label>
+      <input
+        [(ngModel)]="confirmar.observacao"
+        type="text"
+        class="form-control"
+        name="observacao"
+        id="observacao"
+        placeholder=""
+      />
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="openModal(template)">
+    Continuar
+  </button>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    style="margin:5px;"
+    routerLink=""
+  >
+    Cancelar
+  </button>
 </div>
 
 <ng-template #template>
@@ -86,10 +81,10 @@
       type="submit"
       class="btn btn-primary"
       style="margin:5px;"
-      (click)="hideModal(cadastroForm)"
+      (click)="hideModal()"
       routerLink=""
       data-dismiss="modal"
-      [disabled]="!cadastroForm.valid"
+      [disabled]="!confirmar.cpf"
     >
       Sim
     </button>
