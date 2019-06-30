@@ -6,16 +6,16 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand text-danger" href="">Doação de Sangue</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-  </button>
+    <a class="navbar-brand text-danger" href="">Tuntum</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
 
-          <!--
+            <!--
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
@@ -30,51 +30,59 @@
           </li>
           -->
 
-          <li class="nav-link">
-              <a [routerLink]="['']">Home</a>
-          </li>
-
-          <!-- Implementando essa parte -->
-          <li class="nav-link" *ngIf="!logado">
-              <a [routerLink]="['/login']">Acessar meu perfil</a>
-          </li>
-          <!-- Implementando essa parte -->
-
-
-          <li class="nav-link">
-              <a [routerLink]="['/catalogo']">Catálogo</a>
-          </li>
-
-          <li class="nav-link">
-                <a [routerLink]="['/carrinho']">Carrinho</a>
+            <li class="nav-link">
+                <a [routerLink]="['']">Home</a>
             </li>
 
-          <li class="nav-link">
-              <a [routerLink]="['/relatorio/1']">Relatórios</a>
-          </li>
+
+            <li class="nav-link">
+                <a [routerLink]="['/catalogo']">Catálogo</a>
+            </li>
 
 
-          <!-- Implementando essa parte -->
-          <li class="nav-link" *ngIf="logado">
-              <a [routerLink]="" (click)="sair()">Sair</a>
-          </li>
-          <!-- Implementando essa parte -->
+            <li class="nav-link">
+                <a [routerLink]="['/relatorio/1']">Relatórios</a>
+            </li>
 
-          <img [routerLink]="['/carrinho']" 
-          src="https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/devMalu/images/carrinho.png" 
-          width="30" height="30" class="d-inline-block align-top">
+        </ul>
 
-
-      </ul>
-
-      <!--
+        <!--
       <form class="form-inline my-2 my-lg-0" #busca="ngForm" (ngSubmit)="onSubmit(busca)">
           <input class="form-control mr-sm-2" type="search" name="pesquisa" id="pesquisa" placeholder="Search"
               aria-label="Search" [ngModel]="busca.pesquisa" #pesquisa="ngModel">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
       -->
-  </div>
+
+
+        <!-- Parte esquerda da barra de navegação -->
+        <!--<div class="form-inline my-2 my-lg-0">-->
+
+        <!-- login -->
+        <li class="nav-link" *ngIf="!logado">
+            <a [routerLink]="['/login']">Acessar meu perfil</a>
+        </li>
+        <!-- login -->
+
+        <!-- carrinho -->
+        <img [routerLink]="['/carrinho']"
+            src="https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/devMalu/images/carrinhoCompras.png"
+            width="30" height="30" class="text-right">
+        <!-- carrinho -->
+
+
+        <!-- logout -->
+        <li class="nav-link" *ngIf="logado">
+            <a [routerLink]="" (click)="sair()">Sair</a>
+        </li>
+        <!-- logout -->
+
+        <!--</div>-->
+        <!-- Parte esquerda da barra de navegação -->
+
+
+
+    </div>
 
 </nav>
 
@@ -90,4 +98,3 @@
 -->
 
 <router-outlet></router-outlet>
-
