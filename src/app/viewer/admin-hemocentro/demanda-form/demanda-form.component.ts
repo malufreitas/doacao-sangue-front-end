@@ -2,7 +2,7 @@ import { Component, OnInit, TemplateRef } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
-import { environment } from "src/environments/environment.prod";
+import { environment } from "src/environments/environment";
 import { CookieService } from "ngx-cookie-service";
 
 @Component({
@@ -30,13 +30,15 @@ export class DemandaFormComponent implements OnInit {
     backdrop: true,
     ignoreBackdropClick: true
   };
+  ret: any = {};
 
   hideModal() {
     console.log();
     this.modalRef.hide();
     this.enviar();
-    alert("O cadastro da demanda foi concluído.");
-    window.location.href = "/hemocentro";
+    window.alert("O cadastro da demanda foi concluído.");
+    // window.location.href = "/hemocentro";
+    console.log(this.ret);
   }
 
   setTipo(tipo) {
@@ -44,11 +46,10 @@ export class DemandaFormComponent implements OnInit {
   }
 
   enviar() {
-    console.log(this.demanda);
     this.httpClient
       .post(`${environment.API}` + "demanda", this.demanda)
       .pipe(map(res => res))
-      .subscribe(dados => dados);
+      .subscribe(dados => (this.ret = dados), retorno => (this.ret = retorno));
   }
 
   justHide() {

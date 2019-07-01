@@ -23,7 +23,7 @@ import { AdminHemocentroComponent } from "./viewer/admin-hemocentro/admin-hemoce
 import { AdminLojaComponent } from "./viewer/admin-loja/admin-loja.component";
 import { HomeComponent } from "./viewer/home/home";
 import { DemandaFormComponent } from "./viewer/admin-hemocentro/demanda-form/demanda-form.component";
-import { ProdutoModule } from "./viewer/admin-loja/produto/produto.module";
+// import { ProdutoModule } from "./viewer/admin-loja/produto/produto.module";
 import { LoginModule } from "./viewer/login/login.module";
 import { AuthService } from "./viewer/guards/auth.service";
 import { TesteModalComponent } from "./viewer/teste-modal/teste-modal.component";
@@ -32,6 +32,7 @@ import { ConfirmarService } from "./viewer/doador-form/confirmar-doacao/confirma
 import { RelatorioModule } from "./viewer/relatorio/relatorio.module";
 import { DadosEntregaFormComponent } from "./viewer/compra-de-produtos/dados-entrega-form/dados-entrega-form.component";
 import { MessageService } from "primeng/components/common/messageservice";
+import { ProdutosListaComponent } from "./viewer/admin-loja/produto/produtos-lista/produtos-lista.component";
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { MessageService } from "primeng/components/common/messageservice";
     AjudaPageComponent,
     AdminHemocentroComponent,
     AdminLojaComponent,
-    DadosEntregaFormComponent
+    DadosEntregaFormComponent,
+    ProdutosListaComponent
   ],
   imports: [
     NgbModule,
@@ -59,11 +61,10 @@ import { MessageService } from "primeng/components/common/messageservice";
     LoginModule,
     CadastroModule,
     HttpClientModule,
-    ProdutoModule,
+    // ProdutoModule,
     ModalModule.forRoot(),
     BrowserAnimationsModule,
     CarouselModule.forRoot(),
-
     StorageServiceModule,
     RelatorioModule
   ],

@@ -35,35 +35,12 @@
           </li>
           -->
 
-      <li class="nav-link">
-        <a [routerLink]="['']">Home</a>
-      </li>
-
-      <!-- Implementando essa parte -->
-      <li class="nav-link" *ngIf="!user">
-        <a [routerLink]="['/login']">Acessar meu perfil</a>
-      </li>
       <!-- Implementando essa parte -->
 
       <li class="nav-link" *ngIf="!usuario_admin">
         <a [routerLink]="['/catalogo']">Catálogo</a>
       </li>
 
-      <li class="nav-link">
-        <a *ngIf="usuario_hemocentro && usuario_admin">{{
-          usuario_hemocentro
-        }}</a>
-      </li>
-
-      <!-- Nome do usuário -->
-      <li class="nav-link">
-        <a *ngIf="usuario_nome != ''"> Bem vindo(a), {{ usuario_nome }} </a>
-      </li>
-
-      <!-- Logout -->
-      <li class="nav-link" *ngIf="user">
-        <a [routerLink]="" (click)="logout()">Sair</a>
-      </li>
       <!-- Implementando essa parte -->
     </ul>
 
@@ -76,16 +53,15 @@
       -->
 
     <!-- Parte esquerda da barra de navegação -->
-    <!--<div class="form-inline my-2 my-lg-0">-->
 
-    <!-- login -->
-    <li class="nav-link" *ngIf="!logado">
-      <a [routerLink]="['/login']">Acessar meu perfil</a>
+    <li class="nav-link">
+      <a *ngIf="usuario_hemocentro && usuario_admin">{{
+        usuario_hemocentro
+      }}</a>
     </li>
-    <!-- login -->
-
     <!-- carrinho -->
     <img
+      *ngIf="user && !usuario_admin"
       [routerLink]="['/carrinho']"
       src="https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/devMalu/images/carrinhoCompras.png"
       width="30"
@@ -94,13 +70,21 @@
     />
     <!-- carrinho -->
 
-    <!-- logout -->
-    <li class="nav-link" *ngIf="logado">
-      <a [routerLink]="" (click)="sair()">Sair</a>
+    <!-- Nome do usuário -->
+    <li class="nav-link">
+      <a *ngIf="usuario_nome != ''"> Bem vindo(a), {{ usuario_nome }} </a>
     </li>
-    <!-- logout -->
 
-    <!--</div>-->
+    <!-- Implementando essa parte -->
+    <li class="nav-link" *ngIf="!user">
+      <a [routerLink]="['/login']">Login</a>
+    </li>
+
+    <!-- Logout -->
+    <li class="nav-link" *ngIf="user">
+      <a [routerLink]="" (click)="logout()">Sair</a>
+    </li>
+
     <!-- Parte esquerda da barra de navegação -->
   </div>
 </nav>

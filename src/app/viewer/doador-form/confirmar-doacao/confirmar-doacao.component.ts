@@ -115,6 +115,7 @@ export class ConfirmarDoacaoComponent implements OnInit {
       .subscribe(val => val, response => response);
 
     alert("Doação confirmada com sucesso!");
+    window.location.href = "/hemocentro";
   }
 
   continuar() {}

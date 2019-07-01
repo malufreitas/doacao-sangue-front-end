@@ -36,6 +36,7 @@ export class AuthService {
     if (resposta.user_id.admin != null) {
       this.cookieService.set("admin", resposta.user_id.admin);
       this.cookieService.set("hemocentro", resposta.user_id.hemocentro);
+      this.cookieService.set("cnes", resposta.user_id.cnes);
     }
   }
 

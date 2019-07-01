@@ -5,6 +5,8 @@ import { environment } from "src/environments/environment";
 import { Categoria } from "src/app/model/categoria";
 import { Genero } from "src/app/model/genero";
 import { Produto } from "src/app/model/produto";
+import { Tamanho } from "src/app/model/tamanho";
+import { Material } from "src/app/model/material";
 
 @Injectable({
   providedIn: "root"
@@ -21,12 +23,11 @@ export class CatalogoProdutosService {
   }
 
   getTamanhos() {
-    console.log(`${environment.API}`);
-    return this.http.get<Genero[]>(`${environment.API}` + "tamanhos");
+    return this.http.get<Tamanho[]>(`${environment.API}` + "tamanhos");
   }
 
   getMateriais() {
-    return this.http.get<Genero[]>(`${environment.API}` + "materiais");
+    return this.http.get<Material[]>(`${environment.API}` + "materiais");
   }
 
   // Passando de uma maneira muito ruim, argumento pela url

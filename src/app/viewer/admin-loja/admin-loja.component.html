@@ -1,81 +1,41 @@
-<div class="container">
-<nav>
-		<ul class="mcd-menu">
-			<li>
-				<a href="/1">
-					<i class="fa fa-home"></i>
-					<strong>Opção 1</strong>
-					<small>Detalhes sobre a opção 1</small>
-				</a>
-			</li>
-			<br>
-			<li>
-				<a href="/confirmar">
-					<i class="fa fa-edit"></i>
-					<strong>Produto</strong>
-					<small>Cadastrar um novo produto</small>
-				</a>
-			</li>
-			<!--<br>-->
-			<!--<li>-->
-			<!--	<a href="">-->
-			<!--		<i class="fa fa-gift"></i>-->
-			<!--		<strong>Features</strong>-->
-			<!--		<small>sweet home</small>-->
-			<!--	</a>-->
-			<!--</li>-->
-			<!--<br>-->
-			<!--<li>-->
-			<!--	<a href="">-->
-			<!--		<i class="fa fa-globe"></i>-->
-			<!--		<strong>News</strong>-->
-			<!--		<small>sweet home</small>-->
-			<!--	</a>-->
-			<!--</li>-->
-			<br>
-			<li>
-				<a>
-					<i class="fa fa-comments-o"></i>
-					<strong>Relatórios</strong>
-					<small>Relatórios disponíveis</small>
-				</a>
-				<ul>
-					<li><a href="/1"><i class="fa fa-globe"></i>Relatório 1</a></li>
-					<li>
-						<a href="/2"><i class="fa fa-group"></i>Relatório 2</a>
-						<!--<ul>-->
-						<!--	<li><a href="#"><i class="fa fa-female"></i>Leyla Sparks</a></li>-->
-						<!--	<li>-->
-						<!--		<a href="#"><i class="fa fa-male"></i>Gleb Ismailov</a>-->
-						<!--		<ul>-->
-						<!--			<li><a href="#"><i class="fa fa-leaf"></i>About</a></li>-->
-						<!--			<li><a href="#"><i class="fa fa-tasks"></i>Skills</a></li>-->
-						<!--		</ul>-->
-						<!--	</li>-->
-						<!--	<li><a href="#"><i class="fa fa-female"></i>Viktoria Gibbers</a></li>-->
-						<!--</ul>-->
-					</li>
-					<li><a href="/3"><i class="fa fa-trophy"></i>Relatório 3</a></li>
-					<!--<li><a href="#"><i class="fa fa-certificate"></i>Certificates</a></li>-->
-				</ul>
-			</li>
-			<br>
-			<br>
-			<li>
-				<a href="">
-					<i class="fa fa-picture-o"></i>
-					<strong>Sair</strong>
-					<!--<small></small>-->
-				</a>
-			</li>
-			<br>
-			<!--<li>-->
-			<!--	<a href="">-->
-			<!--		<i class="fa fa-envelope-o"></i>-->
-			<!--		<strong>Contacts</strong>-->
-			<!--		<small>drop a line</small>-->
-			<!--	</a>-->
-			<!--</li>-->
-		</ul>
-	</nav>
+<!-- <div class="container"> -->
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <!-- <div class="sidebar-heading">Meu teste</div> -->
+    <div class="list-group list-group-flush">
+      <a
+        [routerLink]=""
+        (click)="opcao = 0"
+        class="list-group-item list-group-item-action bg-light"
+        >Novo Produto</a
+      >
+      <a
+        [routerLink]=""
+        (click)="opcao = 1"
+        class="list-group-item list-group-item-action bg-light"
+        >Novo Hemocentro</a
+      >
+      <a
+        (click)="opcao = 2"
+        class="list-group-item list-group-item-action bg-light"
+        >Relatório</a
+      >
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <!-- aqui tinha um navbar -->
+    <div class="container-fluid">
+      <app-produtos-lista *ngIf="opcao == 0"></app-produtos-lista>
+      <app-confirmar-doacao *ngIf="opcao == 1"></app-confirmar-doacao>
+      <!-- Página de dentro, onde vão aparecer as informações : CONTEUDO DA PAGINA-->
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
 </div>
+
+<!-- /#wrapper -->
+<!-- </div> -->

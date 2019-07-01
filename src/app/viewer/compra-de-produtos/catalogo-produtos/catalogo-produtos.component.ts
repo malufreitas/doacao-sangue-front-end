@@ -11,7 +11,7 @@ import { Material } from "src/app/model/material";
 import { Produto } from "src/app/model/produto";
 import { AppComponent } from "./../../../app.component";
 import { CarrinhoDeComprasService } from "./../carrinho-de-compras/carrinho-de-compras.service";
-import { environment } from "src/environments/environment.prod";
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: "app-catalogo-produtos",
@@ -92,7 +92,6 @@ export class CatalogoProdutosComponent implements OnInit {
     } else {
       this.filtros.categoria.push(nome);
     }
-    //console.log(this.produtos);
     this.pegaProduto(this.filtros);
   }
 
@@ -102,7 +101,6 @@ export class CatalogoProdutosComponent implements OnInit {
     } else {
       this.filtros.genero.push(nome);
     }
-    //console.log(this.produtos);
     this.pegaProduto(this.filtros);
   }
 
@@ -112,7 +110,6 @@ export class CatalogoProdutosComponent implements OnInit {
     } else {
       this.filtros.material.push(nome);
     }
-    //console.log(this.produtos);
     this.pegaProduto(this.filtros);
   }
 
@@ -122,7 +119,6 @@ export class CatalogoProdutosComponent implements OnInit {
     } else {
       this.filtros.tamanho.push(nome);
     }
-    //console.log(this.produtos);
     this.pegaProduto(this.filtros);
   }
 

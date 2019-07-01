@@ -9,7 +9,7 @@ import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
 import { Produto } from "src/app/model/produto";
 import { AppComponent } from "src/app/app.component";
 import { CarrinhoDeComprasService } from "./carrinho-de-compras.service";
-import { environment } from "src/environments/environment.prod";
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: "app-carrinho-de-compras",
