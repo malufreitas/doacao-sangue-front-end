@@ -28,9 +28,8 @@ export class HemoGuard implements CanActivate {
 
     if (
       this.cookieService.check("admin") &&
-      this.cookieService.get("admin").slice(0, 3) == "HEMO"
+      this.cookieService.get("admin").slice(0, 4) == "HEMO"
     ) {
-      console.log(this.cookieService.get("admin").slice(0, 3));
       return true;
     }
   }

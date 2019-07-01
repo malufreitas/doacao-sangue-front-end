@@ -35,6 +35,7 @@ export class AuthService {
     this.cookieService.set("telefone", resposta.user_id.telefone);
     if (resposta.user_id.admin != null) {
       this.cookieService.set("admin", resposta.user_id.admin);
+      this.cookieService.set("hemocentro", resposta.user_id.hemocentro);
     }
   }
 
@@ -44,7 +45,20 @@ export class AuthService {
     this.usuarioAutenticado = true;
 
     // Direcionar para tela:
-    window.location.href = "/";
+
+    if (
+      this.cookieService.check("token") &&
+      this.cookieService.get("admin").slice(0, 4) == "HEMO"
+    ) {
+      window.location.href = "/hemocentro";
+    } else if (
+      this.cookieService.check("token") &&
+      this.cookieService.get("admin").slice(0, 3) == "SIS"
+    ) {
+      window.location.href = "/sistema";
+    } else {
+      window.location.href = "/";
+    }
   }
 
   logout(): void {

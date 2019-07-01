@@ -28,7 +28,7 @@ export class SistemaGuard implements CanActivate {
 
     if (
       this.cookieService.check("admin") &&
-      this.cookieService.get("admin").slice(0, 2) == "SIS"
+      this.cookieService.get("admin").slice(0, 3) == "SIS"
     ) {
       return true;
     }

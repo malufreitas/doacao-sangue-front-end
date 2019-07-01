@@ -14,11 +14,14 @@ export class AppComponent {
   constructor(private serviceCookie: CookieService) {}
   usuario_nome = "";
   usuario_admin;
+  usuario_hemocentro;
 
   ngOnInit() {
     this.usuario_nome = this.serviceCookie.get("nome");
     this.user = this.serviceCookie.check("token");
     this.usuario_admin = this.serviceCookie.check("admin");
+    this.usuario_hemocentro = this.serviceCookie.check("hemocentro");
+    this.usuario_hemocentro = this.serviceCookie.get("hemocentro");
   }
 
   logout(): void {

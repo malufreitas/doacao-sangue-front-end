@@ -45,12 +45,14 @@
       </li>
       <!-- Implementando essa parte -->
 
-      <li class="nav-link">
+      <li class="nav-link" *ngIf="!usuario_admin">
         <a [routerLink]="['/catalogo']">Catálogo</a>
       </li>
 
       <li class="nav-link">
-        <a [routerLink]="['/relatorio/1']">Relatórios</a>
+        <a *ngIf="usuario_hemocentro && usuario_admin">{{
+          usuario_hemocentro
+        }}</a>
       </li>
 
       <!-- Nome do usuário -->
