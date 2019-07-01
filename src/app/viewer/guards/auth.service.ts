@@ -1,88 +1,82 @@
-import { Injectable, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { CookieService } from 'ngx-cookie-service';
-
+import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
+import { HttpClient } from "@angular/common/http";
+import { environment } from "src/environments/environment";
+import { CookieService } from "ngx-cookie-service";
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: "root"
 })
 export class AuthService {
+  private usuarioAutenticado: boolean = false;
+  resposta: void;
 
-    private options
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    private cookieService: CookieService
+  ) {}
 
-    private usuarioAutenticado: boolean = false;
-    resposta: void;
-    //mostrarMenuEmitter =  new EventEmitter<boolean>();
+  salvaCookie(resposta) {
+    let dt = new Date();
 
-    constructor(
-        private http: HttpClient,
-        private cookieService: CookieService
+    this.cookieService.set(
+      "token",
+      resposta.access_token,
+      dt.setHours(dt.getHours() + 1)
+    );
+    this.cookieService.set("tempo_sessao", resposta.expires_in);
+    this.cookieService.set("nome", resposta.user_id.nome);
+    this.cookieService.set("sobrenome", resposta.user_id.sobrenome);
+    this.cookieService.set("datanascimento", resposta.user_id.datanascimento);
+    this.cookieService.set("cpf", resposta.user_id.cpf);
+    this.cookieService.set("sexo", resposta.user_id.sexo);
+    this.cookieService.set("email", resposta.user_id.email);
+    this.cookieService.set("telefone", resposta.user_id.telefone);
+    if (resposta.user_id.admin != null) {
+      this.cookieService.set("admin", resposta.user_id.admin);
+      this.cookieService.set("hemocentro", resposta.user_id.hemocentro);
+    }
+  }
+
+  login(resposta) {
+    console.log(resposta);
+    this.salvaCookie(resposta);
+    this.usuarioAutenticado = true;
+
+    // Direcionar para tela:
+
+    if (
+      this.cookieService.check("token") &&
+      this.cookieService.get("admin").slice(0, 4) == "HEMO"
     ) {
-        this.options = { headers: this.getHeaders() };
+      window.location.href = "/hemocentro";
+    } else if (
+      this.cookieService.check("token") &&
+      this.cookieService.get("admin").slice(0, 3) == "SIS"
+    ) {
+      window.location.href = "/sistema";
+    } else {
+      window.location.href = "/";
     }
+  }
 
+  logout(): void {
+    this.cookieService.deleteAll();
+    this.router.navigate(["/"]);
+  }
 
-    private getHeaders(): HttpHeaders {
-        const headers = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' });
-        return headers;
-    }
+  autenticacao(formulario) {
+    this.http
+      .post<any>(`${environment.API}` + "auth/login", formulario)
+      .pipe()
+      .subscribe(
+        success => this.login(success), //resposta do servidor com o status 404 ou 200
+        error => console.log(error)
+      );
+  }
 
-    login(auth) {
-        return this.http.post<any>('https://doacaodesangue.herokuapp.com/auth/login', auth, this.options);
-    }
-
-    logout() {
-        this.cookieService.deleteAll()
-    }
-
-    salvacookie(pessoa: any) {
-        var dt = new Date();
-        dt.setHours(dt.getHours() + 2);
-    }
-
-
-    /*
-        login(formulario) {
-            //this.resposta = this.autenticacao(formulario);
-            //console.log('>>>>>>>', this.resposta);
-    
-            //status: 404 erro  -   200 sucesso
-    
-            //if (resposta.status == '200') {
-            if (formulario.value.email == 'usuario@email.com' && formulario.value.senha == '123') {
-                // Se usuario for autenticado
-                this.usuarioAutenticado = true;
-    
-                // Para mostrar o menu caso o usuário estiver logado
-                //this.mostrarMenuEmitter.emit(true);
-    
-                // Direcionar para tela:
-                this.router.navigate(['/produtos']);
-            }
-    */
-
-
-
-    usuarioEstaAutenticado() {
-        return this.usuarioAutenticado;
-    }
-
-
-
-    /*
-        logout(): void {
-            // Limpa o token removendo o usuário do local store para efetuar o logout
-            this.token = null;
-            localStorage.removeItem('currentUser');
-        }
-    */
-
-
-
+  usuarioEstaAutenticado() {
+    return this.usuarioAutenticado;
+  }
 }
-
-
-
-
-

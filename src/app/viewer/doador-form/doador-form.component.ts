@@ -1,97 +1,109 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { Component, OnInit, TemplateRef } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { map } from "rxjs/operators";
+import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
+import { CookieService } from "ngx-cookie-service";
 
 @Component({
-  selector: 'app-doador-form',
-  templateUrl: './doador-form.component.html',
-  styleUrls: ['./doador-form.component.css']
+  selector: "app-doador-form",
+  templateUrl: "./doador-form.component.html",
+  styleUrls: ["./doador-form.component.css"]
 })
 export class DoadorFormComponent implements OnInit {
+  constructor(
+    private modalService: BsModalService,
+    private httpClient: HttpClient,
+    private serviceCookie: CookieService
+  ) {}
+
+  ngOnInit() {}
 
   modalRef: BsModalRef;
-  
+
   doador: any = {
-    cpf:78945612300,
-    tipofator: null,
-    hepatiteB: false,
-    hepatiteC: false,
-    hltv: false,
-    drogas: false,
+    cpf: "", //mudar para pegar do usuário da sessão
+    tiposanguineo: null,
     malaria: false,
-    aids: false,
+    hepatite11: false,
+    hepatiteb: false,
+    hepatitec: false,
+    droga: false,
     chagas: false,
+    htlv: false,
+    hiv: false
   };
-  
+
   config = {
     backdrop: true,
     ignoreBackdropClick: true
   };
-  
-  setTipo(tipo){
-    this.doador.tipofator = tipo;
+
+  setTipo(tipo) {
+    this.doador.tiposanguineo = tipo;
   }
-  
-  hideModal(){
+
+  hideModal(ngForm) {
     this.justHide();
-    if (this.doador.hepatiteB == true ||
-        this.doador.hepatiteC == true ||
-        this.doador.hltv == true || 
-        this.doador.drogas == true || 
-        this.doador.malaria == true  ||  
-        this.doador.aids == true || 
-        this.doador.chagas == true){
-           alert('O seu cadastro de doador foi concluído, porém por motivos de saúde você não está apto a doar.'); 
-    }else {
-      alert('O seu cadastro de doador foi concluído.');
+    if (
+      this.doador.hepatite11 == true ||
+      this.doador.hepatiteb == true ||
+      this.doador.hepatitec == true ||
+      this.doador.htlv == true ||
+      this.doador.droga == true ||
+      this.doador.malaria == true ||
+      this.doador.hiv == true ||
+      this.doador.chagas == true
+    ) {
+      alert(
+        "O seu cadastro de doador foi concluído, porém por motivos de saúde você não está apto a doar."
+      );
+    } else {
+      alert("O seu cadastro de doador foi concluído com sucesso!");
     }
     this.enviar();
   }
-  
-  justHide(){
+
+  justHide() {
     this.modalRef.hide();
   }
-  
-  enviar(){
+
+  enviar() {
+    this.doador.cpf = this.serviceCookie.get("cpf");
     console.log(this.doador);
-    this.httpClient.post('https://doacaodesangue.herokuapp.com/doador', this.doador)
-    .pipe(map(res => res))
-    .subscribe(dados => console.log(dados))
+
+    this.httpClient
+      .post("https://doacaodesangue.herokuapp.com/doador", this.doador)
+      // .post("http://localhost:3000/doador", this.doador)
+      .pipe(map(res => res))
+      .subscribe(val => console.log(val));
   }
-  
-  constructor(
-    private modalService: BsModalService,
-    private httpClient: HttpClient
-  ) { }
-  
-  ngOnInit(){}
-  
+
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, this.config);
   }
-  
-  hepatiteBFunction(){
-    this.doador.hepatiteB = true;
+
+  hepatiteBFunction() {
+    this.doador.hepatiteb = true;
   }
-  hepatiteCFunction(){
-    this.doador.hepatiteC = true;
-  }  
-  hltvFunction(){
-    this.doador.hltv = true;
+  hepatiteCFunction() {
+    this.doador.hepatitec = true;
   }
-  drogasFunction(){
-    this.doador.drogas = true;
+  hepatite11Function() {
+    this.doador.hepatite11 = true;
   }
-  malariaFunction(){
+  htlvFunction() {
+    this.doador.htlv = true;
+  }
+  drogasFunction() {
+    this.doador.droga = true;
+  }
+  malariaFunction() {
     this.doador.malaria = true;
   }
-  aidsFunction(){
-    this.doador.aids = true;
+  hivFunction() {
+    this.doador.hiv = true;
   }
-  chagasFunction(){
+  chagasFunction() {
     this.doador.chagas = true;
   }
-  
-  
 }

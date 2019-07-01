@@ -13,7 +13,7 @@ import { CookieService } from "ngx-cookie-service";
 @Injectable({
   providedIn: "root"
 })
-export class AuthGuard implements CanActivate {
+export class HemoGuard implements CanActivate {
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -27,14 +27,10 @@ export class AuthGuard implements CanActivate {
     //Retorna um observable
 
     if (
-      this.cookieService.check("token") &&
-      !this.cookieService.check("admin")
+      this.cookieService.check("admin") &&
+      this.cookieService.get("admin").slice(0, 4) == "HEMO"
     ) {
       return true;
     }
-    if (!this.cookieService.check("token")) {
-      this.router.navigate(["/login"]);
-    }
-    return false;
   }
 }
