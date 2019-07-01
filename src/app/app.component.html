@@ -74,6 +74,34 @@
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
       -->
+
+    <!-- Parte esquerda da barra de navegação -->
+    <!--<div class="form-inline my-2 my-lg-0">-->
+
+    <!-- login -->
+    <li class="nav-link" *ngIf="!logado">
+      <a [routerLink]="['/login']">Acessar meu perfil</a>
+    </li>
+    <!-- login -->
+
+    <!-- carrinho -->
+    <img
+      [routerLink]="['/carrinho']"
+      src="https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/devMalu/images/carrinhoCompras.png"
+      width="30"
+      height="30"
+      class="text-right"
+    />
+    <!-- carrinho -->
+
+    <!-- logout -->
+    <li class="nav-link" *ngIf="logado">
+      <a [routerLink]="" (click)="sair()">Sair</a>
+    </li>
+    <!-- logout -->
+
+    <!--</div>-->
+    <!-- Parte esquerda da barra de navegação -->
   </div>
 </nav>
 

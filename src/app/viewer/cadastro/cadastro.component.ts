@@ -45,7 +45,7 @@ export class CadastroComponent implements OnInit {
       .pipe(map(res => res))
       .subscribe(dados => {
         this.user = dados;
-        console.log(this.user);
+
         if (this.user != null) {
           alert("Usuário já cadastrado!");
           window.location.href = "/login";

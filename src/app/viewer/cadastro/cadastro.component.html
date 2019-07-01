@@ -47,6 +47,7 @@
         Sobrenome é obrigatório.
       </div>
     </div>
+    <<<<<<< HEAD
   </div>
 
   <div class="form-row ">
@@ -67,135 +68,159 @@
         *ngIf="!datanascimento.valid && datanascimento.touched"
         class="text-danger"
       >
-        Data de Nascimento é obrigatório.
+        Data de Nascimento é obrigatório. =======
+
+        <div class="form-row ">
+          <div class="form-group col-md-3">
+            <label for="datanascimento">Data de Nascimento</label>
+            <input
+              type="text"
+              class="form-control"
+              name="datanascimento"
+              id="datanascimento"
+              placeholder="dd/mm/aaaa"
+              [ngModel]="usuario.datanascimento"
+              required
+              #datanascimento="ngModel"
+            />
+
+            <div
+              *ngIf="!datanascimento.valid && datanascimento.touched"
+              class="text-danger"
+            >
+              Data de Nascimento é obrigatório.
+            </div>
+            >>>>>>> 3eabebc4908c4d502d530c9de39943355139978a
+          </div>
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="sexo">Sexo</label>
+          <select
+            class="custom-select"
+            name="sexo"
+            id="sexo"
+            [(ngModel)]="usuario.sexo"
+            required
+            #sexo="ngModel"
+          >
+            <!--option selected>Selecione...</option-->
+            <option value="F">F</option>
+            <option value="M">M</option>
+          </select>
+
+          <div *ngIf="!sexo.valid && sexo.touched" class="text-danger">
+            É necessário informar o sexo.
+          </div>
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="cpf">CPF</label>
+          <input
+            type="text"
+            class="form-control"
+            name="cpf"
+            id="cpf"
+            placeholder="Digite apenas os números"
+            [(ngModel)]="usuario.cpf"
+            required
+            #cpf="ngModel"
+          />
+
+          <div *ngIf="!cpf.valid && cpf.touched" class="text-danger">
+            CPF é obrigatório.
+          </div>
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="telefone">Telefone</label>
+          <input
+            type="text"
+            class="form-control"
+            name="telefone"
+            id="telefone"
+            placeholder="Digite apenas os números"
+            [(ngModel)]="usuario.telefone"
+            required
+            #telefone="ngModel"
+          />
+
+          <div *ngIf="!telefone.valid && telefone.touched" class="text-danger">
+            Telefone é obrigatório.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row ">
+        <div class="form-group col-md-12">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            id="email"
+            placeholder="nome@email.com"
+            [(ngModel)]="usuario.email"
+            required
+            email
+            #email="ngModel"
+          />
+
+          <div *ngIf="!email.valid && email.touched" class="text-danger">
+            E-mail é obrigatório.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row ">
+        <div class="form-group col-md-6">
+          <label for="senha">Senha</label>
+          <input
+            type="password"
+            class="form-control"
+            name="senha"
+            id="senha"
+            placeholder="Senha"
+            [(ngModel)]="usuario.senha"
+            required
+            #senha="ngModel"
+          />
+
+          <div *ngIf="!senha.valid && senha.touched" class="text-danger">
+            Senha é obrigatório.
+          </div>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="confirmarSenha">Confirmar senha</label>
+          <input
+            type="password"
+            class="form-control"
+            name="confirmarSenha"
+            id="confirmarSenha"
+            placeholder="Confirmar senha"
+            [ngModel]="usuario.confirmarSenha"
+            required
+            #confirmarSenha="ngModel"
+          />
+
+          <div
+            *ngIf="!confirmarSenha.valid && confirmarSenha.touched"
+            class="text-danger"
+          >
+            É obrigatório confirmar a senha.
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="form-group col-md-3">
-      <label for="sexo">Sexo</label>
-      <select
-        class="custom-select"
-        name="sexo"
-        id="sexo"
-        [(ngModel)]="usuario.sexo"
-        required
-        #sexo="ngModel"
-      >
-        <!--option selected>Selecione...</option-->
-        <option value="F">F</option>
-        <option value="M">M</option>
-      </select>
-
-      <div *ngIf="!sexo.valid && sexo.touched" class="text-danger">
-        É necessário informar o sexo.
-      </div>
-    </div>
-
-    <div class="form-group col-md-3">
-      <label for="cpf">CPF</label>
-      <input
-        type="text"
-        class="form-control"
-        name="cpf"
-        id="cpf"
-        placeholder="Digite apenas os números"
-        [(ngModel)]="usuario.cpf"
-        required
-        #cpf="ngModel"
-      />
-
-      <div *ngIf="!cpf.valid && cpf.touched" class="text-danger">
-        CPF é obrigatório.
-      </div>
-    </div>
-
-    <div class="form-group col-md-3">
-      <label for="telefone">Telefone</label>
-      <input
-        type="text"
-        class="form-control"
-        name="telefone"
-        id="telefone"
-        placeholder="Digite apenas os números"
-        [(ngModel)]="usuario.telefone"
-        required
-        #telefone="ngModel"
-      />
-
-      <div *ngIf="!telefone.valid && telefone.touched" class="text-danger">
-        Telefone é obrigatório.
-      </div>
-    </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!usuario"
+      (click)="onSubmit()"
+    >
+      Submit
+    </button>
   </div>
-
-  <div class="form-row ">
-    <div class="form-group col-md-12">
-      <label for="email">E-mail</label>
-      <input
-        type="email"
-        class="form-control"
-        name="email"
-        id="email"
-        placeholder="nome@email.com"
-        [(ngModel)]="usuario.email"
-        required
-        email
-        #email="ngModel"
-      />
-
-      <div *ngIf="!email.valid && email.touched" class="text-danger">
-        E-mail é obrigatório.
-      </div>
-    </div>
-  </div>
-
-  <div class="form-row ">
-    <div class="form-group col-md-6">
-      <label for="senha">Senha</label>
-      <input
-        type="password"
-        class="form-control"
-        name="senha"
-        id="senha"
-        placeholder="Senha"
-        [(ngModel)]="usuario.senha"
-        required
-        #senha="ngModel"
-      />
-
-      <div *ngIf="!senha.valid && senha.touched" class="text-danger">
-        Senha é obrigatório.
-      </div>
-    </div>
-
-    <div class="form-group col-md-6">
-      <label for="confirmarSenha">Confirmar senha</label>
-      <input
-        type="password"
-        class="form-control"
-        name="confirmarSenha"
-        id="confirmarSenha"
-        placeholder="Confirmar senha"
-        [(ngModel)]="usuario.confirmarSenha"
-        required
-        #confirmarSenha="ngModel"
-      />
-
-      <div
-        *ngIf="!confirmarSenha.valid && confirmarSenha.touched"
-        class="text-danger"
-      >
-        É obrigatório confirmar a senha.
-      </div>
-    </div>
-  </div>
-
-  <button
-    type="submit"
-    class="btn btn-primary"
-    [disabled]="!usuario"
-    (click)="onSubmit()"
-  >
-    Submit
-  </button>
 </div>

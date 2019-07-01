@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-dados-entrega-form',
   templateUrl: './dados-entrega-form.component.html',
@@ -23,16 +24,16 @@ export class DadosEntregaFormComponent implements OnInit {
   onSubmit(formulario) {
     console.log(formulario);
 
-    this.httpClient.post('https://httpbin.org/post', JSON.stringify(formulario.value))
-    .pipe(map(res => res))
-    .subscribe(dados => console.log(dados))
-
+    this.httpClient.post('inserir o link da rota que vai armazenar os dados de endereço de entrega', formulario.value)
+      .pipe(map(res => res))
+      .subscribe(dados => console.log(dados))
   }
+
 
   consultaCEP(cep, formulario) {
     //Nova variável "cep" somente com dígitos.
     cep = cep.replace(/\D/g, '');
-
+   
     //Verifica se campo cep possui valor informado.
     if (cep != null && cep != '') {
       this.resetaDadosFormulario(formulario);
@@ -40,6 +41,7 @@ export class DadosEntregaFormComponent implements OnInit {
       this.httpClient.get(`//viacep.com.br/ws/${cep}/json`)
         .pipe(map(dados => dados))
         .subscribe(dados => this.populaDadosForm(dados, formulario))
+  
     }
 
   }

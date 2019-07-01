@@ -12,7 +12,7 @@ import { Produto } from 'src/app/model/produto';
 })
 export class CatalogoProdutosService {
 
-  private readonly API = `${environment.API}categoria`;
+  //private readonly API = `${environment.API}categoria`;
   //private readonly API = 'http://localhost:3000/categoria'
 
   constructor(

@@ -1,15 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../guards/auth.service";
 
-// const DADOS_CRIPTOGRAFAR = {
-//   algoritmo: "aes256",
-//   codificacao: "utf8",
-//   segredo: "chaves",
-//   tipo: "hex"
-// };
-
-// const crypto = require("crypto");
-
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
@@ -30,9 +21,6 @@ export class LoginComponent implements OnInit {
   }
 
   logar() {
-    // this.usuario.senha = this.criptografar(this.usuario.senha);
-    console.log(this.usuario);
     this.authService.autenticacao(this.usuario);
-    //this.authService.login(formulario);
   }
 }

@@ -17,28 +17,36 @@
 
       <div class="text-center">
         <!-- Botão de pagamento paypal -->
-        <input type="number" [(ngModel)]="totalAmount" style="padding-bottom: 10px;">
+        <!--<input type="number" [(ngModel)]="totalAmount" style="padding-bottom: 10px;">-->
         <h2 *ngIf="paypalLoad">Paypal button is loading...</h2>
         <div id="paypal-checkout-btn"></div>
         <!-- Botão de pagamento paypal -->
 
 
         <!-- Botão de pagamento boleto -->
-        <form action="https://sandbox.boletobancario.com/boletofacil/integration/button/checkout.html" method="post">
-          <input type="hidden" name="code" value="C43BEA185DCCEC4F" />
+        <!--
+          <form action="https://sandbox.boletobancario.com/boletofacil/integration/button/checkout.html" 
+        method="post">
+          <input type="hidden" name="code" value="AF98B551FBA7C2CF" />
+          -->
+        <a href="https://sandbox.boletobancario.com/boletofacil/integration/button/checkout.html?code=AF98B551FBA7C2CF">
           <input type="image"
             src="https://sandbox.boletobancario.com/boletofacil/img/payment-buttons/button-box-medium.png" name="submit"
             alt="Pague com Boleto Banc&aacute;rio!" />
-          <div id="boleto-checkout-btn"></div>
-        </form>
+        </a>
+        <!-- </form> -->
         <!-- Botão de pagamento boleto -->
 
       </div>
 
 
-      <a href="/enderecodeentrega" class="float-left btn btn-outline-warning">Voltar</a>
+      <div>
+        <a [routerLink]="['/enderecodeentrega']" class="float-left btn btn-outline-warning">Voltar</a>
+      </div>
 
-      <a href="/finalizacompra" class="float-right btn btn-outline-success">Finalizar compra</a>
+      <div>
+        <a [routerLink]="['/finalizacompra']" class="float-right btn btn-outline-success">Finalizar compra</a>
+      </div>
 
     </div>
 

@@ -1,5 +1,7 @@
-import { Component, AfterViewChecked } from '@angular/core';
+import { Component, AfterViewChecked, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
+import { CarrinhoDeComprasService } from './../carrinho-de-compras/carrinho-de-compras.service';
 
 declare let paypal: any;
 
@@ -16,7 +18,8 @@ export class PagamentoComponent implements AfterViewChecked {
   addScript: boolean = false;
   paypalLoad: boolean = true;
 
-  totalAmount: number = 1;
+  totalAmount: number;
+
 
   endereco_cobranca: {};
   compra: {};
@@ -24,8 +27,21 @@ export class PagamentoComponent implements AfterViewChecked {
 
 
   // Boleto fácil
-  
+
   // Boleto fácil
+
+
+  constructor(
+    private http: HttpClient,
+    private carrinhoService: CarrinhoDeComprasService
+  ) { }
+
+
+  ngOnInit() {
+    this.totalAmount = this.carrinhoService.total();
+    console.log('total >>>', this.totalAmount);
+  }
+
 
 
   // Paypal
@@ -47,7 +63,7 @@ export class PagamentoComponent implements AfterViewChecked {
             { amount: { total: this.totalAmount, currency: 'BRL' } }
           ]
         }
-      });   
+      });
 
     },
 
@@ -57,7 +73,7 @@ export class PagamentoComponent implements AfterViewChecked {
         window.alert('Pagamento efetuado!');
 
         this.endereco_cobranca = {
-          'rua': payment.payer.payer_info.shipping_address.line1 ,
+          'rua': payment.payer.payer_info.shipping_address.line1,
           'bairro': payment.payer.payer_info.shipping_address.line2,
           'cidade': payment.payer.payer_info.shipping_address.city,
           'estado': payment.payer.payer_info.shipping_address.state,
@@ -67,7 +83,7 @@ export class PagamentoComponent implements AfterViewChecked {
         this.compra = {
           'status': payment.state,  // payment.payer.status ??
           'data': payment.create_time,
-          'pagamento': payment.payer.payment_method, 
+          'pagamento': payment.payer.payment_method,
           'valorTotal': payment.trasactions.amount.total,  //this.totalAmount
           'idendereco': 0,
           'idpessoa': 0
@@ -79,7 +95,7 @@ export class PagamentoComponent implements AfterViewChecked {
         // compra
       })
     }
-    
+
   };
 
 
@@ -107,6 +123,7 @@ export class PagamentoComponent implements AfterViewChecked {
 
 
   //Boleto Fácil
+  /*
   addBoletoScript() {
     this.addScript = true;
     return new Promise((resolve, reject) => {
@@ -116,8 +133,11 @@ export class PagamentoComponent implements AfterViewChecked {
       document.body.appendChild(scripttagElement);
     })
   }
+  */
 
-
-
+  addBoletoScript(code) {
+    this.http.post('https://sandbox.boletobancario.com/boletofacil/integration/button/checkout.html', code)
+      .subscribe();
+  }
 
 }

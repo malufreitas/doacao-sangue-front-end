@@ -4,7 +4,6 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { catchError, map } from 'rxjs/operators';
 
 import { ProdutosListaService } from './produtos-lista.service';
-import { HttpClient } from 'selenium-webdriver/http';
 import { Produto } from 'src/app/model/produto';
 
 
@@ -26,21 +25,28 @@ export class ProdutosListaComponent implements OnInit {
   modalRef: BsModalRef;
   message: string;
 
+  private produto = {
+    nome: null,
+    quantidade: null, 
+    descricao: null,
+    valorunitario: null,
+    categoria: null,
+    tamanho: null,
+    volume: null,
+    material: null,
+    genero: null
+  };
+
   constructor(
     private service: ProdutosListaService,
-    private modalService: BsModalService
-    //private httpClient: HttpClient
+    private modalService: BsModalService,
+    private produtosListaService: ProdutosListaService
   ) { }
 
   ngOnInit() {
-    //Subscribe para ativar, fazer a chamada de cursos 
-    //Mostra no Network -> XHR
-    /* this.service.list()
-    .subscribe(dados => this.produtos = dados);
-    .subscribe(console.log); */
-
-    this.produtos$ = this.service.list().
-    pipe(
+    console.log(this.produtos$)
+    this.produtos$ = this.service.list()
+    .pipe(
       catchError(error =>{
         console.error(error);
         this.error$.next(true);
@@ -49,25 +55,23 @@ export class ProdutosListaComponent implements OnInit {
     );    
   }
 
-  novoProdutoModal(template: TemplateRef<any>) {
+  setCategoria(tipo) {
+    this.produto.categoria = tipo;
+  }
+
+  openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
   }
 
 
-  /*
   salvar(formulario) {
     console.log(formulario);
-
-    this.httpClient.post('https://doacaodesangue.herokuapp.com/produto', formulario.value)
-    .pipe(map(res => res))
-    .subscribe(dados => console.log(dados))
-
+    this.produtosListaService.salvarProdutos(formulario);
   }
-  */
-
-
-  cancelar() {
-
+  
+ 
+  cancelar(): void {
+    this.modalRef.hide();
   }
 
 
