@@ -40,15 +40,11 @@ export class CatalogoProdutosService {
   // Passando de uma maneira muito ruim, argumento pela url
   // Prencher o banco e fazer as rotas de busca e filtro funcionar
   getProdutos(filtros?) {
-    return this.http.get<Produto[]>('http://localhost:3000/produto', { params: filtros })  
+    return this.http.get<Produto[]>('https://doacaodesangue.herokuapp.com/produto', { params: filtros })  
   }
   
   getRecomendacao() {
-    return this.http.get<Produto[]>('http://localhost:3000/top3')
-      .pipe(
-        delay(2000),
-        tap(console.log) //para debugar, ver os erros
-      );
+    return this.http.get<Produto[]>('http://doacaodesangue.herokuapp.com/top3');
   }
 
 }

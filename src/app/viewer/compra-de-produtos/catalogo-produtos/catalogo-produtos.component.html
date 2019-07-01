@@ -16,132 +16,112 @@
   
   </section>
   <-- ================ Area de banner ================== -->
-  
 
-  <!-- ================ inicio carousel ================= -->
-<carousel *ngFor="let top of recomendacao">
-  <slide>
-    <img
-      src="https://www.weinmann.com.br/Style%20Library/img/banner_blood-donation.jpg"
-      alt="first slide"
-      style="display: block; width: 100%;"
-    />
-    <div class="carousel-caption d-none d-md-block">
-      <h3>{{ top.produto.nome }}</h3>
-      <p>{{ top.porcentagem }}</p>
-    </div>
-  </slide>
-  <slide>
-    <img
-      src="https://www.weinmann.com.br/Style%20Library/img/banner_blood-donation.jpg"
-      alt="second slide"
-      style="display: block; width: 100%;"
-    />
-    <div class="carousel-caption d-none d-md-block">
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-  </slide>
-  <slide>
-    <img
-      src="https://www.weinmann.com.br/Style%20Library/img/banner_blood-donation.jpg"
-      alt="third slide"
-      style="display: block; width: 100%;"
-    />
-    <div class="carousel-caption d-none d-md-block">
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-    </div>
-  </slide>
+<!-- ================ inicio carousel ================= -->
+<carousel>
+  <div *ngFor="let item of recomendacao">
+
+    <slide>
+      <img src="https://www.weinmann.com.br/Style%20Library/img/banner_blood-donation.jpg" alt="first slide"
+        style="display: block; width: 100%;" />
+      <div class="carousel-caption d-none d-md-block">
+        <h3>{{ item.produto.nome }}</h3>
+        <img src="{{ item.imagem.url }}" alt="first slide"
+          style="display: center; width: 10%;" />
+        <h5>{{ item.porcentagem | number:'1.0-0' }}% dos clientes compraram esse produto</h5>
+      </div>
+    </slide>
+
+  </div>
 </carousel>
 <!-- ================ final carousel ================= -->
 
-  
-  
-  
-  
-  <!-- ================ Menu de filtros ================= -->
-  <section class="section-margin--small mb-5">
-  
-    <div class="container">
-  
-      <div class="row">
-  
-  
-        <div class="col-xl-3 col-lg-4 col-md-5">
-  
-          <!-- Sidebar para listar categorias -->
-          <div class="sidebar-categories">
-  
-            <div class="head bg-danger text-white rounded">Categorias</div>
-  
-            <ul class="main-categories bg-white">
-              <li class="common-filter">
-  
-                <ul *ngFor="let categoria of categorias; let i = index">
-                  <li class="filter-list">
-                    <input class="pixel-checkbox" type="checkbox" [(ngModel)]="campoCategoria[i]"
-                      (change)="getCategoria(categoria.nome)">{{ categoria.nome }}
-                  </li>
-                </ul>
-  
+
+
+
+
+<!-- ================ Menu de filtros ================= -->
+<section class="section-margin--small mb-5">
+
+  <div class="container">
+
+    <div class="row">
+
+
+      <div class="col-xl-3 col-lg-4 col-md-5">
+
+        <!-- Sidebar para listar categorias -->
+        <div class="sidebar-categories">
+
+          <div class="head bg-danger text-white rounded">Categorias</div>
+
+          <ul class="main-categories bg-white">
+            <li class="common-filter">
+
+              <ul *ngFor="let categoria of categorias; let i = index">
+                <li class="filter-list">
+                  <input class="pixel-checkbox" type="checkbox" [(ngModel)]="campoCategoria[i]"
+                    (change)="getCategoria(categoria.nome)">{{ categoria.nome }}
+                </li>
+              </ul>
+
+            </li>
+          </ul>
+
+        </div>
+
+        <!-- Sidebar para listar filtros -->
+        <div class="sidebar-filter">
+
+          <div class="top-filter-head bg-danger text-white rounded">Filtro de Produtos</div>
+
+          <div class="common-filter bg-white">
+
+            <div class="head">Genero</div>
+
+            <ul *ngFor="let genero of generos; let i = index">
+              <li class="filter-list">
+                <input class="pixel-checkbox" type="checkbox" [(ngModel)]="campoGenero[i]"
+                  (change)="getGenero(genero.nome)">
+                {{genero.nome}}
               </li>
             </ul>
-  
+
+            <br>
+            <div class="head border-top border-danger">Material</div>
+            <ul *ngFor="let material of materiais; let i = index">
+              <li class="filter-list">
+                <input class="pixel-checkbox" type="checkbox" [(ngModel)]="campoMaterial[i]"
+                  (change)="getMaterial(material.nome)">
+                {{material.nome}}
+              </li>
+            </ul>
+
+            <br>
+            <div class="head border-top border-danger">Tamanho</div>
+            <ul *ngFor="let tamanho of tamanhos; let i = index">
+              <li class="filter-list">
+                <input class="pixel-checkbox" type="checkbox" [(ngModel)]="campoTamanho[i]"
+                  (change)="getTamanho(tamanho.nome)">
+                {{tamanho.nome}}
+              </li>
+            </ul>
+
+
           </div>
-  
-          <!-- Sidebar para listar filtros -->
-          <div class="sidebar-filter">
-  
-            <div class="top-filter-head bg-danger text-white rounded">Filtro de Produtos</div>
-  
-            <div class="common-filter bg-white">
-  
-              <div class="head">Genero</div>
-  
-              <ul *ngFor="let genero of generos; let i = index">
-                <li class="filter-list">
-                  <input class="pixel-checkbox" type="checkbox" [(ngModel)]="campoGenero[i]"
-                    (change)="getGenero(genero.nome)">
-                  {{genero.nome}}
-                </li>
-              </ul>
-  
-              <br>
-              <div class="head border-top border-danger">Material</div>
-              <ul *ngFor="let material of materiais; let i = index">
-                <li class="filter-list">
-                  <input class="pixel-checkbox" type="checkbox" [(ngModel)]="campoMaterial[i]"
-                    (change)="getMaterial(material.nome)">
-                  {{material.nome}}
-                </li>
-              </ul>
-  
-              <br>
-              <div class="head border-top border-danger">Tamanho</div>
-              <ul *ngFor="let tamanho of tamanhos; let i = index">
-                <li class="filter-list">
-                  <input class="pixel-checkbox" type="checkbox" [(ngModel)]="campoTamanho[i]"
-                    (change)="getTamanho(tamanho.nome)">
-                  {{tamanho.nome}}
-                </li>
-              </ul>
-  
-  
-            </div>
-  
-          </div>
-  
-  
+
         </div>
-  
-  
-        <div class="col-xl-9 col-lg-8 col-md-7">
-  
-          <!-- Barra de filtros -->
-          <div class="filter-bar d-flex flex-wrap align-items-center bg-white">
-  
-            <!-- Ordenação dos produtos 
+
+
+      </div>
+
+
+      <div class="col-xl-9 col-lg-8 col-md-7">
+
+        <!-- Barra de filtros -->
+        <div class="filter-bar d-flex flex-wrap align-items-center bg-white">
+
+          <!-- Ordenação dos produtos 
             <div class="sorting">
               <select (change)="ordenaProdutos($event.target.value)">
                 <option value="0">Ordenação Padrão</option>
@@ -150,66 +130,70 @@
               </select>
             </div>
             -->
-  
-            <!-- Limpar filtros selecionados -->
-            <div class="sorting mr-auto">
-              <button class="btn btn-dark rounded" (click)="limpar()">Limpar Filtros <i class="fas fa-trash-alt"></i></button>
+
+          <!-- Limpar filtros selecionados -->
+          <div class="sorting mr-auto">
+            <button class="btn btn-dark rounded" (click)="limpar()">Limpar Filtros <i
+                class="fas fa-trash-alt"></i></button>
+          </div>
+
+          <!-- Barra de busca -->
+          <div>
+            <div class="input-group filter-bar-search">
+              <input type="text" placeholder="Pesquisar" (keyup.enter)="pegaProduto(filtros)"
+                [(ngModel)]="filtros.produto">
+                <!--
+              <div class="input-group-append">
+                <button type="button" (click)="pegaProduto(filtros)"><i class="fas fa-search"></i></button>
+              </div>
+              -->
             </div>
-  
-            <!-- Barra de busca -->
-            <div>
-              <div class="input-group filter-bar-search">
-                <input type="text" placeholder="Pesquisar" (keyup.enter)="pegaProduto(filtros)"
-                  [(ngModel)]="filtros.produto">
-                <div class="input-group-append">
-                  <button type="button" (click)="pegaProduto(filtros)"><i class="fas fa-search"></i></button>
+          </div>
+
+        </div>
+
+
+        <!-- Area do catalogo de produtos -->
+        <section class="lattest-product-area pb-40 category-list">
+          <div class="row">
+
+            <!-- Acessa rota de produtos -->
+            <ng-container *ngFor="let produto of produtos">
+              <div class="col-md-6 col-lg-4">
+                <div class="card text-center card-product">
+
+                  <!-- Coloca imagem dos produtos -->
+                  <div class="card-product__img">
+                    <img class="card-img" src="{{ produto.url }}" alt="" height="293" width="255">
+
+                    <!-- Coloca imagem em destaque ao passar o mouse -->
+                  </div>
+
+                  <!-- Coloca nome e valor do produto -->
+                  <div class="card-body">
+                    <h6 class="card-product__title"><a href="#">{{ produto.nome }}</a></h6>
+                    <!-- Tratar o valor impresso do produto -->
+                    <p class="card-product__price">R$ {{ produto.valorunitario }}</p>
+                  </div>
+                  <!--[routerLink]="/carrinho"-->
+                  <button class="btn btn-success rounded" (click)="addCart(produto)">Adicionar ao carrinho <i
+                      class="fas fa-trash-alt"></i></button>
+
                 </div>
               </div>
-            </div>
-  
-          </div>
-  
-  
-          <!-- Area do catalogo de produtos -->
-          <section class="lattest-product-area pb-40 category-list">
-            <div class="row">
-  
-              <!-- Acessa rota de produtos -->
-              <ng-container *ngFor="let produto of produtos">
-                <div class="col-md-6 col-lg-4">
-                  <div class="card text-center card-product">
-  
-                    <!-- Coloca imagem dos produtos -->
-                    <div class="card-product__img">
-                      <img class="card-img" src="{{ produto.urlimagem }}" alt="" height="293" width="255">
-  
-                      <!-- Coloca imagem em destaque ao passar o mouse -->
-                    </div>
-  
-                    <!-- Coloca nome e valor do produto -->
-                    <div class="card-body">
-                      <h4 class="card-product__title"><a href="#">{{ produto.nome }}</a></h4>
-                      <!-- Tratar o valor impresso do produto -->
-                      <p class="card-product__price">R$ {{ produto.valorunitario }}</p>
-                    </div>
-                    <!--[routerLink]="/carrinho"-->
-                    <button class="btn btn-success rounded" (click)="addCart(produto)">Adicionar ao carrinho <i class="fas fa-trash-alt"></i></button>
+            </ng-container>
 
-                  </div>
-                </div>
-              </ng-container>
-  
-            </div>
-          </section>
-          <!-- Area do catalogo de produtos -->
-  
-  
-        </div>
-  
-  
+          </div>
+        </section>
+        <!-- Area do catalogo de produtos -->
+
+
       </div>
-  
+
+
     </div>
-  
-  </section>
-  <!-- ================ Menu de filtros ================= -->
+
+  </div>
+
+</section>
+<!-- ================ Menu de filtros ================= -->

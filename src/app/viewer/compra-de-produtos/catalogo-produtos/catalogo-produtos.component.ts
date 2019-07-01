@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { delay, tap } from 'rxjs/operators';
-import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { CarouselConfig } from "ngx-bootstrap/carousel";
+
 
 import { CatalogoProdutosService } from './catalogo-produtos.service';
 import { Categoria } from 'src/app/model/categoria';
@@ -11,13 +13,19 @@ import { Material } from 'src/app/model/material';
 import { Produto } from 'src/app/model/produto';
 import { AppComponent } from './../../../app.component';
 import { CarrinhoDeComprasService } from './../carrinho-de-compras/carrinho-de-compras.service';
-import { Observable } from 'rxjs';
+
 
 
 @Component({
   selector: 'app-catalogo-produtos',
   templateUrl: './catalogo-produtos.component.html',
-  styleUrls: ['./catalogo-produtos.component.css']
+  styleUrls: ['./catalogo-produtos.component.css'],
+  providers: [
+    {
+      provide: CarouselConfig,
+      useValue: { interval: 2000, noPause: true, showIndicators: true }
+    }
+  ]
 })
 
 export class CatalogoProdutosComponent implements OnInit {
@@ -30,6 +38,7 @@ export class CatalogoProdutosComponent implements OnInit {
   public sucRequi: boolean = false
 
   public filtros = {
+    nome: '',
     produto: '',
     categoria: [],
     genero: [],
@@ -47,7 +56,8 @@ export class CatalogoProdutosComponent implements OnInit {
     compraProdutos: [],
   }
 
-  recomendacao$: Observable<Produto[]>;
+  //recomendacao$: Observable<Produto[]>;
+  private recomendacao;
 
 
   constructor(
@@ -59,6 +69,9 @@ export class CatalogoProdutosComponent implements OnInit {
 
 
   ngOnInit() {
+    this.catalogoService.getRecomendacao()
+    .subscribe(recomendacao => this.recomendacao = recomendacao);
+
     this.catalogoService.getCategorias().
       subscribe(categorias => this.categorias = categorias);
 
@@ -81,11 +94,11 @@ export class CatalogoProdutosComponent implements OnInit {
     
 
     // Não funciona na busca de nome de produto, 
-    this.http.get<Produto[]>('http://localhost:3000/produto', { params: filtro })
+    this.http.get<any>('https://doacaodesangue.herokuapp.com/produto/busca', { params: filtro })
       .pipe(
         delay(2000),
-        tap()
-        //tap(console.log)
+        //tap()
+        tap(console.log)
       )
       .subscribe(produtos => {
         this.produtos = produtos
@@ -152,6 +165,7 @@ export class CatalogoProdutosComponent implements OnInit {
     this.campoTamanho = [];
 
     this.filtros = {
+      nome: '',
       produto: '',
       categoria: [],
       genero: [],
@@ -163,15 +177,10 @@ export class CatalogoProdutosComponent implements OnInit {
   }
 
   
-  // AGORA VAI CARRINHO
   addCart(Product){
     //console.log(Product);
     this.carrinhoService.addItem(Product);
     window.location.href = "/carrinho";
-  }
-
-  pegaRecomendacao() {
-    this.recomendacao$ = this.catalogoService.getRecomendacao();
   }
 
 
