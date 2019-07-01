@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
 import { CookieService } from "ngx-cookie-service";
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: "app-doador-form",
@@ -72,8 +73,7 @@ export class DoadorFormComponent implements OnInit {
     console.log(this.doador);
 
     this.httpClient
-      .post("https://doacaodesangue.herokuapp.com/doador", this.doador)
-      // .post("http://localhost:3000/doador", this.doador)
+      .post(`${environment.API}` + "doador", this.doador)
       .pipe(map(res => res))
       .subscribe(val => console.log(val));
   }

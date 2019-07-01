@@ -110,7 +110,6 @@ export class ConfirmarDoacaoComponent implements OnInit {
     this.body.cnes = this.cnes;
 
     this.httpClient
-      // .post("https://doacaodesangue.herokuapp.com/doacao", formulario.value)
       .post(`${environment.API}` + "doacao", this.body)
       .pipe(map(res => (this.bla = res)))
       .subscribe(val => val, response => response);

@@ -47,7 +47,6 @@ export class DemandaFormComponent implements OnInit {
     console.log(this.demanda);
     this.httpClient
       .post(`${environment.API}` + "demanda", this.demanda)
-      // .post("http://localhost:3000/demanda", this.demanda)
       .pipe(map(res => res))
       .subscribe(dados => dados);
   }
