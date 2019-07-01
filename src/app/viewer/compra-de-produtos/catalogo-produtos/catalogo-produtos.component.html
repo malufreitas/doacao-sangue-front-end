@@ -1,4 +1,4 @@
-<!-- ================ Area de banner ================== -->
+<!-- ================ Area de banner ================== ->
 <section class="blog-banner-area" id="category">
     <div class="container h-100">
       <div class="blog-banner">
@@ -15,8 +15,47 @@
     </div>
   
   </section>
-  <!-- ================ Area de banner ================== -->
+  <-- ================ Area de banner ================== -->
   
+
+  <!-- ================ inicio carousel ================= -->
+<carousel *ngFor="let top of recomendacao">
+  <slide>
+    <img
+      src="https://www.weinmann.com.br/Style%20Library/img/banner_blood-donation.jpg"
+      alt="first slide"
+      style="display: block; width: 100%;"
+    />
+    <div class="carousel-caption d-none d-md-block">
+      <h3>{{ top.produto.nome }}</h3>
+      <p>{{ top.porcentagem }}</p>
+    </div>
+  </slide>
+  <slide>
+    <img
+      src="https://www.weinmann.com.br/Style%20Library/img/banner_blood-donation.jpg"
+      alt="second slide"
+      style="display: block; width: 100%;"
+    />
+    <div class="carousel-caption d-none d-md-block">
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </slide>
+  <slide>
+    <img
+      src="https://www.weinmann.com.br/Style%20Library/img/banner_blood-donation.jpg"
+      alt="third slide"
+      style="display: block; width: 100%;"
+    />
+    <div class="carousel-caption d-none d-md-block">
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </div>
+  </slide>
+</carousel>
+<!-- ================ final carousel ================= -->
+
   
   
   

@@ -44,12 +44,29 @@
         <a [routerLink]="['/enderecodeentrega']" class="float-left btn btn-outline-warning">Voltar</a>
       </div>
 
-      <div>
-        <a [routerLink]="['/finalizacompra']" class="float-right btn btn-outline-success">Finalizar compra</a>
-      </div>
+      <span class="float-right">
+        <button (click)="openModal(template)" class="btn btn-outline-success">
+          Finalizar Compra
+        </button>
+      </span>
 
     </div>
 
   </div>
 
 </div>
+
+
+
+
+<!-- MODAL, CONFIRMAR EXCLUSÃO PRODUTO-->
+<ng-template #template>
+
+  <div class="modal-body text-center">
+    <p>Você deseja comprar esses produtos?</p>
+    <button type="button" class="btn btn-primary" (click)="confirm(produto)">Sim</button>
+    <button type="button" class="btn btn-default" (click)="decline()">Não</button>
+  </div>
+
+</ng-template>
+<!-- MODAL, CONFIRMAR EXCLUSÃO PRODUTO-->

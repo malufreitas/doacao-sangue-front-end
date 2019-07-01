@@ -31,7 +31,6 @@ import { CadastroModule } from "./viewer/cadastro/cadastro.module";
 import { ConfirmarService } from "./viewer/doador-form/confirmar-doacao/confirmar-service";
 import { RelatorioModule } from "./viewer/relatorio/relatorio.module";
 import { DadosEntregaFormComponent } from "./viewer/compra-de-produtos/dados-entrega-form/dados-entrega-form.component";
-import { MessageService } from "primeng/components/common/messageservice";
 
 @NgModule({
   declarations: [
@@ -71,7 +70,6 @@ import { MessageService } from "primeng/components/common/messageservice";
     AuthService,
     AuthGuard,
     ConfirmarService,
-    MessageService,
     CookieService,
     CarrinhoDeComprasComponent
   ],

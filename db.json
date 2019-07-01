@@ -159,5 +159,29 @@
       "senha": "1234567",
       "status": true
     }
+  ],
+  "top3": [
+    {
+      "produto": {
+        "id": 4,
+        "nome": "Sangue bom",
+        "valor": 23
+      },
+      "imagem": {
+        "url": "https://http2.mlstatic.com/D_NQ_NP_803001-MLB20266874624_032015-O.jpg"
+      },
+      "porcentagem": 100
+    },
+    {
+      "produto": {
+        "id": 4,
+        "nome": "Sangue bom 561512518",
+        "valor": 23
+      },
+      "imagem": {
+        "url": "https://http2.mlstatic.com/D_NQ_NP_803001-MLB20266874624_032015-O.jpg"
+      },
+      "porcentagem": 50
+    }
   ]
 }

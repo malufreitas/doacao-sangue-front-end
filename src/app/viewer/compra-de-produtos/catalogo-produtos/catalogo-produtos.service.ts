@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Categoria } from 'src/app/model/categoria';
 import { Genero } from 'src/app/model/genero';
 import { Produto } from 'src/app/model/produto';
+import { tap, delay, map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -42,5 +43,12 @@ export class CatalogoProdutosService {
     return this.http.get<Produto[]>('http://localhost:3000/produto', { params: filtros })  
   }
   
+  getRecomendacao() {
+    return this.http.get<Produto[]>('http://localhost:3000/top3')
+      .pipe(
+        delay(2000),
+        tap(console.log) //para debugar, ver os erros
+      );
+  }
 
 }

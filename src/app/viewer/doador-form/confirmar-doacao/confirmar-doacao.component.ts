@@ -10,11 +10,6 @@ import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
 
 import { environment } from "src/environments/environment";
 import { Pessoa } from "src/app/model/pessoa";
-import { NgIf } from "@angular/common";
-import { Observable } from "rxjs";
-import { Doacao } from "src/app/model/doacao";
-import { MessageService } from "primeng/components/common/messageservice";
-import { Router } from "@angular/router";
 
 @Component({
   selector: "app-confirmar-doacao",

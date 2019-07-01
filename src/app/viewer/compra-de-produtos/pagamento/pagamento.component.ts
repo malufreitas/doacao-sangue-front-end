@@ -1,5 +1,6 @@
-import { Component, AfterViewChecked, OnInit } from '@angular/core';
+import { Component, AfterViewChecked, OnInit, TemplateRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 import { CarrinhoDeComprasService } from './../carrinho-de-compras/carrinho-de-compras.service';
 
@@ -31,9 +32,17 @@ export class PagamentoComponent implements AfterViewChecked {
   // Boleto fácil
 
 
+  
+  // Uso para o Modal
+  modalRef: BsModalRef;
+  message: string;
+  // Uso para o Modal
+
+
   constructor(
     private http: HttpClient,
-    private carrinhoService: CarrinhoDeComprasService
+    private carrinhoService: CarrinhoDeComprasService,
+    private modalService: BsModalService
   ) { }
 
 
@@ -139,5 +148,25 @@ export class PagamentoComponent implements AfterViewChecked {
     this.http.post('https://sandbox.boletobancario.com/boletofacil/integration/button/checkout.html', code)
       .subscribe();
   }
+
+
+  // Abre modal pedindo confirmação para comprar o produto do carrinho
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
+  }
+
+  // Caso queira comprar o produto do carrinho
+  confirm(Produto): void {
+    this.modalRef.hide();
+  }
+ 
+  // Caso não queira comprar o produto do carrinho
+  decline(): void {
+    this.modalRef.hide();
+  }
+
+
+
+
 
 }

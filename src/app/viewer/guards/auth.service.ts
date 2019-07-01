@@ -72,7 +72,7 @@ export class AuthService {
       .pipe()
       .subscribe(
         success => this.login(success), //resposta do servidor com o status 404 ou 200
-        error => console.log(error)
+        error => {console.log(error), alert("E-mail ou senha incorreto!")}
       );
   }
 
