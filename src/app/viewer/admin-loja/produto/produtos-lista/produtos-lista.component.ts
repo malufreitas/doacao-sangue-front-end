@@ -1,19 +1,17 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
-import { Observable, empty, Subject } from 'rxjs';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { catchError, map } from 'rxjs/operators';
+import { Component, OnInit, TemplateRef } from "@angular/core";
+import { Observable, empty, Subject } from "rxjs";
+import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
+import { catchError, map } from "rxjs/operators";
 
-import { ProdutosListaService } from './produtos-lista.service';
-import { Produto } from 'src/app/model/produto';
-
+import { ProdutosListaService } from "./produtos-lista.service";
+import { Produto } from "src/app/model/produto";
 
 @Component({
-  selector: 'app-produtos-lista',
-  templateUrl: './produtos-lista.component.html',
-  styleUrls: ['./produtos-lista.component.css']
+  selector: "app-produtos-lista",
+  templateUrl: "./produtos-lista.component.html",
+  styleUrls: ["./produtos-lista.component.css"]
 })
 export class ProdutosListaComponent implements OnInit {
-
   //produtos: Produto[];
 
   //Sempre que tiver um $ do lado é um observable
@@ -27,7 +25,7 @@ export class ProdutosListaComponent implements OnInit {
 
   private produto = {
     nome: null,
-    quantidade: null, 
+    quantidade: null,
     descricao: null,
     valorunitario: null,
     categoria: null,
@@ -41,18 +39,17 @@ export class ProdutosListaComponent implements OnInit {
     private service: ProdutosListaService,
     private modalService: BsModalService,
     private produtosListaService: ProdutosListaService
-  ) { }
+  ) {}
 
   ngOnInit() {
-    console.log(this.produtos$)
-    this.produtos$ = this.service.list()
-    .pipe(
-      catchError(error =>{
+    console.log(this.produtos$);
+    this.produtos$ = this.service.list().pipe(
+      catchError(error => {
         console.error(error);
         this.error$.next(true);
         return empty();
       })
-    );    
+    );
   }
 
   setCategoria(tipo) {
@@ -60,19 +57,15 @@ export class ProdutosListaComponent implements OnInit {
   }
 
   openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
+    this.modalRef = this.modalService.show(template, { class: "modal-sm" });
   }
-
 
   salvar(formulario) {
     console.log(formulario);
     this.produtosListaService.salvarProdutos(formulario);
   }
-  
- 
+
   cancelar(): void {
     this.modalRef.hide();
   }
-
-
 }

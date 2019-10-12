@@ -86,10 +86,18 @@
 
       </form>
 
-      <a href="/carrinho" class="float-left btn btn-outline-warning">Voltar</a>
 
-      <a href="/pagamento" class="float-right btn btn-outline-success">Próximo</a>
+      <div>
+        <a [routerLink]="['/carrinho']" class="float-left btn btn-outline-warning">Voltar</a>
+      </div>
+
+      <div>
+        <a [routerLink]="['/pagamento']" class="float-right btn btn-outline-success">Próximo</a>
+      </div>
+
       <button type="submit" class="float-right btn btn-outline-success" [disabled]="!entregaForm.valid">Submit</button>
+
+
 
     </div>
 

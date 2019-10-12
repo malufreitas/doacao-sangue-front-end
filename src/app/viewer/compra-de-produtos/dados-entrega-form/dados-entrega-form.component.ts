@@ -1,21 +1,17 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
-
+import { HttpClient } from "@angular/common/http";
+import { Component, OnInit } from "@angular/core";
+import { map } from "rxjs/operators";
+import { environment } from "src/environments/environment";
 
 @Component({
-  selector: 'app-dados-entrega-form',
-  templateUrl: './dados-entrega-form.component.html',
-  styleUrls: ['./dados-entrega-form.component.css']
+  selector: "app-dados-entrega-form",
+  templateUrl: "./dados-entrega-form.component.html",
+  styleUrls: ["./dados-entrega-form.component.css"]
 })
 export class DadosEntregaFormComponent implements OnInit {
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(
-    private httpClient: HttpClient
-  ) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   verificaValidTouched(campo) {
     return !campo.valid && campo.touched;
@@ -24,40 +20,38 @@ export class DadosEntregaFormComponent implements OnInit {
   onSubmit(formulario) {
     console.log(formulario);
 
-    this.httpClient.post('inserir o link da rota que vai armazenar os dados de endereço de entrega', formulario.value)
+    this.httpClient
+      .post(`${environment.API}` + "pessoa/entrega", formulario.value)
       .pipe(map(res => res))
-      .subscribe(dados => console.log(dados))
+      .subscribe(dados => console.log(dados));
   }
-
 
   consultaCEP(cep, formulario) {
     //Nova variável "cep" somente com dígitos.
-    cep = cep.replace(/\D/g, '');
-   
+    cep = cep.replace(/\D/g, "");
+
     //Verifica se campo cep possui valor informado.
-    if (cep != null && cep != '') {
+    if (cep != null && cep != "") {
       this.resetaDadosFormulario(formulario);
 
-      this.httpClient.get(`//viacep.com.br/ws/${cep}/json`)
+      this.httpClient
+        .get(`//viacep.com.br/ws/${cep}/json`)
         .pipe(map(dados => dados))
-        .subscribe(dados => this.populaDadosForm(dados, formulario))
-  
+        .subscribe(dados => this.populaDadosForm(dados, formulario));
     }
-
   }
 
   populaDadosForm(dados, formulario) {
     formulario.form.patchValue({
       endereco: {
         rua: dados.logradouro,
-        numero: '',
+        numero: "",
         complemento: dados.complemento,
         bairro: dados.bairro,
         cidade: dados.localidade,
         estado: dados.uf
       }
     });
-
   }
 
   resetaDadosFormulario(formulario) {
@@ -70,8 +64,5 @@ export class DadosEntregaFormComponent implements OnInit {
         estado: null
       }
     });
-
   }
-
-
 }

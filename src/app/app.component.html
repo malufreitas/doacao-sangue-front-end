@@ -4,18 +4,23 @@
 </head>
 -->
 
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand text-danger" href="">Doação de Sangue</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-
-          <!--
+    <ul class="navbar-nav mr-auto">
+      <!--
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
@@ -30,43 +35,58 @@
           </li>
           -->
 
-          <li class="nav-link">
-              <a [routerLink]="['']">Home</a>
-          </li>
+      <!-- Implementando essa parte -->
 
-          <!-- Implementando essa parte -->
-          <li class="nav-link" *ngIf="!logado">
-              <a [routerLink]="['/login']">Acessar meu perfil</a>
-          </li>
-          <!-- Implementando essa parte -->
+      <li class="nav-link" *ngIf="!usuario_admin">
+        <a [routerLink]="['/catalogo']">Catálogo</a>
+      </li>
 
+      <!-- Implementando essa parte -->
+    </ul>
 
-          <li class="nav-link">
-              <a [routerLink]="['/catalogo']">Catálogo</a>
-          </li>
-
-          <li class="nav-link">
-              <a [routerLink]="['/relatorio/1']">Relatórios</a>
-          </li>
-
-
-          <!-- Implementando essa parte -->
-          <li class="nav-link" *ngIf="logado">
-              <a [routerLink]="" (click)="sair()">Sair</a>
-          </li>
-          <!-- Implementando essa parte -->
-
-      </ul>
-
-      <!--
+    <!--
       <form class="form-inline my-2 my-lg-0" #busca="ngForm" (ngSubmit)="onSubmit(busca)">
           <input class="form-control mr-sm-2" type="search" name="pesquisa" id="pesquisa" placeholder="Search"
               aria-label="Search" [ngModel]="busca.pesquisa" #pesquisa="ngModel">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
       -->
-  </div>
 
+    <!-- Parte esquerda da barra de navegação -->
+
+    <li class="nav-link">
+      <a *ngIf="usuario_hemocentro && usuario_admin">{{
+        usuario_hemocentro
+      }}</a>
+    </li>
+    <!-- carrinho -->
+    <img
+      *ngIf="user && !usuario_admin"
+      [routerLink]="['/carrinho']"
+      src="https://raw.githubusercontent.com/malufreitas/doacao-sangue-front-end/devMalu/images/carrinhoCompras.png"
+      width="30"
+      height="30"
+      class="text-right"
+    />
+    <!-- carrinho -->
+
+    <!-- Nome do usuário -->
+    <li class="nav-link">
+      <a *ngIf="usuario_nome != ''"> Bem vindo(a), {{ usuario_nome }} </a>
+    </li>
+
+    <!-- Implementando essa parte -->
+    <li class="nav-link" *ngIf="!user">
+      <a [routerLink]="['/login']">Login</a>
+    </li>
+
+    <!-- Logout -->
+    <li class="nav-link" *ngIf="user">
+      <a [routerLink]="" (click)="logout()">Sair</a>
+    </li>
+
+    <!-- Parte esquerda da barra de navegação -->
+  </div>
 </nav>
 
 <!-- Onde da o espaço nas laterais do site 
@@ -75,10 +95,4 @@
 </div>
 -->
 
-
-<button (click)="saveInLocal('1', 'produto1')" ></button>
-<button (click)="saveInLocal('2', 'produto2')" ></button>
-
-
 <router-outlet></router-outlet>
-

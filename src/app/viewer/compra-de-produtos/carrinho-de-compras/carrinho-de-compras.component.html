@@ -1,5 +1,7 @@
 <br><br>
 
+<br><br>
+
 <div class="container">
 
   <div class="card">
@@ -12,19 +14,22 @@
 
       <div class="float-right">
         <!--button type="button" class="btn btn-primary" [routerLink]="['novoProduto']"-->
-        <a href="/catalogo" class="float-right btn btn-outline-primary">Continuar comprando</a>
+        <a [routerLink]="['/catalogo']" class="float-right btn btn-outline-primary" *ngIf="items().length">Continuar
+          comprando</a>
+        <a [routerLink]="['/catalogo']" class="float-right btn btn-outline-primary" *ngIf="items().length==0">Voltar
+          para o
+          catálogo</a>
       </div>
 
     </div>
 
-    <div class="card-body">
+    <div class="card-body" *ngIf="items().length">
 
       <!--Só vai mostrar produtos caso exista produtos-->
 
-      <table id="produtos" class="table table-hover" *ngIf="produtos$ | async as produtos; else loadingError">
+      <table id="produtos" class="table table-hover">
         <thead>
           <tr>
-            <th>#</th>
             <th>Produto</th>
             <th>Preço</th>
             <th>Qtd</th>
@@ -34,18 +39,17 @@
         </thead>
 
         <tbody>
-          <tr *ngFor="let produto of produtos">
+          <tr *ngFor="let produto of items()">
             <td>{{ produto.nome }}</td>
-            <td>{{ produto.quantidade }}</td>
-            <td>{{ produto.valorunitario }}</td>
+            <td>R$ {{ produto.valorunitario }}</td>
             <td></td>
-            <td></td>
+            <td>R$ {{ produto.valorunitario }}</td>
             <td></td>
             <td></td>
             <td>
               <span class="float-right">
-                <button (click)="deletar(produto.id)" class="btn btn-outline-danger mb-1 btn-sm">
-                  <!-- Pendente botão remover -->
+                <!-- ABRE UM MODAL PEDINDO CONFIRMAÇÃO DE EXCLUSÃO-->
+                <button (click)="openModal(template)" class="btn btn-outline-danger mb-1 btn-sm">
                   X
                 </button>
               </span>
@@ -53,22 +57,42 @@
           </tr>
 
         </tbody>
-
       </table>
 
-      <ng-template #loadingError>
-        <div *ngIf="error$ | async; else loading">
-          Carrinho vazio!
-        </div>
-        <ng-template #loading>
-          <span>Carregando Carrinho...</span>
-        </ng-template>
-      </ng-template>
+      <div class="float-right">
+        <p>subtotal</p>
+        <span id="sub-cash">{{total() | currency: 'BRL': true}}</span>
+      </div>
+      <br><br><br><br>
 
-      <a href="/enderecodeentrega" class="float-right btn btn-outline-success">Próximo</a>
+      <div>
+        <a [routerLink]="['/enderecodeentrega']" class="float-right btn btn-outline-success">Próximo</a>
+      </div>
+
 
     </div>
+
+
+
+    <div class="card-body text-center" *ngIf="items().length == 0">
+      <h5>Carrinho vazio!</h5>
+      <p>Clique em "Voltar para o catálogo" para comprar um produto.</p>
+    </div>
+
 
   </div>
 
 </div>
+
+
+<!-- MODAL, CONFIRMAR EXCLUSÃO PRODUTO-->
+<ng-template #template>
+
+  <div class="modal-body text-center">
+    <p>Você tem certeza que deseja remover este item do carrinho?</p>
+    <button type="button" class="btn btn-default" (click)="confirm(produto)">Sim</button>
+    <button type="button" class="btn btn-primary" (click)="decline()">Não</button>
+  </div>
+
+</ng-template>
+<!-- MODAL, CONFIRMAR EXCLUSÃO PRODUTO-->
